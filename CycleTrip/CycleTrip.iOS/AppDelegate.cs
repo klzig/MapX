@@ -1,13 +1,16 @@
 ﻿using Foundation;
 using UIKit;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.iOS.Platform;
+using MvvmCross.Platform;
 
 namespace CycleTrip.iOS
 {
-	// The UIApplicationDelegate for the application. This class is responsible for launching the
-	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
-	[Register ("AppDelegate")]
-	public class AppDelegate : UIApplicationDelegate
-	{
+     // The UIApplicationDelegate for the application. This class is responsible for launching the
+    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
+    [Register ("AppDelegate")]
+	public class AppDelegate : MvxApplicationDelegate
+    {
 		// class-level declarations
 
 		public override UIWindow Window {
@@ -15,14 +18,22 @@ namespace CycleTrip.iOS
 			set;
 		}
 
-		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
-		{
-			// Override point for customization after application launch.
-			// If not required for your application you can safely delete this method
-			return true;
-		}
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+        {
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-		public override void OnResignActivation (UIApplication application)
+            var setup = new Setup(this, Window);
+            setup.Initialize();
+
+            var startup = Mvx.Resolve<IMvxAppStart>();
+            startup.Start();
+
+            Window.MakeKeyAndVisible();
+
+            return true;
+        }
+
+        public override void OnResignActivation (UIApplication application)
 		{
 			// Invoked when the application is about to move from active to inactive state.
 			// This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) 
