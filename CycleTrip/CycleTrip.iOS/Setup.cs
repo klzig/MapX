@@ -20,7 +20,7 @@ namespace CycleTrip.iOS
 
         protected override IMvxApplication CreateApp()
         {
-            return new App();
+            return new CycleTrip.App();
         }
         
         protected override IMvxTrace CreateDebugTrace()
