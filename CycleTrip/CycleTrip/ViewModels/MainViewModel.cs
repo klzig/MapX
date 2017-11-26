@@ -1,21 +1,42 @@
-using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Core.Navigation;
 
 namespace CycleTrip.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        public MainViewModel()
+        readonly Type[] _menuItemTypes = {
+            typeof(FirstPageViewModel),
+            typeof(SettingsViewModel),
+        };
+
+        public IEnumerable<string> MenuItems { get; private set; } = new[] { "First Page", "Settings" };
+
+        public void ShowDefaultMenuItem()
         {
+            NavigateTo(0);
         }
-        
-        public override Task Initialize()
+
+        public void NavigateTo(int position)
         {
-            //TODO: Add starting logic here
-		    
-            return base.Initialize();
+            Type vm = _menuItemTypes[position];
+            _navigationService.Navigate(vm);
         }
-        
+
+        //public async Task NavigateTo(int position)
+        //{
+        //    Type vm = _menuItemTypes[position];
+        //    await _navigationService.Navigate(vm);
+        //}
+
+        private readonly IMvxNavigationService _navigationService;
+        public MainViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()
         {
@@ -27,6 +48,23 @@ namespace CycleTrip.ViewModels
         {
             get { return _text; }
             set { SetProperty(ref _text, value); }
+        }
+    }
+
+    public class MenuItem : Tuple<string, Type>
+    {
+        public MenuItem(string displayName, Type viewModelType)
+            : base(displayName, viewModelType)
+        { }
+
+        public string DisplayName
+        {
+            get { return Item1; }
+        }
+
+        public Type ViewModelType
+        {
+            get { return Item2; }
         }
     }
 }

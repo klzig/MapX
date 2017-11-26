@@ -1,4 +1,5 @@
-using MvvmCross.Platform.IoC;
+//using MvvmCross.Platform.IoC;
+using CycleTrip.ViewModels;
 
 namespace CycleTrip
 {
@@ -6,12 +7,13 @@ namespace CycleTrip
     {
         public override void Initialize()
         {
-            CreatableTypes()
-                .EndingWith("Service")
-                .AsInterfaces()
-                .RegisterAsLazySingleton();
+             base.Initialize();
+ //           CreatableTypes()
+ //               .EndingWith("Service")
+ //               .AsInterfaces()
+ //               .RegisterAsLazySingleton();
 
-            RegisterNavigationServiceAppStart<ViewModels.MainViewModel>();
+            RegisterNavigationServiceAppStart<MainViewModel>();
         }
     }
 }

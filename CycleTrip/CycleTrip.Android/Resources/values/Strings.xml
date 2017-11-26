@@ -2,4 +2,6 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">CycleTrip.Android</string>
+  <string name="OpenDrawerString">Open navigation drawer</string>
+  <string name="CloseDrawerString">Close navigation drawer</string>
 </resources>

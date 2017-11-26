@@ -1,6 +1,7 @@
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters.Attributes;
+using CycleTrip.ViewModels;
 
 namespace CycleTrip.iOS.Views
 {
@@ -15,7 +16,7 @@ namespace CycleTrip.iOS.Views
         {
             base.ViewDidLoad();
 
-            var set = this.CreateBindingSet<MainView, ViewModels.MainViewModel>();
+            var set = this.CreateBindingSet<MainView, MainViewModel>();
             set.Bind(TextField).To(vm => vm.Text);
             set.Bind(Button).To(vm => vm.ResetTextCommand);
             set.Apply();
