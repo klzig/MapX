@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MvvmCross.Uwp.Views;
+using MvvmCross.Uwp.Attributes;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -21,6 +22,7 @@ namespace CycleTrip.UWP.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    [MvxPagePresentation]
     public sealed partial class MainView : MvxWindowsPage
     {
         public MainView()
