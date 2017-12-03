@@ -47,6 +47,9 @@ namespace CycleTrip.Droid.Views
         {
             ViewModel.NavigateTo(position);
 
+ //           FragmentManager fm = getFragmentManager();
+ //           FragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
             Title = ViewModel.MenuItems.ElementAt(position);
 
             _drawerLayout.CloseDrawer(_drawerListView);

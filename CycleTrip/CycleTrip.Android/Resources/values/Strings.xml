@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">CycleTrip.Android</string>
+	<string name="app_name">Cycle Trip</string>
   <string name="OpenDrawerString">Open navigation drawer</string>
   <string name="CloseDrawerString">Close navigation drawer</string>
 </resources>

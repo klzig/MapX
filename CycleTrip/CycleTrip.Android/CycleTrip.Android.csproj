@@ -154,6 +154,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="Views\SecondPageFragment.cs" />
     <Compile Include="Views\FirstPageFragment.cs" />
     <Compile Include="Views\MainActivity.cs" />
     <AndroidResource Include="Resources\layout\FirstPageView.axml">
@@ -175,6 +176,9 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\layout\SecondPageView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

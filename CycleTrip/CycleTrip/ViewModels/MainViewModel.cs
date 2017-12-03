@@ -22,7 +22,11 @@ namespace CycleTrip.ViewModels
         public void NavigateTo(int position)
         {
             Type vm = _menuItemTypes[position];
+     //       var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
+     //       _navigationService.Navigate(vm, presentationBundle);
+            var presentationBundle = new MvxBundle(new Dictionary<string, string> {  });
             _navigationService.Navigate(vm);
+
         }
 
         //public async Task NavigateTo(int position)
