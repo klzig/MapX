@@ -7,7 +7,7 @@ using MvvmCross.Droid.Views.Attributes;
 
 namespace CycleTrip.Droid.Views
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, false)]
     [Register("CycleTrip.Droid.MySettingsFragment")]
     public class SettingsFragment : MvxFragment<SettingsViewModel>
     {

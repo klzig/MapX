@@ -5,7 +5,7 @@ using MvvmCross.Droid.Views;
 namespace CycleTrip.Droid
 {
     [Activity(
-        Label = "CycleTrip.Droid"
+        Label = "Cycle Trip"
         , MainLauncher = true
         , Icon = "@mipmap/splash"
         , Theme = "@style/Theme.Splash"

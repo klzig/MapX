@@ -8,7 +8,7 @@ using MvvmCross.Binding.Droid.BindingContext;
 
 namespace CycleTrip.Droid.Views
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, false)]
     [Register("CycleTrip.Droid.FirstPageFragment")]
     public class FirstPageFragment : MvxFragment<FirstPageViewModel>
     {
@@ -17,14 +17,5 @@ namespace CycleTrip.Droid.Views
            base.OnCreateView(inflater, container, savedInstanceState);
            return this.BindingInflate(Resource.Layout.FirstPageView, container, false);
         }
-
-        //public override void Show(MvxViewModelRequest request)
-        //{
-        //    if (vmRequest.PresentationValues != null)
-        //    {
-        //        if (request.PresentationValues.ContainsKey("NavigationMode") && request.PresentationValues["NavigationMode"] == "ClearStack")
-        //            _fragmentManager.PopBackStackImmediate(null, PopBackStackFlags.Inclusive);
-        //    }
-        //}
     }
 }

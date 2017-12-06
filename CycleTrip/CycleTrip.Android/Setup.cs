@@ -7,6 +7,9 @@ using MvvmCross.Platform.Platform;
 using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Binding.Bindings.Target.Construction;
+using CycleTrip.Droid.Presenters;
+using MvvmCross.Platform;
+using CycleTrip.PresentationHints;
 
 namespace CycleTrip.Droid
 {
@@ -33,7 +36,10 @@ namespace CycleTrip.Droid
    
         protected override IMvxAndroidViewPresenter CreateViewPresenter()
         {
-            return new MvxAppCompatViewPresenter(AndroidViewAssemblies);
+            var presenter = new MvxAppCompatViewPresenter(AndroidViewAssemblies);
+            presenter.AddPresentationHintHandler<ClearBackstackHint>((new BackStackHintHandler()).HandleClearBackstackHint);
+            Mvx.RegisterSingleton<IMvxAndroidViewPresenter>(presenter);
+            return presenter;
         }
     }
 }

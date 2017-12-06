@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Navigation;
+using CycleTrip.PresentationHints;
 
 namespace CycleTrip.ViewModels
 {
@@ -11,10 +12,16 @@ namespace CycleTrip.ViewModels
             typeof(FirstPageViewModel),
             typeof(SettingsViewModel),
         };
-
         public IEnumerable<string> MenuItems { get; private set; } = new[] { "First Page", "Settings" };
+   
+        private readonly IMvxNavigationService _navigationService;
 
-        public void ShowDefaultMenuItem()
+        public MainViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+    
+        public void ShowDefaultMenuItemAsync()
         {
             NavigateTo(0);
         }
@@ -22,24 +29,18 @@ namespace CycleTrip.ViewModels
         public void NavigateTo(int position)
         {
             Type vm = _menuItemTypes[position];
-     //       var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
-     //       _navigationService.Navigate(vm, presentationBundle);
-            var presentationBundle = new MvxBundle(new Dictionary<string, string> {  });
-            _navigationService.Navigate(vm);
+            ChangePresentation(new ClearBackstackHint());
+//           var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
+            _navigationService.Navigate(vm, null);  // Fragment's OnCreateView not called unless second parameter is null
 
         }
 
-        //public async Task NavigateTo(int position)
-        //{
-        //    Type vm = _menuItemTypes[position];
-        //    await _navigationService.Navigate(vm);
-        //}
-
-        private readonly IMvxNavigationService _navigationService;
-        public MainViewModel(IMvxNavigationService navigationService)
-        {
-            _navigationService = navigationService;
-        }
+  //      public async Task NavigateTo(int position)
+  //      {
+  //          Type vm = _menuItemTypes[position];
+  //          var presentationBundle = new MvxBundle(new Dictionary<string, string> { {"NavigationMode", "ClearStack"} });
+  //          await _navigationService.Navigate(vm, null);
+  //      }
 
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()

@@ -11,14 +11,15 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace CycleTrip.Droid.Views
 {
+    /// <summary>
+    /// The one activity.  It managages the top navigation bar, navigation drawer, and hosts pages as fragments. 
+    /// </summary>
     [Activity]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>
 
     {
         ActionBarDrawerToggle _drawerToggle;
-
         ListView _drawerListView;
-
         DrawerLayout _drawerLayout;
 
         protected override void OnCreate(Bundle bundle)
@@ -46,12 +47,7 @@ namespace CycleTrip.Droid.Views
         void ShowFragmentAt(int position)
         {
             ViewModel.NavigateTo(position);
-
- //           FragmentManager fm = getFragmentManager();
- //           FragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
             Title = ViewModel.MenuItems.ElementAt(position);
-
             _drawerLayout.CloseDrawer(_drawerListView);
         }
 
