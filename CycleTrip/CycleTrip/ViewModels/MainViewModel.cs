@@ -12,8 +12,12 @@ namespace CycleTrip.ViewModels
             typeof(FirstPageViewModel),
             typeof(SettingsViewModel),
         };
-        public IEnumerable<string> MenuItems { get; private set; } = new[] { "First Page", "Settings" };
-   
+
+        public MenuItem[] MenuItems = {
+            new MenuItem("First Page", 0),
+            new MenuItem("Settings", 0)
+        };
+
         private readonly IMvxNavigationService _navigationService;
 
         public MainViewModel(IMvxNavigationService navigationService)
@@ -56,20 +60,15 @@ namespace CycleTrip.ViewModels
         }
     }
 
-    public class MenuItem : Tuple<string, Type>
+    public class MenuItem
     {
-        public MenuItem(string displayName, Type viewModelType)
-            : base(displayName, viewModelType)
-        { }
+        public string MenuName { get; set; }
+        public int IconId { get; set; }
 
-        public string DisplayName
+        public MenuItem(string menuName, int iconId)
         {
-            get { return Item1; }
-        }
-
-        public Type ViewModelType
-        {
-            get { return Item2; }
+            MenuName = menuName;
+            IconId = iconId;
         }
     }
 }
