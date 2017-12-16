@@ -34,8 +34,8 @@ namespace CycleTrip.Droid.Views
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetDisplayShowHomeEnabled(true);
 
             _drawerListView = FindViewById<ListView>(Resource.Id.drawerListView);
             _drawerListView.ItemClick += (s, e) => ShowFragmentAt(e.Position);
