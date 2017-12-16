@@ -1,9 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+<?xml version="1.0" encoding="utf-8" ?>
+<!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/notifications"
+    android:icon="@drawable/ic_info_outline_black"
+    app:showAsAction="always"
+    android:visible="true"
+    android:title="New Notification"/>
+  <item
+    android:id="@+id/recording"
+    android:icon="@drawable/ic_record_black"
+    app:showAsAction="always"
+    android:visible="true"
+    android:title="Recording"/>
+</menu>

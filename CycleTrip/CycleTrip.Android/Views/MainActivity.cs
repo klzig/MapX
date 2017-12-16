@@ -74,6 +74,12 @@ namespace CycleTrip.Droid.Views
 
             return base.OnOptionsItemSelected(item);
         }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {   // Shared toolbar alert buttons
+            MenuInflater.Inflate(Resource.Layout.Toolbar, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
     }
 
     public class MenuListAdapter : BaseAdapter<MenuItem>
