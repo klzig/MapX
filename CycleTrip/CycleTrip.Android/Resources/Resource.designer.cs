@@ -4563,6 +4563,9 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f09001f
 			public const int normal = 2131296287;
 			
+			// aapt resource value: 0x7f0900b3
+			public const int notification = 2131296435;
+			
 			// aapt resource value: 0x7f0900af
 			public const int notification_background = 2131296431;
 			
@@ -4571,9 +4574,6 @@ namespace CycleTrip.Droid
 			
 			// aapt resource value: 0x7f0900a8
 			public const int notification_main_column_container = 2131296424;
-			
-			// aapt resource value: 0x7f0900b3
-			public const int notifications = 2131296435;
 			
 			// aapt resource value: 0x7f09004d
 			public const int parallax = 2131296333;

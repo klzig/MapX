@@ -11,6 +11,8 @@ using CycleTrip.Droid.Presenters;
 using MvvmCross.Platform;
 using CycleTrip.PresentationHints;
 
+// http://dailydotnettips.com/2016/05/11/accessing-platform-specific-code-using-ioc-in-mvvm-cross/recordingMessage
+
 namespace CycleTrip.Droid
 {
     public class Setup : MvxAppCompatSetup
