@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using CycleTrip.Messages;
 using CycleTrip.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platform;
+using MvvmCross.Plugins.Messenger;
+using System.Collections.Generic;
+using System.Linq;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 // https://developer.xamarin.com/guides/android/user_interface/layouts/list-view/part-3-customizing-list-view-appearance/
@@ -24,7 +27,20 @@ namespace CycleTrip.Droid.Views
         ListView _drawerListView;
         DrawerLayout _drawerLayout;
 
+        Dictionary<AlertType, bool> _alerts = new Dictionary<AlertType, bool> {
+            {AlertType.notification, false},
+            {AlertType.recording, false }
+        };
+
         public IEnumerable<int> MenuIcons{ get; private set; } = new int[] { Resource.Drawable.ic_android_black, Resource.Drawable.ic_settings_black };
+        private readonly IMvxMessenger _messenger;
+        private readonly MvxSubscriptionToken _token;   
+
+        public MainActivity() : base()
+        {
+            _messenger = Mvx.Resolve<IMvxMessenger>();
+            _token = _messenger.Subscribe<AlertMessage>(OnAlertMessage);
+        }
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -45,10 +61,10 @@ namespace CycleTrip.Droid.Views
             ViewModel.MenuItems[1].IconId = Resource.Drawable.ic_settings_black;
 
             _drawerListView.Adapter = new MenuListAdapter(this, ViewModel.MenuItems.ToList());
-
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
-
             _drawerToggle = new ActionBarDrawerToggle(this, _drawerLayout, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
+
+            ViewModel.SelfTest();
 
             ShowFragmentAt(0);
         }
@@ -77,8 +93,22 @@ namespace CycleTrip.Droid.Views
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {   // Shared toolbar alert buttons
+            IMenuItem alert;
             MenuInflater.Inflate(Resource.Layout.Toolbar, menu);
+
+            alert = menu.FindItem(Resource.Id.notification);
+            alert.SetVisible(_alerts[AlertType.notification]);
+
+            alert = menu.FindItem(Resource.Id.recording);
+            alert.SetVisible(_alerts[AlertType.recording]);
+
             return base.OnCreateOptionsMenu(menu);
+        }
+
+        private void OnAlertMessage(AlertMessage alert)
+        {
+            _alerts[alert.Type] = alert.Visible;
+            InvalidateOptionsMenu();
         }
     }
 

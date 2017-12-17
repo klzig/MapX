@@ -1,8 +1,10 @@
 using System;
-using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Navigation;
 using CycleTrip.PresentationHints;
+using CycleTrip.Messages;
+using MvvmCross.Plugins.Messenger;
+using System.Threading.Tasks;
 
 namespace CycleTrip.ViewModels
 {
@@ -19,12 +21,27 @@ namespace CycleTrip.ViewModels
         };
 
         private readonly IMvxNavigationService _navigationService;
+        private readonly IMvxMessenger _messenger;
 
-        public MainViewModel(IMvxNavigationService navigationService)
+        public MainViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger)
         {
             _navigationService = navigationService;
+            _messenger = messenger;
+          }
+
+        public async void SelfTest()
+        {
+            var notification_true = new AlertMessage(this, AlertType.notification, true);
+            var notification_false = new AlertMessage(this, AlertType.notification, false);
+            var recording_true = new AlertMessage(this, AlertType.recording, true);
+            var recording_false = new AlertMessage(this, AlertType.recording, false);
+            _messenger.Publish(notification_true);
+            _messenger.Publish(recording_true);
+            await Task.Delay(2000);
+            _messenger.Publish(notification_true);
+            _messenger.Publish(recording_false);
         }
-    
+
         public void ShowDefaultMenuItemAsync()
         {
             NavigateTo(0);
