@@ -27,7 +27,7 @@ namespace CycleTrip.ViewModels
         {
             _navigationService = navigationService;
             _messenger = messenger;
-          }
+        }
 
         public async void SelfTest()
         {

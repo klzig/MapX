@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Messages\ViewTitle.cs" />
     <Compile Include="Messages\Alerts.cs" />
     <Compile Include="PresentationHints\ClearBackstackHint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

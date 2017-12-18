@@ -26,6 +26,7 @@ namespace CycleTrip.Droid.Views
         ActionBarDrawerToggle _drawerToggle;
         ListView _drawerListView;
         DrawerLayout _drawerLayout;
+        string _title;
 
         Dictionary<AlertType, bool> _alerts = new Dictionary<AlertType, bool> {
             {AlertType.notification, false},
@@ -34,12 +35,14 @@ namespace CycleTrip.Droid.Views
 
         public IEnumerable<int> MenuIcons{ get; private set; } = new int[] { Resource.Drawable.ic_android_black, Resource.Drawable.ic_settings_black };
         private readonly IMvxMessenger _messenger;
-        private readonly MvxSubscriptionToken _token;   
+        private readonly MvxSubscriptionToken _alert_token;
+        private readonly MvxSubscriptionToken _title_token;
 
         public MainActivity() : base()
         {
             _messenger = Mvx.Resolve<IMvxMessenger>();
-            _token = _messenger.Subscribe<AlertMessage>(OnAlertMessage);
+            _alert_token = _messenger.Subscribe<AlertMessage>(OnAlertMessage);
+            _title_token = _messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
         }
 
         protected override void OnCreate(Bundle bundle)
@@ -55,24 +58,22 @@ namespace CycleTrip.Droid.Views
 
             _drawerListView = FindViewById<ListView>(Resource.Id.drawerListView);
             _drawerListView.ItemClick += (s, e) => ShowFragmentAt(e.Position);
+            _drawerListView.Adapter = new MenuListAdapter(this, ViewModel.MenuItems.ToList());
+            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
+            _drawerToggle = new ActionBarDrawerToggle(this, _drawerLayout, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
 
             // Platform-specific initialization
             ViewModel.MenuItems[0].IconId = Resource.Drawable.ic_android_black;
             ViewModel.MenuItems[1].IconId = Resource.Drawable.ic_settings_black;
 
-            _drawerListView.Adapter = new MenuListAdapter(this, ViewModel.MenuItems.ToList());
-            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
-            _drawerToggle = new ActionBarDrawerToggle(this, _drawerLayout, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
+            ShowFragmentAt(0);
 
             ViewModel.SelfTest();
-
-            ShowFragmentAt(0);
         }
 
         void ShowFragmentAt(int position)
         {
             ViewModel.NavigateTo(position);
-            Title = ViewModel.MenuItems.ElementAt(position).MenuName;
             _drawerLayout.CloseDrawer(_drawerListView);
         }
 
@@ -108,6 +109,12 @@ namespace CycleTrip.Droid.Views
         private void OnAlertMessage(AlertMessage alert)
         {
             _alerts[alert.Type] = alert.Visible;
+            InvalidateOptionsMenu();
+        }
+
+        private void OnViewTitleMessage(ViewTitleMessage msg)
+        {
+            _title = Title = msg.Title;
             InvalidateOptionsMenu();
         }
     }
