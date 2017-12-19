@@ -10,6 +10,7 @@ namespace CycleTrip.Messages
             Title = title;
         }
 
+        // String resource identifier
         public string Title
         {
             get;

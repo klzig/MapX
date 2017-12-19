@@ -14,9 +14,9 @@ namespace CycleTrip.ViewModels
             _messenger = messenger;
         }
 
-        public override void ViewAppearing()
+        public override void ViewAppeared()
         {
-            var new_title = new ViewTitleMessage(this, "First Page");
+            var new_title = new ViewTitleMessage(this, "first_page");
             _messenger.Publish(new_title);
         }
 

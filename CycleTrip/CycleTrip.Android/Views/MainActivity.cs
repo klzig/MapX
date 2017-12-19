@@ -9,6 +9,7 @@ using CycleTrip.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
@@ -23,10 +24,9 @@ namespace CycleTrip.Droid.Views
     [Activity]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>
     {
-        ActionBarDrawerToggle _drawerToggle;
+        MyActionBarDrawerToggle _drawerToggle;
         ListView _drawerListView;
         DrawerLayout _drawerLayout;
-        string _title;
 
         Dictionary<AlertType, bool> _alerts = new Dictionary<AlertType, bool> {
             {AlertType.notification, false},
@@ -60,7 +60,9 @@ namespace CycleTrip.Droid.Views
             _drawerListView.ItemClick += (s, e) => ShowFragmentAt(e.Position);
             _drawerListView.Adapter = new MenuListAdapter(this, ViewModel.MenuItems.ToList());
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
-            _drawerToggle = new ActionBarDrawerToggle(this, _drawerLayout, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
+            _drawerToggle = new MyActionBarDrawerToggle(this, _drawerLayout, toolbar, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
+            _drawerLayout.AddDrawerListener(_drawerToggle);
+            _drawerToggle.SyncState();
 
             // Platform-specific initialization
             ViewModel.MenuItems[0].IconId = Resource.Drawable.ic_android_black;
@@ -114,8 +116,10 @@ namespace CycleTrip.Droid.Views
 
         private void OnViewTitleMessage(ViewTitleMessage msg)
         {
-            _title = Title = msg.Title;
-            InvalidateOptionsMenu();
+            int title_res = Resources.GetIdentifier(msg.Title, "string", PackageName);
+      
+            SupportActionBar.SetTitle(title_res);
+            _drawerToggle.OldTitleRes = title_res;
         }
     }
 
@@ -160,5 +164,52 @@ namespace CycleTrip.Droid.Views
             view.FindViewById<ImageView>(Resource.Id.menu_icon).SetImageResource(item.IconId);
             return view;
         }
+    }
+
+    // This approach is wrong?  https://forums.xamarin.com/discussion/54407/explicit-interface-implementation-for-drawerlayout
+    // This class has one purpose: change the appbar title to the app name when the navigation drawer is open
+    public class MyActionBarDrawerToggle : ActionBarDrawerToggle
+    {
+        private AppCompatActivity _HostActivity;
+
+        public MyActionBarDrawerToggle(AppCompatActivity host, DrawerLayout drawerLayout, Toolbar toolbar, int openedResource, int closedResource)
+            : base(host, drawerLayout, toolbar, openedResource, closedResource)
+        {
+            _HostActivity = host;
+        }
+
+        public int OldTitleRes { get; set; }
+
+        public override void OnDrawerOpened(View drawerView)
+        {
+            int drawerType = (int)drawerView.Tag;
+
+            base.OnDrawerOpened(drawerView);
+
+            if (drawerType == 0)
+            {
+                base.OnDrawerOpened(drawerView);
+                _HostActivity.SupportActionBar.SetTitle(Resource.String.app_name);
+                // base.OnDrawerSlide(drawerView, 0);  // Disables the back arrow
+            }
+        }
+
+        public override void OnDrawerClosed(View drawerView)
+        {
+            int drawerType = (int)drawerView.Tag;
+
+            base.OnDrawerClosed(drawerView);
+
+            if (drawerType == 0)
+            {
+                base.OnDrawerClosed(drawerView);
+                _HostActivity.SupportActionBar.SetTitle(OldTitleRes);
+            }
+        }
+
+        //public override void OnDrawerSlide(View drawerView, float slideOffset)
+        //{
+        //    base.OnDrawerSlide(drawerView, 0); // Disables the animation 
+        //}
     }
 }

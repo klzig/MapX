@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">Cycle Trip</string>
+	<string name="app_name">CycleTrip</string>
   <string name="OpenDrawerString">Open navigation drawer</string>
   <string name="CloseDrawerString">Close navigation drawer</string>
+  <string name="first_page">First Page</string>
+  <string name="second_page">Second Page</string>
+  <string name="settings">Settings</string>
 </resources>

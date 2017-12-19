@@ -5203,6 +5203,9 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0a0023
 			public const int character_counter_pattern = 2131361827;
 			
+			// aapt resource value: 0x7f0a002d
+			public const int first_page = 2131361837;
+			
 			// aapt resource value: 0x7f0a0029
 			public const int hello = 2131361833;
 			
@@ -5223,6 +5226,12 @@ namespace CycleTrip.Droid
 			
 			// aapt resource value: 0x7f0a0013
 			public const int search_menu_title = 2131361811;
+			
+			// aapt resource value: 0x7f0a002e
+			public const int second_page = 2131361838;
+			
+			// aapt resource value: 0x7f0a002f
+			public const int settings = 2131361839;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int status_bar_notification_info_overflow = 2131361812;
