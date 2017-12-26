@@ -36,6 +36,7 @@
     <Compile Include="Messages\Alerts.cs" />
     <Compile Include="PresentationHints\ClearBackstackHint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\InfoViewModel.cs" />
     <Compile Include="ViewModels\SecondPageViewModel.cs" />
     <Compile Include="ViewModels\FirstPageViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

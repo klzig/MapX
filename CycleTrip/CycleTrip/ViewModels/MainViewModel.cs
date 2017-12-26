@@ -12,11 +12,13 @@ namespace CycleTrip.ViewModels
     {
         readonly Type[] _menuItemTypes = {
             typeof(FirstPageViewModel),
+            typeof(InfoViewModel),
             typeof(SettingsViewModel),
         };
 
         public MenuItem[] MenuItems = {
             new MenuItem("First Page", 0),
+            new MenuItem("Information", 0),
             new MenuItem("Settings", 0)
         };
 
@@ -51,17 +53,16 @@ namespace CycleTrip.ViewModels
         {
             Type vm = _menuItemTypes[position];
             ChangePresentation(new ClearBackstackHint());
-//           var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
+            //           var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
             _navigationService.Navigate(vm, null);  // Fragment's OnCreateView not called unless second parameter is null
-
         }
 
-  //      public async Task NavigateTo(int position)
-  //      {
-  //          Type vm = _menuItemTypes[position];
-  //          var presentationBundle = new MvxBundle(new Dictionary<string, string> { {"NavigationMode", "ClearStack"} });
-  //          await _navigationService.Navigate(vm, null);
-  //      }
+        //      public async Task NavigateTo(int position)
+        //      {
+        //          Type vm = _menuItemTypes[position];
+        //          var presentationBundle = new MvxBundle(new Dictionary<string, string> { {"NavigationMode", "ClearStack"} });
+        //          await _navigationService.Navigate(vm, null);
+        //      }
 
         public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
         private void ResetText()

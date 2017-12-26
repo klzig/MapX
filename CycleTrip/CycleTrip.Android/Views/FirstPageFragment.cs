@@ -8,8 +8,7 @@ using MvvmCross.Binding.Droid.BindingContext;
 
 namespace CycleTrip.Droid.Views
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, false)]
-    [Register("CycleTrip.Droid.FirstPageFragment")]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, AddToBackStack = false)]
     public class FirstPageFragment : MvxFragment<FirstPageViewModel>
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

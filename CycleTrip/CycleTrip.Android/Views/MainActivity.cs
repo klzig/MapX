@@ -9,7 +9,6 @@ using CycleTrip.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
@@ -33,7 +32,6 @@ namespace CycleTrip.Droid.Views
             {AlertType.recording, false }
         };
 
-        public IEnumerable<int> MenuIcons{ get; private set; } = new int[] { Resource.Drawable.ic_android_black, Resource.Drawable.ic_settings_black };
         private readonly IMvxMessenger _messenger;
         private readonly MvxSubscriptionToken _alert_token;
         private readonly MvxSubscriptionToken _title_token;
@@ -66,7 +64,8 @@ namespace CycleTrip.Droid.Views
 
             // Platform-specific initialization
             ViewModel.MenuItems[0].IconId = Resource.Drawable.ic_android_black;
-            ViewModel.MenuItems[1].IconId = Resource.Drawable.ic_settings_black;
+            ViewModel.MenuItems[1].IconId = Resource.Drawable.ic_info_outline_black;
+            ViewModel.MenuItems[2].IconId = Resource.Drawable.ic_settings_black;
 
             ShowFragmentAt(0);
 
@@ -90,6 +89,14 @@ namespace CycleTrip.Droid.Views
         {
             if (_drawerToggle.OnOptionsItemSelected(item))
                 return true;
+
+            switch (item.ItemId)
+            {
+                case Resource.Id.notification:
+                    // TODO: Figure out how to add this view to backstack when navigating via actionbar button
+                    ViewModel.NavigateTo(1);
+                    break;
+            }
 
             return base.OnOptionsItemSelected(item);
         }

@@ -7,8 +7,7 @@ using MvvmCross.Droid.Views.Attributes;
 
 namespace CycleTrip.Droid.Views
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, true)]
-    [Register("CycleTrip.Droid.SecondPageFragment")]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, AddToBackStack = true)]
     public class SecondPageFragment : MvxFragment<SecondPageViewModel>
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
