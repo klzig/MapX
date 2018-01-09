@@ -22,6 +22,12 @@ namespace CycleTrip.ViewModels
             new MenuItem("Settings", 0)
         };
 
+        public ModelMenuItem[] ModelMenuItems = {
+            new ModelMenuItem("First Page", typeof(FirstPageViewModel)),
+            new ModelMenuItem("Information", typeof(InfoViewModel)),
+            new ModelMenuItem("Settings", typeof(SettingsViewModel))
+        };
+
         private readonly IMvxNavigationService _navigationService;
         private readonly IMvxMessenger _messenger;
 
@@ -31,6 +37,14 @@ namespace CycleTrip.ViewModels
             _messenger = messenger;
         }
 
+        public override Task Initialize()
+        {
+            //TODO: Add starting logic here
+ //           NavigateTo(0);
+
+            return base.Initialize();
+        }
+    
         public async void SelfTest()
         {
             var notification_true = new AlertMessage(this, AlertType.notification, true);
@@ -87,6 +101,18 @@ namespace CycleTrip.ViewModels
         {
             MenuName = menuName;
             IconId = iconId;
+        }
+    }
+
+    public class ModelMenuItem
+    {
+        public string MenuName { get; set; }
+        public Type ViewType { get; set; }
+
+        public ModelMenuItem(string name, Type type)
+        {
+            MenuName = name;
+            ViewType = type;
         }
     }
 }

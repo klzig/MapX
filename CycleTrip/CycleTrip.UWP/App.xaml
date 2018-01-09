@@ -5,4 +5,25 @@
     xmlns:local="using:CycleTrip.UWP"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--	<ResourceDictionary Source="Styles/Colors.xaml"/>
+                <ResourceDictionary Source="Styles/TextStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/> -->
+
+
+                <ResourceDictionary Source="Styles/AppColors.xaml"/>
+                <ResourceDictionary Source="Styles/AppTheme.xaml"/>
+                <ResourceDictionary Source="Styles/Styles.xaml"/>
+                <!--Add other global resource dictionaries here-->
+            </ResourceDictionary.MergedDictionaries>
+
+            <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
+              BackgroundSource="Backdrop" TintColor="CornflowerBlue" TintOpacity=".4"/>
+            <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
+              BackgroundSource="HostBackdrop" TintColor="CornflowerBlue" TintOpacity=".6"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

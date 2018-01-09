@@ -3,4 +3,4 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_bright" />
+    android:background="#FFBF32CD" />

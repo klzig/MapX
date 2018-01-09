@@ -18,7 +18,7 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 namespace CycleTrip.Droid.Views
 {
     /// <summary>
-    /// The one activity.  It managages the top navigation bar, navigation drawer, and hosts pages as fragments. 
+    /// The one activity, common to all views.  It managages the top navigation bar, navigation drawer, and hosts views as fragments. 
     /// </summary>
     [Activity]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>

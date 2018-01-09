@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	  xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light">
+    android:background="#FF32CD32">
     <Button
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:textSize="40dp"
-      android:text="Binding is Broken"
-      local:MvxBind="Click MyCommand; Text ButtonText" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="Binding is Broken"
+        local:MvxBind="Click MyCommand; Text ButtonText" />
 </LinearLayout>

@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CycleTrip.WinUWP.Styles">
+    <ResourceDictionary.MergedDictionaries>
+
+        <!-- This entry is a hack to get the latest Microsoft.Toolkit.UWP... to work -->
+        <ResourceDictionary Source="ms-appx:///Styles/AppColors.xaml"/>
+
+    </ResourceDictionary.MergedDictionaries>
+    <SolidColorBrush x:Key="AppBarButton" Color="{ThemeResource AppBarButtonColor}"/>
+</ResourceDictionary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CycleTrip.UWP.Views;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
@@ -27,7 +28,15 @@ namespace CycleTrip.UWP
             return new DebugTrace();
         }
 
-        // Fixes crash on launch: https://stackoverflow.com/questions/47050608/mvvmcross-5-4-crash-on-app-startup-with-nullref-at-consolelogprovider
+        protected override void InitializeFirstChance()
+        {
+            base.InitializeFirstChance();
+
+ //           Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
+ //           Mvx.RegisterSingleton<MvxPresentationHint>(() => new MvxPanelPopToRootPresentationHint());
+        }
+
+        // Fixes crash on launch: https://github.com/MvvmCross/MvvmCross/issues/2333
         protected override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.None;
     }
 }

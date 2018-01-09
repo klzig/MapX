@@ -1,12 +1,18 @@
-﻿using System;
+﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -47,6 +53,15 @@ namespace CycleTrip.UWP
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                rootFrame.Navigated += OnNavigated;
+
+                // Register a handler for BackRequested events and set the
+                // visibility of the Back button
+                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                    rootFrame.CanGoBack ?
+                    AppViewBackButtonVisibility.Visible :
+                    AppViewBackButtonVisibility.Collapsed;
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
@@ -55,7 +70,7 @@ namespace CycleTrip.UWP
                     //TODO: Load state from previously suspended application
                 }
 
-                // Place the frame in the current Window
+                // Place the frame in the current Window.  Holds the NavigationView and navigation stack.
                 Window.Current.Content = rootFrame;
             }
 
@@ -66,16 +81,34 @@ namespace CycleTrip.UWP
                     var setup = new Setup(rootFrame);
                     setup.Initialize();
 
-                    var start = MvvmCross.Platform.Mvx.Resolve<MvvmCross.Core.ViewModels.IMvxAppStart>();
+                    var start = Mvx.Resolve<IMvxAppStart>();
                     start.Start();
-           
-                    // When the navigation stack isn't restored navigate to the first page,
-                    // configuring the new page by passing required information as a navigation
-                    // parameter
-                    //rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
+
                 // Ensure the current window is active
                 Window.Current.Activate();
+
+                //draw into the title bar
+                CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+
+                //remove the solid-colored backgrounds behind the caption controls and system back button
+                ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+                // Set active window colors
+                titleBar.ButtonBackgroundColor = Colors.Transparent;
+                titleBar.ForegroundColor = Colors.White;
+                titleBar.BackgroundColor = Colors.Green;
+                titleBar.ButtonForegroundColor = Colors.White;
+                titleBar.ButtonHoverForegroundColor = Colors.White;
+                titleBar.ButtonHoverBackgroundColor = Colors.LightSlateGray;
+                titleBar.ButtonPressedForegroundColor = Colors.Gray;
+                titleBar.ButtonPressedBackgroundColor = Colors.LightGray;
+
+                // Set inactive window colors
+                titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+                titleBar.InactiveForegroundColor = Colors.Gray;
+                titleBar.ButtonInactiveForegroundColor = Colors.Gray;
+                titleBar.ButtonInactiveBackgroundColor = Colors.LightSlateGray;
             }
         }
 
@@ -101,6 +134,26 @@ namespace CycleTrip.UWP
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            // Each time a navigation event occurs, update the Back button's visibility
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                ((Frame)sender).CanGoBack ?
+                AppViewBackButtonVisibility.Visible :
+                AppViewBackButtonVisibility.Collapsed;
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
         }
     }
 }

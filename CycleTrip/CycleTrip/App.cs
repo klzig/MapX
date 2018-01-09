@@ -1,11 +1,11 @@
-//using MvvmCross.Platform.IoC;
 using CycleTrip.ViewModels;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 
 namespace CycleTrip
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvxApplication
     {
         public override void Initialize()
         {

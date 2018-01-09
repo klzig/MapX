@@ -1,0 +1,20 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestImage.Resources">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Styles/AppTheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- These entries are hacks to get the latest Microsoft.Toolkit.UWP... to work -->
+    <Style TargetType="Button" x:Key="AppBarButtonBackground">
+        <Setter Property="Background" Value="{ThemeResource AppBarButton}" />
+    </Style>
+    <Style TargetType="Button" x:Key="AppBarButtonForeground">
+        <Setter Property="Background" Value="{ThemeResource AppBarButton}" />
+    </Style>
+    <Style TargetType="Button" x:Key="AppBarButtonBorderBrush">
+        <Setter Property="Background" Value="{ThemeResource AppBarButton}" />
+    </Style>
+
+</ResourceDictionary>
