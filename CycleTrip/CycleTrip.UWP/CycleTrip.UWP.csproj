@@ -179,10 +179,10 @@
       <Version>6.0.5</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>5.6.2</Version>
+      <Version>5.6.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Messenger">
-      <Version>5.6.2</Version>
+      <Version>5.6.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
