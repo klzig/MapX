@@ -10,18 +10,6 @@ namespace CycleTrip.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        readonly Type[] _menuItemTypes = {
-            typeof(FirstPageViewModel),
-            typeof(InfoViewModel),
-            typeof(SettingsViewModel),
-        };
-
-        public MenuItem[] MenuItems = {
-            new MenuItem("First Page", 0),
-            new MenuItem("Information", 0),
-            new MenuItem("Settings", 0)
-        };
-
         public ModelMenuItem[] ModelMenuItems = {
             new ModelMenuItem("First Page", typeof(FirstPageViewModel)),
             new ModelMenuItem("Information", typeof(InfoViewModel)),
@@ -65,7 +53,7 @@ namespace CycleTrip.ViewModels
 
         public void NavigateTo(int position)
         {
-            Type vm = _menuItemTypes[position];
+            Type vm = ModelMenuItems[position].ViewType;
             ChangePresentation(new ClearBackstackHint());
             //           var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
             _navigationService.Navigate(vm, null);  // Fragment's OnCreateView not called unless second parameter is null
@@ -92,18 +80,9 @@ namespace CycleTrip.ViewModels
         }
     }
 
-    public class MenuItem
-    {
-        public string MenuName { get; set; }
-        public int IconId { get; set; }
-
-        public MenuItem(string menuName, int iconId)
-        {
-            MenuName = menuName;
-            IconId = iconId;
-        }
-    }
-
+    /// <summary>
+    /// Common elements of main menu listview item
+    /// </summary>
     public class ModelMenuItem
     {
         public string MenuName { get; set; }

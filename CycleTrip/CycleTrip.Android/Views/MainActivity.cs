@@ -10,7 +10,6 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 using System.Collections.Generic;
-using System.Linq;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 // https://developer.xamarin.com/guides/android/user_interface/layouts/list-view/part-3-customizing-list-view-appearance/
@@ -56,16 +55,11 @@ namespace CycleTrip.Droid.Views
 
             _drawerListView = FindViewById<ListView>(Resource.Id.drawerListView);
             _drawerListView.ItemClick += (s, e) => ShowFragmentAt(e.Position);
-            _drawerListView.Adapter = new MenuListAdapter(this, ViewModel.MenuItems.ToList());
+            _drawerListView.Adapter = new MenuListAdapter(this, MenuItem.GetMenuItems(ViewModel.ModelMenuItems));
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
             _drawerToggle = new MyActionBarDrawerToggle(this, _drawerLayout, toolbar, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
             _drawerLayout.AddDrawerListener(_drawerToggle);
             _drawerToggle.SyncState();
-
-            // Platform-specific initialization
-            ViewModel.MenuItems[0].IconId = Resource.Drawable.ic_android_black;
-            ViewModel.MenuItems[1].IconId = Resource.Drawable.ic_info_outline_black;
-            ViewModel.MenuItems[2].IconId = Resource.Drawable.ic_settings_black;
 
             ShowFragmentAt(0);
 
@@ -218,5 +212,25 @@ namespace CycleTrip.Droid.Views
         //{
         //    base.OnDrawerSlide(drawerView, 0); // Disables the animation 
         //}
+    }
+
+    /// <summary>
+    /// An Android main menu listview item
+    /// </summary>
+    public class MenuItem
+    {
+        public int IconId { get; set; }
+        public string MenuName { get; set; }
+
+        public static List<MenuItem> GetMenuItems(ModelMenuItem[] menuItems)
+        {
+            var items = new List<MenuItem>();
+
+            items.Add(new MenuItem() { IconId = Resource.Drawable.ic_android_black, MenuName = menuItems[0].MenuName });
+            items.Add(new MenuItem() { IconId = Resource.Drawable.ic_info_outline_black, MenuName = menuItems[1].MenuName });
+            items.Add(new MenuItem() { IconId = Resource.Drawable.ic_settings_black, MenuName = menuItems[2].MenuName });
+
+            return items;
+        }
     }
 }

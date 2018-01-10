@@ -1,28 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using MvvmCross.Uwp.Views;
-using MvvmCross.Uwp.Attributes;
-
-using Windows.UI.ViewManagement;
-using System.Threading.Tasks;
-using CycleTrip.ViewModels;
-using Windows.UI;
-using System.Reflection;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 using MvvmCross.Platform;
+using CycleTrip.ViewModels;
 using CycleTrip.Messages;
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar
@@ -117,11 +98,14 @@ namespace CycleTrip.UWP.Views
         }
     }
 
+    /// <summary>
+    /// A UWP main menu listview item
+    /// </summary>
     public class MenuItem
     {
         public string Icon { get; set; }
         public string Label { get; set; }
-        public int Index { get; set; }
+        public int Index { get; set; }  // Pass-through to view model because UWP doesn't provide index of selected item
 
         public static List<MenuItem> GetMainItems(ModelMenuItem[] menuItems)
         {
@@ -129,6 +113,7 @@ namespace CycleTrip.UWP.Views
 
             items.Add(new MenuItem() { Icon = "\uEC1B", Label = menuItems[0].MenuName, Index = 0 });
             items.Add(new MenuItem() { Icon = "\uEC42", Label = menuItems[1].MenuName, Index = 1 });
+
             return items;
         }
     }
