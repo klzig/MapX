@@ -20,7 +20,7 @@ namespace CycleTrip.ViewModels
             _messenger.Publish(new_title);
         }
 
-        public ICommand MyCommand
+        public ICommand SecondPageCommand
         {
             get => new MvxCommand(() => ShowViewModel<SecondPageViewModel>(), () => true);
         }

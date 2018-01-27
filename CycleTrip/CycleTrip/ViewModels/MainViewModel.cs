@@ -78,6 +78,26 @@ namespace CycleTrip.ViewModels
             get { return _text; }
             set { SetProperty(ref _text, value); }
         }
+  
+        public IMvxAsyncCommand FirstPageCommand
+        {
+            get => new MvxAsyncCommand(() =>  _navigationService.Navigate<FirstPageViewModel>());
+        }
+
+        public IMvxCommand SecondPageCommand
+        {
+            get => new MvxCommand(() => _navigationService.Navigate<SecondPageViewModel>());
+        }
+
+        public IMvxCommand InfoCommand
+        {
+            get => new MvxCommand(() => _navigationService.Navigate<InfoViewModel>());
+        }
+
+        public IMvxCommand SettingsCommand
+        {
+            get => new MvxCommand(() => _navigationService.Navigate<SettingsViewModel>());
+        }
     }
 
     /// <summary>

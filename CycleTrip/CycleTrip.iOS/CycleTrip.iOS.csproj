@@ -23,6 +23,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
+    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -146,8 +147,16 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <InterfaceDefinition Include="Views\MainView.xib" />
+    <InterfaceDefinition Include="Views\MainView.xib">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
     <None Include="packages.config" />
+    <InterfaceDefinition Include="Views\SecondPageView.xib" />
+    <InterfaceDefinition Include="Views\FirstPageView.xib" />
+    <InterfaceDefinition Include="Views\SettingsView.xib">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
+    <InterfaceDefinition Include="Views\InfoView.xib" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
@@ -156,9 +165,25 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\FirstPageView.cs" />
+    <Compile Include="Views\FirstPageView.designer.cs">
+      <DependentUpon>FirstPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfoView.cs" />
+    <Compile Include="Views\InfoView.designer.cs">
+      <DependentUpon>InfoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.cs" />
     <Compile Include="Views\MainView.designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondPageView.cs" />
+    <Compile Include="Views\SecondPageView.designer.cs">
+      <DependentUpon>SecondPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\SettingsView.designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
