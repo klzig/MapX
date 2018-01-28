@@ -13,7 +13,7 @@
             FontSize="48"
             Margin="5"
             Background="White"
-            Command="{Binding MyCommand}" 
+            Command="{Binding SecondPageCommand}" 
             Content="{Binding ButtonText}"/>
     </StackPanel>
 

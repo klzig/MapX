@@ -1,4 +1,5 @@
 ﻿using CycleTrip.Messages;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 using System.Windows.Input;
@@ -7,10 +8,12 @@ namespace CycleTrip.ViewModels
 {
     public class FirstPageViewModel : MvxViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
         private readonly IMvxMessenger _messenger;
 
-        public FirstPageViewModel(IMvxMessenger messenger)
+        public FirstPageViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger)
         {
+            _navigationService = navigationService;
             _messenger = messenger;
         }
 
@@ -20,9 +23,9 @@ namespace CycleTrip.ViewModels
             _messenger.Publish(new_title);
         }
 
-        public ICommand SecondPageCommand
+        public IMvxCommand SecondPageCommand
         {
-            get => new MvxCommand(() => ShowViewModel<SecondPageViewModel>(), () => true);
+            get => new MvxCommand(() => _navigationService.Navigate<SecondPageViewModel>());
         }
 
         private string _ButtonText = "Second Page";

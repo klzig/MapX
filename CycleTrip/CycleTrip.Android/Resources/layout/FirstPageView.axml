@@ -10,5 +10,5 @@
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:text="Binding is Broken"
-        local:MvxBind="Click MyCommand; Text ButtonText" />
+        local:MvxBind="Click SecondPageCommand; Text ButtonText" />
 </LinearLayout>
