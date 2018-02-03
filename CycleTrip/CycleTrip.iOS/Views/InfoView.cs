@@ -4,7 +4,7 @@ using CycleTrip.ViewModels;
 
 namespace CycleTrip.iOS.Views
 {
-    [MvxRootPresentation(WrapInNavigationController = false)]
+    [MvxRootPresentation(WrapInNavigationController = true)]
     public partial class InfoView : MvxViewController<InfoViewModel>
     {
         public InfoView() : base("InfoView", null)

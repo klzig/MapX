@@ -68,7 +68,7 @@
                     </constraints>
                 </button>
                 <view contentMode="scaleToFill" id="739" translatesAutoresizingMaskIntoConstraints="NO" tag="1" fixedFrame="YES">
-                    <rect key="frame" x="0.0" y="276" width="320" height="201"/>
+                    <rect key="frame" x="0.0" y="310" width="320" height="167"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
                 </view>

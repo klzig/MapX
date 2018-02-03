@@ -17,45 +17,42 @@ namespace CycleTrip.iOS
     {
         private UIView _containerView;
         private MvxNavigationController _navigationController;
-        //     private MvxViewController _rootController;  // How does this work?
-        //     MvxViewController c = _rootController.CreateViewControllerFor(request) as MvxViewController;
+        private MvxViewController _rootController;
 
         public ContainerPresenter(IMvxApplicationDelegate applicationDelegate, UIWindow window)
             : base(applicationDelegate, window)
         {
         }
 
-       // public override void Show(MvxViewModelRequest request)
-       // {
-       //     base.Show(request);
-
-       ////     if (_navigationController != null)
-       ////     {
-       ////         //the view controller we want to insert into the container
-       ////         //var viewController = new MyViewController();  // viewController == c
-
-       ////         //c.View.Frame = this._containerView.Bounds;
-       ////         //c.WillMoveToParentViewController(_navigationController.TopViewController);
-       ////         //_containerView.AddSubview(c.View);
-       ////         //_navigationController.TopViewController.AddChildViewController(c);
-       ////         //c.DidMoveToParentViewController(_navigationController.TopViewController);
-
-
-
-
-       ////         //         _navigationController.NavigationItem.SetHidesBackButton(true, true);
-
-       //////         PushViewControllerIntoStack(_navigationController, c, true);
-
-       ////         ShowRootViewController(c, new MvxRootPresentationAttribute() { WrapInNavigationController = false }, request);
-
-       ////     }
-       ////     else
-       ////     {
-       ////         base.Show(request);
-       ////     }
-       //  //   base.Show(request);
-       // }
+        public override void Show(MvxViewModelRequest request)
+        {
+            if (_navigationController == null)
+            {
+                // First controller called from main hamburger menu.  Must have decorator: WrapInNavigationController = true
+                base.Show(request);
+            }
+            else
+            {
+                // Subsequent controllers called from main menu or other views 
+                MvxViewController c = _rootController.CreateViewControllerFor(request) as MvxViewController;
+                string val = "";
+                if (request.PresentationValues != null)
+                {
+                    request.PresentationValues.TryGetValue("NavigationMode", out val);
+                }
+                if (val.Equals("Push", StringComparison.Ordinal))
+                {
+                    // Push new controller onto navigation stack
+                    PushViewControllerIntoStack(_navigationController, c, true);
+                }
+                else
+                {
+                    // Replace stack in existing navigation controller with new controller
+                    UIViewController[] controllers = {c};
+                    _navigationController.SetViewControllers(controllers, true);
+                }
+            }
+        }
 
         protected override MvxNavigationController CreateNavigationController(UIViewController viewController)
         {
@@ -76,6 +73,7 @@ namespace CycleTrip.iOS
             {
                 // Insert MainView as root controller, subsequent root menu_item controllers will use MainView.ContainerView as root
                 base.SetWindowRootViewController(controller, attribute);
+                _rootController = controller as MvxViewController;
 
                 // Hack to get around: 'MainView.ContainerView' is inacessible due to its protection level
                 // _containerView = (_window.RootViewController as MainView).ContainerView;

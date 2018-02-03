@@ -81,7 +81,7 @@ namespace CycleTrip.ViewModels
   
         public IMvxAsyncCommand FirstPageCommand
         {
-            get => new MvxAsyncCommand(() =>  _navigationService.Navigate<FirstPageViewModel>());
+            get => new MvxAsyncCommand(() => _navigationService.Navigate<FirstPageViewModel>());
         }
 
         public IMvxCommand SecondPageCommand

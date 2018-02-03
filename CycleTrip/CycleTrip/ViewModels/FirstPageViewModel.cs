@@ -2,6 +2,7 @@
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
+using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace CycleTrip.ViewModels
@@ -25,7 +26,7 @@ namespace CycleTrip.ViewModels
 
         public IMvxCommand SecondPageCommand
         {
-            get => new MvxCommand(() => _navigationService.Navigate<SecondPageViewModel>());
+            get => new MvxCommand(() => _navigationService.Navigate<SecondPageViewModel>(new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "Push" } })));
         }
 
         private string _ButtonText = "Second Page";
