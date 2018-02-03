@@ -5,7 +5,7 @@ using CycleTrip.ViewModels;
 
 namespace CycleTrip.iOS.Views
 {
-    [MvxRootPresentation(WrapInNavigationController = true)]
+    [MvxRootPresentation(WrapInNavigationController = false)]
     public partial class MainView : MvxViewController<MainViewModel>
     {
         public MainView() : base("MainView", null)

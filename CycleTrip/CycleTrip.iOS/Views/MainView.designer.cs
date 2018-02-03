@@ -20,6 +20,10 @@ namespace CycleTrip.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView ContainerView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton FirstPageButton { get; set; }
 
         [Outlet]
@@ -47,6 +51,11 @@ namespace CycleTrip.iOS.Views
             if (Button != null) {
                 Button.Dispose ();
                 Button = null;
+            }
+
+            if (ContainerView != null) {
+                ContainerView.Dispose ();
+                ContainerView = null;
             }
 
             if (FirstPageButton != null) {

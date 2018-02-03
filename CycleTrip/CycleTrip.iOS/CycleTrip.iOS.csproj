@@ -164,6 +164,7 @@
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Presenter.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\FirstPageView.cs" />
     <Compile Include="Views\FirstPageView.designer.cs">
@@ -189,6 +190,7 @@
   <ItemGroup>
     <Content Include="AppDelegate.cs.txt" />
     <BundleResource Include="Resources\icon_map.png" />
+    <BundleResource Include="Resources\menu_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

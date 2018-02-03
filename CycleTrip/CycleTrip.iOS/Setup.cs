@@ -27,5 +27,10 @@ namespace CycleTrip.iOS
         {
             return new DebugTrace();
         }
+
+        protected override IMvxIosViewPresenter CreatePresenter()
+        {
+            return new ContainerPresenter(this.ApplicationDelegate, this.Window);
+        }
     }
 }

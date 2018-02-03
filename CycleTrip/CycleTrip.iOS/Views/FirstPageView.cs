@@ -5,7 +5,7 @@ using MvvmCross.Binding.BindingContext;
 
 namespace CycleTrip.iOS.Views
 {
-    [MvxRootPresentation(WrapInNavigationController = false)]
+    [MvxRootPresentation(WrapInNavigationController = true)]
     public partial class FirstPageView : MvxViewController<FirstPageViewModel>
     {
         public FirstPageView() : base("FirstPageView", null)
