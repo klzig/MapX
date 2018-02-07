@@ -157,6 +157,7 @@
       <SubType>Designer</SubType>
     </InterfaceDefinition>
     <InterfaceDefinition Include="Views\InfoView.xib" />
+    <BundleResource Include="Resources\hamburger.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
@@ -191,6 +192,8 @@
     <Content Include="AppDelegate.cs.txt" />
     <BundleResource Include="Resources\icon_map.png" />
     <BundleResource Include="Resources\menu_icon.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\hamburger.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

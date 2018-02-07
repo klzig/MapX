@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using UIKit;
 using CycleTrip.iOS.Views;
+using CoreGraphics;
 
 // http://www.allenhashkey.com/mobile-development/adding-a-view-controller-to-a-container-view-in-xamarin-ios/
 
@@ -49,22 +50,42 @@ namespace CycleTrip.iOS
                 {
                     // Replace stack in existing navigation controller with new controller
                     UIViewController[] controllers = {c};
-                    _navigationController.SetViewControllers(controllers, true);
+
+                    // Apparently SetViewControllers unloads all the toolbar buttons, etc.  Seems very wrong...
+                    _navigationController.SetViewControllers(controllers, false);
+                    PopulateNavigationBar(_navigationController);
                 }
             }
         }
 
         protected override MvxNavigationController CreateNavigationController(UIViewController viewController)
         {
-            // Wrap MainView in navigation controller
-            var toReturn = base.CreateNavigationController(viewController);
-            toReturn.NavigationBarHidden = false;
-            toReturn.NavigationBar.TintColor = UIColor.FromRGB(15, 79, 140);
-            toReturn.NavigationBar.BarTintColor = UIColor.FromRGB(228, 242, 231);
-            toReturn.NavigationBar.Translucent = false;
-            //           toReturn.NavigationItem.SetLeftBarButtonItem(new UIBarButtonItem(UIImage.FromFile("menu_icon.png"), UIBarButtonItemStyle.Plain, null), true);
-            _navigationController = toReturn;
-            return toReturn;
+            // One NavigationController instance for all views
+            _navigationController = base.CreateNavigationController(viewController);
+            _navigationController.NavigationBarHidden = false;
+            _navigationController.NavigationBar.TintColor = UIColor.FromRGB(15, 79, 140);
+            _navigationController.NavigationBar.BarTintColor = UIColor.FromRGB(228, 242, 231);
+            _navigationController.NavigationBar.Translucent = false;
+
+            PopulateNavigationBar(_navigationController);
+     
+            return _navigationController;
+        }
+
+        private void PopulateNavigationBar(UINavigationController nav)
+        {
+            UIBarButtonItem btn = new UIBarButtonItem();
+            btn.Image = UIImage.FromFile("hamburger.png");
+            btn.Clicked += (sender, e) => { System.Diagnostics.Debug.WriteLine("Button tap"); };
+            //       UINavigationItem _navigationItem = new UINavigationItem();
+            //       _navigationItem.RightBarButtonItem = btn;
+            nav.NavigationBar.TopItem.SetLeftBarButtonItem(btn, true);
+            nav.NavigationBar.TopItem.Title = "My Title";
+
+            // Left-justify title
+            //         CGRect frame = toReturn.NavigationItem.TitleView.Frame;  // Why is TitleView null?
+            //         frame.X = 10;
+            //         toReturn.NavigationItem.TitleView.Frame = frame;
         }
 
         protected override void SetWindowRootViewController(UIViewController controller, MvxRootPresentationAttribute attribute = null)
