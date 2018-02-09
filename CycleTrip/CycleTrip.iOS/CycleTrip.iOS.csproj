@@ -147,9 +147,6 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <InterfaceDefinition Include="Views\MainView.xib">
-      <SubType>Designer</SubType>
-    </InterfaceDefinition>
     <None Include="packages.config" />
     <InterfaceDefinition Include="Views\SecondPageView.xib" />
     <InterfaceDefinition Include="Views\FirstPageView.xib" />
@@ -158,6 +155,7 @@
     </InterfaceDefinition>
     <InterfaceDefinition Include="Views\InfoView.xib" />
     <BundleResource Include="Resources\hamburger.pdf" />
+    <InterfaceDefinition Include="Views\MainView.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />

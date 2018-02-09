@@ -2,6 +2,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters.Attributes;
 using CycleTrip.ViewModels;
+using System;
 
 namespace CycleTrip.iOS.Views
 {
@@ -11,6 +12,14 @@ namespace CycleTrip.iOS.Views
         public MainView() : base("MainView", null)
         {
         }
+
+        public MainView(IntPtr handle) : base(handle)
+        {
+        }
+
+
+
+        #region View lifecycle
 
         public override void ViewDidLoad()
         {
@@ -25,5 +34,27 @@ namespace CycleTrip.iOS.Views
             set.Bind(SettingsButton).To(vm => vm.SettingsCommand);
             set.Apply();
         }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+        }
+
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+        }
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+        }
+
+        #endregion
     }
 }
