@@ -9,6 +9,7 @@ using System.Text;
 using UIKit;
 using CycleTrip.iOS.Views;
 using CoreGraphics;
+using Foundation;
 
 // http://www.allenhashkey.com/mobile-development/adding-a-view-controller-to-a-container-view-in-xamarin-ios/
 
@@ -68,24 +69,76 @@ namespace CycleTrip.iOS
             _navigationController.NavigationBar.Translucent = false;
 
             PopulateNavigationBar(_navigationController);
-     
             return _navigationController;
         }
 
         private void PopulateNavigationBar(UINavigationController nav)
         {
-            UIBarButtonItem btn = new UIBarButtonItem();
-            btn.Image = UIImage.FromFile("hamburger.png");
+            var btn = new UIBarButtonItem
+            {
+                Image = UIImage.FromFile("alert.png"),
+            };
             btn.Clicked += (sender, e) => { System.Diagnostics.Debug.WriteLine("Button tap"); };
             //       UINavigationItem _navigationItem = new UINavigationItem();
             //       _navigationItem.RightBarButtonItem = btn;
             nav.NavigationBar.TopItem.SetLeftBarButtonItem(btn, true);
-            nav.NavigationBar.TopItem.Title = "My Title";
+
+            var btn2 = new UIBarButtonItem
+            {
+                Image = UIImage.FromFile("alert.png")
+            };
+
+            var btn3 = new UIBarButtonItem
+            {
+                Image = UIImage.FromFile("alert.png")
+            };
+
+            var btn4 = new UIBarButtonItem
+            {
+                Image = UIImage.FromFile("alert.png")
+            };
+
+            var btn5 = new UIBarButtonItem
+            {
+                Image = UIImage.FromFile("alert.png")
+            };
+
+            UIBarButtonItem[] btns = {btn2, btn3, btn4};
+            nav.NavigationBar.TopItem.SetRightBarButtonItems(btns, true);
+
+            UILabel label = new UILabel(new CGRect())
+            {
+                BackgroundColor = UIColor.White,
+                TextColor = UIColor.Black,
+                Lines = 0,
+                TextAlignment = UITextAlignment.Left
+            };
+
+            var s = new NSMutableAttributedString("My Title",
+                font: UIFont.FromName("HoeflerText-Regular", 24.0f),
+                foregroundColor: UIColor.Red,
+                strokeWidth: 4);
+
+            var stringAttributes = new UIStringAttributes
+            {
+                ParagraphStyle = new NSMutableParagraphStyle()
+                {
+                    //            LineSpacing = 6,
+                    Alignment = UITextAlignment.Left
+                }
+            };
+
+            s.AddAttributes(stringAttributes, new NSRange(0, s.Length));
+            label.AttributedText = s;
+            nav.NavigationBar.TopItem.TitleView = label;
+
+
+  //          nav.NavigationBar.TopItem.Title = "My Title";
 
             // Left-justify title
-            //         CGRect frame = toReturn.NavigationItem.TitleView.Frame;  // Why is TitleView null?
-            //         frame.X = 10;
-            //         toReturn.NavigationItem.TitleView.Frame = frame;
+            //CGRect frame = nav.NavigationBar.TopItem.TitleView.Frame;
+            //frame.X = 0;
+            //nav.NavigationBar.TopItem.TitleView.Frame = frame;
         }
 
         protected override void SetWindowRootViewController(UIViewController controller, MvxRootPresentationAttribute attribute = null)
