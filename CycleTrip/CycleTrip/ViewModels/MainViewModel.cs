@@ -28,11 +28,18 @@ namespace CycleTrip.ViewModels
         public override Task Initialize()
         {
             //TODO: Add starting logic here
- //           NavigateTo(0);
 
             return base.Initialize();
         }
-    
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+ 
+            // Show first view after cold start
+      //      NavigateTo(0);
+        }
+
         public async void SelfTest()
         {
             var notification_true = new AlertMessage(this, AlertType.notification, true);
@@ -44,11 +51,6 @@ namespace CycleTrip.ViewModels
             await Task.Delay(2000);
             _messenger.Publish(notification_true);
             _messenger.Publish(recording_false);
-        }
-
-        public void ShowDefaultMenuItemAsync()
-        {
-            NavigateTo(0);
         }
 
         public void NavigateTo(int position)

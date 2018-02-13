@@ -10,6 +10,8 @@ using UIKit;
 using CycleTrip.iOS.Views;
 using CoreGraphics;
 using Foundation;
+using static CycleTrip.iOS.Views.MainView;
+using CycleTrip.ViewModels;
 
 // http://www.allenhashkey.com/mobile-development/adding-a-view-controller-to-a-container-view-in-xamarin-ios/
 
@@ -17,8 +19,9 @@ namespace CycleTrip.iOS
 {
     public class ContainerPresenter : MvxIosViewPresenter
     {
+        public static MvxNavigationController NavigationController;
+
         private UIView _containerView;
-        private MvxNavigationController _navigationController;
         private MvxViewController _rootController;
 
         public ContainerPresenter(IMvxApplicationDelegate applicationDelegate, UIWindow window)
@@ -28,7 +31,7 @@ namespace CycleTrip.iOS
 
         public override void Show(MvxViewModelRequest request)
         {
-            if (_navigationController == null)
+            if (NavigationController == null)
             {
                 // First controller called from main hamburger menu.  Must have decorator: WrapInNavigationController = true
                 base.Show(request);
@@ -45,16 +48,20 @@ namespace CycleTrip.iOS
                 if (val.Equals("Push", StringComparison.Ordinal))
                 {
                     // Push new controller onto navigation stack
-                    PushViewControllerIntoStack(_navigationController, c, true);
+                    PushViewControllerIntoStack(NavigationController, c, true);
                 }
                 else
                 {
                     // Replace stack in existing navigation controller with new controller
                     UIViewController[] controllers = {c};
 
+                    // SetViewControllers unloads all the navigation bar buttons
+                    NavigationController.SetViewControllers(controllers, false);
+        //            NavigationController.NavigationBar.TopItem.SetRightBarButtonItems(AlertItem.GetAlertItems(), false);
+                    PopulateNavigationBar(NavigationController);
                     // Apparently SetViewControllers unloads all the toolbar buttons, etc.  Seems very wrong...
-                    _navigationController.SetViewControllers(controllers, false);
-                    PopulateNavigationBar(_navigationController);
+        //            _navigationController.SetViewControllers(controllers, false);
+        //            PopulateNavigationBar(_navigationController);
                 }
             }
         }
@@ -62,18 +69,20 @@ namespace CycleTrip.iOS
         protected override MvxNavigationController CreateNavigationController(UIViewController viewController)
         {
             // One NavigationController instance for all views
-            _navigationController = base.CreateNavigationController(viewController);
-            _navigationController.NavigationBarHidden = false;
-            _navigationController.NavigationBar.TintColor = UIColor.FromRGB(15, 79, 140);
-            _navigationController.NavigationBar.BarTintColor = UIColor.FromRGB(228, 242, 231);
-            _navigationController.NavigationBar.Translucent = false;
+            NavigationController = base.CreateNavigationController(viewController);
+            NavigationController.NavigationBarHidden = false;
+            NavigationController.NavigationBar.TintColor = UIColor.FromRGB(15, 79, 140);
+            NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(228, 242, 231);
+            NavigationController.NavigationBar.Translucent = false;
 
-            PopulateNavigationBar(_navigationController);
-            return _navigationController;
+            PopulateNavigationBar(NavigationController);
+
+            return NavigationController;
         }
 
         private void PopulateNavigationBar(UINavigationController nav)
         {
+            // Don't animate to avoid visible refresh when switching root menu items
             var btn = new UIBarButtonItem
             {
                 Image = UIImage.FromFile("alert.png"),
@@ -81,7 +90,7 @@ namespace CycleTrip.iOS
             btn.Clicked += (sender, e) => { System.Diagnostics.Debug.WriteLine("Button tap"); };
             //       UINavigationItem _navigationItem = new UINavigationItem();
             //       _navigationItem.RightBarButtonItem = btn;
-            nav.NavigationBar.TopItem.SetLeftBarButtonItem(btn, true);
+            nav.NavigationBar.TopItem.SetLeftBarButtonItem(btn, false);
 
             var btn2 = new UIBarButtonItem
             {
@@ -104,41 +113,9 @@ namespace CycleTrip.iOS
             };
 
             UIBarButtonItem[] btns = {btn2, btn3, btn4};
-            nav.NavigationBar.TopItem.SetRightBarButtonItems(btns, true);
+            nav.NavigationBar.TopItem.SetRightBarButtonItems(btns, false);
 
-            UILabel label = new UILabel(new CGRect())
-            {
-                BackgroundColor = UIColor.White,
-                TextColor = UIColor.Black,
-                Lines = 0,
-                TextAlignment = UITextAlignment.Left
-            };
-
-            var s = new NSMutableAttributedString("My Title",
-                font: UIFont.FromName("HoeflerText-Regular", 24.0f),
-                foregroundColor: UIColor.Red,
-                strokeWidth: 4);
-
-            var stringAttributes = new UIStringAttributes
-            {
-                ParagraphStyle = new NSMutableParagraphStyle()
-                {
-                    //            LineSpacing = 6,
-                    Alignment = UITextAlignment.Left
-                }
-            };
-
-            s.AddAttributes(stringAttributes, new NSRange(0, s.Length));
-            label.AttributedText = s;
-            nav.NavigationBar.TopItem.TitleView = label;
-
-
-  //          nav.NavigationBar.TopItem.Title = "My Title";
-
-            // Left-justify title
-            //CGRect frame = nav.NavigationBar.TopItem.TitleView.Frame;
-            //frame.X = 0;
-            //nav.NavigationBar.TopItem.TitleView.Frame = frame;
+            nav.NavigationBar.TopItem.Title = "My Title";
         }
 
         protected override void SetWindowRootViewController(UIViewController controller, MvxRootPresentationAttribute attribute = null)

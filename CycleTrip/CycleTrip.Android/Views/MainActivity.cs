@@ -60,10 +60,6 @@ namespace CycleTrip.Droid.Views
             _drawerToggle = new MyActionBarDrawerToggle(this, _drawerLayout, toolbar, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
             _drawerLayout.AddDrawerListener(_drawerToggle);
             _drawerToggle.SyncState();
-
-            ShowFragmentAt(0);
-
-            ViewModel.SelfTest();
         }
 
         void ShowFragmentAt(int position)
