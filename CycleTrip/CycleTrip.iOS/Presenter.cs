@@ -57,11 +57,8 @@ namespace CycleTrip.iOS
 
                     // SetViewControllers unloads all the navigation bar buttons
                     NavigationController.SetViewControllers(controllers, false);
-        //            NavigationController.NavigationBar.TopItem.SetRightBarButtonItems(AlertItem.GetAlertItems(), false);
-                    PopulateNavigationBar(NavigationController);
-                    // Apparently SetViewControllers unloads all the toolbar buttons, etc.  Seems very wrong...
-        //            _navigationController.SetViewControllers(controllers, false);
-        //            PopulateNavigationBar(_navigationController);
+                    NavigationController.NavigationBar.TopItem.SetRightBarButtonItems(AlertItem.GetAlertItems(), false);
+                    SetHamburger();
                 }
             }
         }
@@ -75,48 +72,12 @@ namespace CycleTrip.iOS
             NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(228, 242, 231);
             NavigationController.NavigationBar.Translucent = false;
 
-            PopulateNavigationBar(NavigationController);
+            SetHamburger();
 
             return NavigationController;
         }
 
-        private void PopulateNavigationBar(UINavigationController nav)
-        {
-            // Don't animate to avoid visible refresh when switching root menu items
-            var btn = new UIBarButtonItem
-            {
-                Image = UIImage.FromFile("alert.png"),
-            };
-            btn.Clicked += (sender, e) => { System.Diagnostics.Debug.WriteLine("Button tap"); };
-            //       UINavigationItem _navigationItem = new UINavigationItem();
-            //       _navigationItem.RightBarButtonItem = btn;
-            nav.NavigationBar.TopItem.SetLeftBarButtonItem(btn, false);
 
-            var btn2 = new UIBarButtonItem
-            {
-                Image = UIImage.FromFile("alert.png")
-            };
-
-            var btn3 = new UIBarButtonItem
-            {
-                Image = UIImage.FromFile("alert.png")
-            };
-
-            var btn4 = new UIBarButtonItem
-            {
-                Image = UIImage.FromFile("alert.png")
-            };
-
-            var btn5 = new UIBarButtonItem
-            {
-                Image = UIImage.FromFile("alert.png")
-            };
-
-            UIBarButtonItem[] btns = {btn2, btn3, btn4};
-            nav.NavigationBar.TopItem.SetRightBarButtonItems(btns, false);
-
-            nav.NavigationBar.TopItem.Title = "My Title";
-        }
 
         protected override void SetWindowRootViewController(UIViewController controller, MvxRootPresentationAttribute attribute = null)
         {

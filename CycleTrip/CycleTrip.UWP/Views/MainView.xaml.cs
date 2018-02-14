@@ -36,6 +36,12 @@ namespace CycleTrip.UWP.Views
 
         private void OnAlertMessage(AlertMessage alert)
         {
+            // Hack around a race with SelfTest
+            if (_alerts[alert.Type] == null)
+            {
+                return;
+            }
+
             if (alert.Visible)
             {
       //          SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(0xff, 0xe1, 0x03, 0x32));

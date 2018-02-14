@@ -28,7 +28,6 @@ namespace CycleTrip.ViewModels
         public override Task Initialize()
         {
             //TODO: Add starting logic here
-
             return base.Initialize();
         }
 
@@ -37,20 +36,17 @@ namespace CycleTrip.ViewModels
             base.ViewAppeared();
  
             // Show first view after cold start
-      //      NavigateTo(0);
+            NavigateTo(0);
+            SelfTest();
         }
 
         public async void SelfTest()
         {
             var notification_true = new AlertMessage(this, AlertType.notification, true);
             var notification_false = new AlertMessage(this, AlertType.notification, false);
-            var recording_true = new AlertMessage(this, AlertType.recording, true);
-            var recording_false = new AlertMessage(this, AlertType.recording, false);
             _messenger.Publish(notification_true);
-            _messenger.Publish(recording_true);
             await Task.Delay(2000);
             _messenger.Publish(notification_true);
-            _messenger.Publish(recording_false);
         }
 
         public void NavigateTo(int position)
