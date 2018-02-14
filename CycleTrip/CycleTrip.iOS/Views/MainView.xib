@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView">
+            <connections>
+                <outlet property="Button" destination="17" id="name-outlet-17"/>
+                <outlet property="TextField" destination="10" id="name-outlet-10"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet property="FirstPageButton" destination="328" id="name-outlet-328"/>
+                <outlet property="SecondPageButton" destination="330" id="name-outlet-330"/>
+                <outlet property="InfoButton" destination="331" id="name-outlet-331"/>
+                <outlet property="SettingsButton" destination="332" id="name-outlet-332"/>
+                <outlet property="ContainerView" destination="739" id="name-outlet-739"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17" misplaced="YES">
+                    <rect key="frame" x="0.0" y="89" width="320" height="30"/>
+                    <state key="normal" title="Reset">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10" misplaced="YES">
+                    <rect key="frame" x="0.0" y="52" width="320" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="328" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="8" y="127" width="132" height="30"/>
+                    <state key="normal" title="First Page"/>
+                    <constraints>
+                        <constraint id="520" firstItem="328" firstAttribute="width" constant="132"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="330" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="8" y="165" width="132" height="30"/>
+                    <state key="normal" title="Second Page"/>
+                    <constraints>
+                        <constraint id="519" firstItem="330" firstAttribute="width" constant="132"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="331" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="8" y="203" width="132" height="30"/>
+                    <state key="normal" title="Info"/>
+                    <connections>
+                        <action selector="InfoButton_TouchUpInside:" destination="-1" id="336" eventType="touchUpInside"/>
+                    </connections>
+                    <constraints>
+                        <constraint id="518" firstItem="331" firstAttribute="width" constant="132"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="332" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="8" y="241" width="132" height="30"/>
+                    <state key="normal" title="Settings"/>
+                    <constraints>
+                        <constraint id="517" firstItem="332" firstAttribute="width" constant="132"/>
+                    </constraints>
+                </button>
+                <view contentMode="scaleToFill" id="739" translatesAutoresizingMaskIntoConstraints="NO" tag="1" fixedFrame="YES">
+                    <rect key="frame" x="0.0" y="310" width="320" height="167"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+            <constraints>
+                <constraint id="176" firstItem="10" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
+                <constraint id="177" firstItem="2" firstAttribute="centerY" secondItem="10" secondAttribute="centerY" constant="173"/>
+                <constraint id="178" firstItem="17" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
+                <constraint id="179" firstItem="17" firstAttribute="centerY" secondItem="10" secondAttribute="bottom" constant="22"/>
+                <constraint id="337" firstItem="2" firstAttribute="centerX" secondItem="328" secondAttribute="centerX" constant="86"/>
+                <constraint id="338" firstItem="2" firstAttribute="centerX" secondItem="330" secondAttribute="centerX" constant="86"/>
+                <constraint id="339" firstItem="2" firstAttribute="centerX" secondItem="331" secondAttribute="centerX" constant="86"/>
+                <constraint id="340" firstItem="2" firstAttribute="centerX" secondItem="332" secondAttribute="centerX" constant="86"/>
+                <constraint id="341" firstItem="328" firstAttribute="centerY" secondItem="17" secondAttribute="bottom" constant="23"/>
+                <constraint id="342" firstItem="330" firstAttribute="centerY" secondItem="328" secondAttribute="bottom" constant="23"/>
+                <constraint id="343" firstItem="331" firstAttribute="centerY" secondItem="330" secondAttribute="bottom" constant="23"/>
+                <constraint id="344" firstItem="332" firstAttribute="centerY" secondItem="331" secondAttribute="bottom" constant="23"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_map.png" width="200" height="200"/>
+        <image name="menu_icon.png" width="48" height="48"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="hamburger.png" width="48" height="48"/>
+    </resources>
+</document>

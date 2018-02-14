@@ -91,7 +91,7 @@ namespace CycleTrip.iOS.Views
         //    }
         //}
 
-        #region View lifecycle
+#region View lifecycle
 
         public override void ViewDidLoad()
         {
@@ -106,27 +106,6 @@ namespace CycleTrip.iOS.Views
             set.Bind(SettingsButton).To(vm => vm.SettingsCommand);
             set.Apply();
         }
-
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
-        }
-
-        public override void ViewDidAppear(bool animated)
-        {
-            base.ViewDidAppear(animated);
-        }
-
-        public override void ViewWillDisappear(bool animated)
-        {
-            base.ViewWillDisappear(animated);
-        }
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-        }
-
-        #endregion
     }
 }
+#endregion
