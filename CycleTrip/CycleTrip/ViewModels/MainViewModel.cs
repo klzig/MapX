@@ -64,38 +64,23 @@ namespace CycleTrip.ViewModels
         //          await _navigationService.Navigate(vm, null);
         //      }
 
-        public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
-        private void ResetText()
-        {
-            Text = "Hello MvvmCross";
-        }
+        //public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
+        //private void ResetText()
+        //{
+        //    Text = "Hello MvvmCross";
+        //}
 
-        private string _text = "Hello MvvmCross";
-        public string Text
-        {
-            get { return _text; }
-            set { SetProperty(ref _text, value); }
-        }
+        //private string _text = "Hello MvvmCross";
+        //public string Text
+        //{
+        //    get { return _text; }
+        //    set { SetProperty(ref _text, value); }
+        //}
   
-        public IMvxAsyncCommand FirstPageCommand
-        {
-            get => new MvxAsyncCommand(() => _navigationService.Navigate<FirstPageViewModel>());
-        }
-
-        public IMvxCommand SecondPageCommand
-        {
-            get => new MvxCommand(() => _navigationService.Navigate<SecondPageViewModel>());
-        }
-
-        public IMvxCommand InfoCommand
-        {
-            get => new MvxCommand(() => _navigationService.Navigate<InfoViewModel>());
-        }
-
-        public IMvxCommand SettingsCommand
-        {
-            get => new MvxCommand(() => _navigationService.Navigate<SettingsViewModel>());
-        }
+        //public IMvxAsyncCommand FirstPageCommand
+        //{
+        //    get => new MvxAsyncCommand(() => _navigationService.Navigate<FirstPageViewModel>());
+        //}
     }
 
     /// <summary>

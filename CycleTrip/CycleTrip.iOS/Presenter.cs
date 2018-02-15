@@ -56,9 +56,10 @@ namespace CycleTrip.iOS
                     UIViewController[] controllers = {c};
 
                     // SetViewControllers unloads all the navigation bar buttons
+                    // Don't animate to avoid visible refresh when switching root menu items
                     NavigationController.SetViewControllers(controllers, false);
                     NavigationController.NavigationBar.TopItem.SetRightBarButtonItems(AlertItem.GetAlertItems(), false);
-                    SetHamburger();
+                    NavigationController.NavigationBar.TopItem.SetLeftBarButtonItem(HamburgerItem.Button, false);
                 }
             }
         }
@@ -72,7 +73,7 @@ namespace CycleTrip.iOS
             NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(228, 242, 231);
             NavigationController.NavigationBar.Translucent = false;
 
-            SetHamburger();
+            NavigationController.NavigationBar.TopItem.SetLeftBarButtonItem(HamburgerItem.Button, false);
 
             return NavigationController;
         }

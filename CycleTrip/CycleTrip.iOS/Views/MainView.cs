@@ -8,55 +8,91 @@ using UIKit;
 using MvvmCross.Plugins.Messenger;
 using MvvmCross.Platform;
 using CycleTrip.Messages;
-using CycleTrip.iOS;
-using System.Collections;
+using CoreAnimation;
+using CycleTrip.iOS.UserControls;
+
+// Flyout menu adapted from http://www.appliedcodelog.com/2015/09/sliding-menu-in-xamarinios-using.html
+// Github https://github.com/suchithm/SlidingMenu_Xamarin.iOS
 
 namespace CycleTrip.iOS.Views
 {
     [MvxRootPresentation(WrapInNavigationController = false)]
     public partial class MainView : MvxViewController<MainViewModel>
     {
-        private readonly IMvxMessenger _messenger;
-        private readonly MvxSubscriptionToken _alert_token;
-        private readonly MvxSubscriptionToken _title_token;
+        private MenuTableSourceClass _menuTableSource;
+ //       private nfloat _viewShiftUpY;
+ //       private nfloat _viewBringDownY;
+
+        // Hold on to tokens
+        private readonly MvxSubscriptionToken _alertToken;  
+        private readonly MvxSubscriptionToken _titleToken;
 
         public MainView() : base("MainView", null)
         {
+            IMvxMessenger messenger = Mvx.Resolve<IMvxMessenger>();
+            _alertToken = messenger.Subscribe<AlertMessage>(OnAlertMessage);
+            _titleToken = messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
+
             AlertItem.Init();
             AlertItem.Alerts[AlertType.notification].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(1); };
 
-            _messenger = Mvx.Resolve<IMvxMessenger>();
-            _alert_token = _messenger.Subscribe<AlertMessage>(OnAlertMessage);
-            _title_token = _messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
+            HamburgerItem.Init();
+            HamburgerItem.Button.Clicked += (sender, e) => { PerformTableTransition(); };
         }
 
         public MainView(IntPtr handle) : base(handle)
         {
         }
 
-        private void OnAlertMessage(AlertMessage alert)
+        #region View lifecycle
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            //var set = this.CreateBindingSet<MainView, MainViewModel>();
+            //set.Bind(TextField).To(vm => vm.Text);
+            //set.Apply();
+
+            MenuItem.Init(ViewModel.ModelMenuItems);
+
+            InitializeView();
+            tableViewLeftMenu.Hidden = true;
+            BindMenu();
+        }
+
+        //public override void DidReceiveMemoryWarning()
+        //{
+        //    base.DidReceiveMemoryWarning();
+        //    // Release any cached data, images, etc that aren't in use.
+        //}
+
+        #endregion
+
+        #region NavigationBar
+
+        private static void OnAlertMessage(AlertMessage alert)
         {
             AlertItem.SetVisibility(alert.Type, alert.Visible);
             ContainerPresenter.NavigationController.NavigationBar.TopItem.SetRightBarButtonItems(AlertItem.GetAlertItems(), false);
         }
 
-        private void OnViewTitleMessage(ViewTitleMessage msg)
+        private static void OnViewTitleMessage(ViewTitleMessage msg)
         {
- //           var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
- //           string title = loader.GetString(msg.Title);
- //           hamburgerMenuControl.Header = title;
             ContainerPresenter.NavigationController.NavigationBar.TopItem.Title = msg.Title;
         }
 
-        public static void SetHamburger()
+        public class HamburgerItem
         {
-            // Don't animate to avoid visible refresh when switching root menu items
-            var btn = new UIBarButtonItem
+            public static UIBarButtonItem Button { get; set; }
+
+            public static void Init()
             {
-                Image = UIImage.FromFile("alert.png"),
-            };
-            btn.Clicked += (sender, e) => { System.Diagnostics.Debug.WriteLine("Button tap"); };
-            ContainerPresenter.NavigationController.NavigationBar.TopItem.SetLeftBarButtonItem(btn, false);
+                Button = new UIBarButtonItem
+                {
+                    Image = UIImage.FromFile("alert.png"),
+                };
+            }
         }
 
         public class AlertItem
@@ -98,21 +134,131 @@ namespace CycleTrip.iOS.Views
             }
         }
 
-        #region View lifecycle
+        #endregion
 
-        public override void ViewDidLoad()
+        #region Flyout menu
+
+        public class MenuItem
         {
-            base.ViewDidLoad();
+            public static List<MenuItem> Items { get; set; }
+            public string IconPath { get; set; }
+            public string MenuName { get; set; }
 
-            var set = this.CreateBindingSet<MainView, MainViewModel>();
-            set.Bind(TextField).To(vm => vm.Text);
-            set.Bind(Button).To(vm => vm.ResetTextCommand);
-            set.Bind(FirstPageButton).To(vm => vm.FirstPageCommand);
-            set.Bind(SecondPageButton).To(vm => vm.SecondPageCommand);
-            set.Bind(InfoButton).To(vm => vm.InfoCommand);
-            set.Bind(SettingsButton).To(vm => vm.SettingsCommand);
-            set.Apply();
+            public static void Init(ModelMenuItem[] menuItems)
+            {
+                Items = new List<MenuItem>
+                {
+                    new MenuItem() { IconPath = "alert", MenuName = menuItems[0].MenuName },
+                    new MenuItem() { IconPath = "alert", MenuName = menuItems[1].MenuName },
+                    new MenuItem() { IconPath = "alert", MenuName = menuItems[2].MenuName }
+                };
+            }
         }
+
+        public class MenuTableSourceClass : UITableViewSource
+        {
+            internal event Action<int> MenuSelected;
+
+            public override nint RowsInSection(UITableView tableview, nint section)
+            {
+                return MenuItem.Items.Count;
+            }
+
+            public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+            {
+                var cell = tableView.DequeueReusableCell(LeftDrawerMenuItemView.Key) as LeftDrawerMenuItemView ?? LeftDrawerMenuItemView.Create();
+                cell.BindData(MenuItem.Items[indexPath.Row].MenuName, MenuItem.Items[indexPath.Row].IconPath);
+                return cell;
+            }
+
+            public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
+            {
+                MenuSelected?.Invoke(indexPath.Row);
+                tableView.DeselectRow(indexPath, true);
+            }
+
+            public override UIView GetViewForFooter(UITableView tableView, nint section)
+            {
+                return new UIView();
+            }
+        }
+
+        private void InitializeView()
+        {
+            var recognizerRight = new UISwipeGestureRecognizer(SwipeLeftToRight)
+            {
+                Direction = UISwipeGestureRecognizerDirection.Right
+            };
+            View.AddGestureRecognizer(recognizerRight);
+
+            var recognizerLeft = new UISwipeGestureRecognizer(SwipeRightToLeft)
+            {
+                Direction = UISwipeGestureRecognizerDirection.Left
+            };
+            View.AddGestureRecognizer(recognizerLeft);
+        }
+
+        private void SwipeLeftToRight()
+        {
+            if (tableViewLeftMenu.Hidden)
+                PerformTableTransition();
+        }
+
+        private void SwipeRightToLeft()
+        {
+            if (!tableViewLeftMenu.Hidden)
+                PerformTableTransition();
+        }
+
+        private void PerformTableTransition()
+        {
+            tableViewLeftMenu.Hidden = !tableViewLeftMenu.Hidden;
+            var transition = new CATransition
+            {
+                Duration = 0.25f,
+                Type = CAAnimation.TransitionPush
+            };
+            if (tableViewLeftMenu.Hidden)
+            {
+                transition.TimingFunction = CAMediaTimingFunction.FromName(new Foundation.NSString("easeOut"));
+                transition.Subtype = CAAnimation.TransitionFromRight;
+            }
+            else
+            {
+                transition.TimingFunction = CAMediaTimingFunction.FromName(new Foundation.NSString("easeIn"));
+                transition.Subtype = CAAnimation.TransitionFromLeft;
+            }
+            tableViewLeftMenu.Layer.AddAnimation(transition, null);
+        }
+
+        private void BindMenu()
+        {
+            if (_menuTableSource != null)
+            {
+                _menuTableSource.MenuSelected -= MenuSelected;
+                _menuTableSource = null;
+            }
+            _menuTableSource = new MenuTableSourceClass();
+            _menuTableSource.MenuSelected += MenuSelected;
+            tableViewLeftMenu.Source = _menuTableSource;
+        }
+
+        private void MenuSelected(int menuSelected)
+        {
+            //          txtActionBarText.Text = menuSeleted;
+            ViewModel.NavigateTo(menuSelected);
+            SwipeRightToLeft();
+        }
+
+        //private void AnimateView(nfloat frameY, UIView view)
+        //{
+        //    UIView.Animate(0.2f, 0.1f, UIViewAnimationOptions.CurveEaseIn, delegate
+        //    {
+        //        var frame = View.Frame;
+        //        frame.Y = frameY;
+        //        view.Frame = frame;
+        //    }, null);
+        //}
 
         #endregion
     }

@@ -7,31 +7,30 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
-namespace CycleTrip.iOS.Views
+namespace CycleTrip.iOS.UserControls
 {
-    [Register ("MainView")]
-    partial class MainView
+    [Register ("LeftDrawerMenuItemView")]
+    partial class LeftDrawerMenuItemView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView ContainerView { get; set; }
+        UIKit.UILabel menuText { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView tableViewLeftMenu { get; set; }
+        UIKit.UIImageView viewMenuIcon { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (ContainerView != null) {
-                ContainerView.Dispose ();
-                ContainerView = null;
+            if (menuText != null) {
+                menuText.Dispose ();
+                menuText = null;
             }
 
-            if (tableViewLeftMenu != null) {
-                tableViewLeftMenu.Dispose ();
-                tableViewLeftMenu = null;
+            if (viewMenuIcon != null) {
+                viewMenuIcon.Dispose ();
+                viewMenuIcon = null;
             }
         }
     }
