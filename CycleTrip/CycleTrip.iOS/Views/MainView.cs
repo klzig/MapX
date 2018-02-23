@@ -10,6 +10,7 @@ using MvvmCross.Platform;
 using CycleTrip.Messages;
 using CoreAnimation;
 using CycleTrip.iOS.UserControls;
+using CoreGraphics;
 
 // Flyout menu adapted from http://www.appliedcodelog.com/2015/09/sliding-menu-in-xamarinios-using.html
 // Github https://github.com/suchithm/SlidingMenu_Xamarin.iOS
@@ -59,6 +60,12 @@ namespace CycleTrip.iOS.Views
             InitializeView();
             tableViewLeftMenu.Hidden = true;
             BindMenu();
+        }
+
+        public override void ViewWillTransitionToSize(CGSize toSize, IUIViewControllerTransitionCoordinator coordinator)
+        {
+            // TODO: Adjust top postion of menu to height of statusbar + navigationbar
+            base.ViewWillTransitionToSize(toSize, coordinator);
         }
 
         //public override void DidReceiveMemoryWarning()

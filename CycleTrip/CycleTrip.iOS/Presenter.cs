@@ -19,7 +19,8 @@ namespace CycleTrip.iOS
 {
     public class ContainerPresenter : MvxIosViewPresenter
     {
-        public static MvxNavigationController NavigationController;
+        public static MvxNavigationController NavigationController = null;
+        public static UIView MenuView = null;
 
         private UIView _containerView;
         private MvxViewController _rootController;
@@ -91,6 +92,7 @@ namespace CycleTrip.iOS
                 // Hack to get around: 'MainView.ContainerView' is inacessible due to its protection level
                 // _containerView = (_window.RootViewController as MainView).ContainerView;
                 _containerView = _window.RootViewController.View.ViewWithTag(1);
+                MenuView = _window.RootViewController.View.ViewWithTag(2);
             }
             else
             {
