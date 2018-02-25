@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF32CD32">
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:text="Binding is Broken"
-        local:MvxBind="Click SecondPageCommand; Text ButtonText" />
+  <Button
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:textSize="40dp"
+      android:text="Binding is Broken"
+      local:MvxBind="Click SecondPageCommand; Text SharedSource, Converter=Language, ConverterParameter=SecondPage, Mode=OneWay"/>
 </LinearLayout>

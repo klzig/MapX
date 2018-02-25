@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <SupportedCultures>en;de;</SupportedCultures>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,10 +33,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Localization\LocalizedStrings.cs" />
     <Compile Include="Messages\ViewTitle.cs" />
     <Compile Include="Messages\Alerts.cs" />
     <Compile Include="PresentationHints\ClearBackstackHint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Localization\AppStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\InfoViewModel.cs" />
     <Compile Include="ViewModels\SecondPageViewModel.cs" />
     <Compile Include="ViewModels\FirstPageViewModel.cs" />
@@ -58,9 +66,25 @@
     <Reference Include="MvvmCross.Plugins.Messenger, Version=5.6.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.ResxLocalization, Version=5.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Plugin.ResxLocalization.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.ResxLocalization.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Localization\AppStrings.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppStrings.de.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Localization\AppStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Localization\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

@@ -2,6 +2,7 @@
     x:Class="CycleTrip.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:resources="using:CycleTrip.Localization"
     xmlns:local="using:CycleTrip.UWP"
     RequestedTheme="Light">
 
@@ -23,6 +24,8 @@
               BackgroundSource="Backdrop" TintColor="CornflowerBlue" TintOpacity=".4"/>
             <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
               BackgroundSource="HostBackdrop" TintColor="CornflowerBlue" TintOpacity=".6"/>
+
+            <resources:LocalizedStrings x:Key="LocalizedStrings"/>
 
         </ResourceDictionary>
     </Application.Resources>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CycleTrip.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public class MainViewModel : BaseViewModel
     {
         public ModelMenuItem[] ModelMenuItems = {
             new ModelMenuItem("First Page", typeof(FirstPageViewModel)),

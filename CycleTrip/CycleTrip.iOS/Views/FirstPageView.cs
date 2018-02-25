@@ -2,6 +2,7 @@
 using MvvmCross.iOS.Views.Presenters.Attributes;
 using CycleTrip.ViewModels;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Localization;
 
 namespace CycleTrip.iOS.Views
 {
@@ -25,6 +26,7 @@ namespace CycleTrip.iOS.Views
 
             // Perform any additional setup after loading the view, typically from a nib.
             var set = this.CreateBindingSet<FirstPageView, FirstPageViewModel>();
+            set.Bind(Button).For("Title").To(ViewModel => ViewModel.SharedSource).WithConversion(new MvxLanguageConverter(), "SecondPage");
             set.Bind(Button).To(vm => vm.SecondPageCommand);
             set.Apply();
         }

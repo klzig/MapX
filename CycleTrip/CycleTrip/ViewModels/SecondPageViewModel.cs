@@ -4,7 +4,7 @@ using MvvmCross.Plugins.Messenger;
 
 namespace CycleTrip.ViewModels
 {
-    public class SecondPageViewModel : MvxViewModel
+    public class SecondPageViewModel : BaseViewModel
     {
         private readonly IMvxMessenger _messenger;
     

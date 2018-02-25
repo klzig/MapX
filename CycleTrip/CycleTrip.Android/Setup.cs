@@ -10,6 +10,7 @@ using MvvmCross.Binding.Bindings.Target.Construction;
 using CycleTrip.Droid.Presenters;
 using MvvmCross.Platform;
 using CycleTrip.PresentationHints;
+using MvvmCross.Localization;
 
 // http://dailydotnettips.com/2016/05/11/accessing-platform-specific-code-using-ioc-in-mvvm-cross/recordingMessage
 
@@ -42,6 +43,12 @@ namespace CycleTrip.Droid
             presenter.AddPresentationHintHandler<ClearBackstackHint>((new BackStackHintHandler()).HandleClearBackstackHint);
             Mvx.RegisterSingleton<IMvxAndroidViewPresenter>(presenter);
             return presenter;
+        }
+
+        protected override void FillValueConverters(MvvmCross.Platform.Converters.IMvxValueConverterRegistry registry)
+        {
+            base.FillValueConverters(registry);
+            registry.AddOrOverwrite("Language", new MvxLanguageConverter());
         }
     }
 }

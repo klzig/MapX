@@ -7,3 +7,4 @@ Baseline solution for a cross platform, open source mapping (OSM) application
   * Android - Single root activity with pages as fragments, Android.Support.V7.Widget.Toolbar
   * iOS - Single root view with pages in ContentView, UINavigationBar
   * UWP - Single NavigationView with pages in ContentFrame, CommandBar
+* Shared string localization using .resx in PCL and MvvmCross ResxLocalization plugin
