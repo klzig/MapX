@@ -3,6 +3,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Navigation;
 using CycleTrip.PresentationHints;
 using CycleTrip.Messages;
+using CycleTrip.Localization;
 using MvvmCross.Plugins.Messenger;
 using System.Threading.Tasks;
 
@@ -11,9 +12,9 @@ namespace CycleTrip.ViewModels
     public class MainViewModel : BaseViewModel
     {
         public ModelMenuItem[] ModelMenuItems = {
-            new ModelMenuItem("First Page", typeof(FirstPageViewModel)),
-            new ModelMenuItem("Information", typeof(InfoViewModel)),
-            new ModelMenuItem("Settings", typeof(SettingsViewModel))
+            new ModelMenuItem(AppStrings.FirstPage, typeof(FirstPageViewModel)),
+            new ModelMenuItem(AppStrings.Information, typeof(InfoViewModel)),
+            new ModelMenuItem(AppStrings.Settings, typeof(SettingsViewModel))
         };
 
         private readonly IMvxNavigationService _navigationService;

@@ -1,4 +1,5 @@
-﻿using CycleTrip.Messages;
+﻿using CycleTrip.Localization;
+using CycleTrip.Messages;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 
@@ -15,7 +16,7 @@ namespace CycleTrip.ViewModels
 
         public override void ViewAppeared()
         {
-            var new_title = new ViewTitleMessage(this, "second_page");
+            var new_title = new ViewTitleMessage(this, AppStrings.SecondPage);
             _messenger.Publish(new_title);
         }
     }

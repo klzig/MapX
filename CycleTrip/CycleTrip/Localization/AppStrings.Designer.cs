@@ -62,11 +62,47 @@ namespace CycleTrip.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SECOND PAGE.
+        ///   Looks up a localized string similar to CycleTrip.
+        /// </summary>
+        public static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Page.
+        /// </summary>
+        public static string FirstPage {
+            get {
+                return ResourceManager.GetString("FirstPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string Information {
+            get {
+                return ResourceManager.GetString("Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Second Page.
         /// </summary>
         public static string SecondPage {
             get {
                 return ResourceManager.GetString("SecondPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
     }

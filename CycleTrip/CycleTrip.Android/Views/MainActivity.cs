@@ -113,6 +113,7 @@ namespace CycleTrip.Droid.Views
 
         private void OnViewTitleMessage(ViewTitleMessage msg)
         {
+            // TODO: Handle localized string
             int title_res = Resources.GetIdentifier(msg.Title, "string", PackageName);
       
             SupportActionBar.SetTitle(title_res);

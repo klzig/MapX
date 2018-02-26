@@ -5098,8 +5098,20 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0a002c
 			public const int CloseDrawerString = 2131361836;
 			
+			// aapt resource value: 0x7f0a002d
+			public const int FirstPage = 2131361837;
+			
+			// aapt resource value: 0x7f0a0030
+			public const int Information = 2131361840;
+			
 			// aapt resource value: 0x7f0a002b
 			public const int OpenDrawerString = 2131361835;
+			
+			// aapt resource value: 0x7f0a002e
+			public const int SecondPage = 2131361838;
+			
+			// aapt resource value: 0x7f0a002f
+			public const int Settings = 2131361839;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int abc_action_bar_home_description = 2131361792;
@@ -5206,14 +5218,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0a0023
 			public const int character_counter_pattern = 2131361827;
 			
-			// aapt resource value: 0x7f0a002d
-			public const int first_page = 2131361837;
-			
 			// aapt resource value: 0x7f0a0029
 			public const int hello = 2131361833;
-			
-			// aapt resource value: 0x7f0a0030
-			public const int info = 2131361840;
 			
 			// aapt resource value: 0x7f0a0024
 			public const int password_toggle_content_description = 2131361828;
@@ -5232,12 +5238,6 @@ namespace CycleTrip.Droid
 			
 			// aapt resource value: 0x7f0a0013
 			public const int search_menu_title = 2131361811;
-			
-			// aapt resource value: 0x7f0a002e
-			public const int second_page = 2131361838;
-			
-			// aapt resource value: 0x7f0a002f
-			public const int settings = 2131361839;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int status_bar_notification_info_overflow = 2131361812;

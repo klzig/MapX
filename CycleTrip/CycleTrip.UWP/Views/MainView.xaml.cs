@@ -58,9 +58,7 @@ namespace CycleTrip.UWP.Views
 
         private void OnViewTitleMessage(ViewTitleMessage msg)
         {
-            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-            string title = loader.GetString(msg.Title);
-            hamburgerMenuControl.Header = title;
+            hamburgerMenuControl.Header = msg.Title;
         }
 
         // http://blog.jerrynixon.com/2012/09/how-to-access-named-control-inside-xaml.html

@@ -33,6 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Localization\AppStrings.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppStrings.de.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Localization\LocalizedStrings.cs" />
     <Compile Include="Messages\ViewTitle.cs" />
     <Compile Include="Messages\Alerts.cs" />
@@ -42,6 +48,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppStrings.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\InfoViewModel.cs" />
@@ -74,13 +81,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Localization\AppStrings.de.resx">
+    <EmbeddedResource Include="Localization\AppStrings.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppStrings.de.Designer.cs</LastGenOutput>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Localization\AppStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

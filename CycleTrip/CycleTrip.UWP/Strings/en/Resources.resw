@@ -117,16 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="first_page" xml:space="preserve">
-    <value>First Page</value>
-  </data>
-  <data name="info" xml:space="preserve">
-    <value>Notifications</value>
-  </data>
-  <data name="second_page" xml:space="preserve">
-    <value>Second Page</value>
-  </data>
-  <data name="settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
 </root>
