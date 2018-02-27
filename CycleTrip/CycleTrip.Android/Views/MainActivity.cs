@@ -112,12 +112,8 @@ namespace CycleTrip.Droid.Views
         }
 
         private void OnViewTitleMessage(ViewTitleMessage msg)
-        {
-            // TODO: Handle localized string
-            int title_res = Resources.GetIdentifier(msg.Title, "string", PackageName);
-      
-            SupportActionBar.SetTitle(title_res);
-            _drawerToggle.OldTitleRes = title_res;
+        {    
+            SupportActionBar.SetWindowTitle(msg.Title);
         }
     }
 
@@ -176,21 +172,18 @@ namespace CycleTrip.Droid.Views
             _HostActivity = host;
         }
 
-        public int OldTitleRes { get; set; }
+        //public override void OnDrawerOpened(View drawerView)
+        //{
+        //    int drawerType = (int)drawerView.Tag;
 
-        public override void OnDrawerOpened(View drawerView)
-        {
-            int drawerType = (int)drawerView.Tag;
+        //    base.OnDrawerOpened(drawerView);
 
-            base.OnDrawerOpened(drawerView);
-
-            if (drawerType == 0)
-            {
-                base.OnDrawerOpened(drawerView);
-                _HostActivity.SupportActionBar.SetTitle(Resource.String.app_name);
-                // base.OnDrawerSlide(drawerView, 0);  // Disables the back arrow
-            }
-        }
+        //    if (drawerType == 0)
+        //    {
+        //        base.OnDrawerOpened(drawerView);
+        //         // base.OnDrawerSlide(drawerView, 0);  // Disables the back arrow
+        //    }
+        //}
 
         public override void OnDrawerClosed(View drawerView)
         {
@@ -201,7 +194,6 @@ namespace CycleTrip.Droid.Views
             if (drawerType == 0)
             {
                 base.OnDrawerClosed(drawerView);
-                _HostActivity.SupportActionBar.SetTitle(OldTitleRes);
             }
         }
 
