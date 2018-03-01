@@ -56,11 +56,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_map.png" width="200" height="200"/>
-        <image name="hamburger.png" width="48" height="48"/>
-        <image name="Icon.png" width="57" height="57"/>
-        <image name="menu_icon.png" width="48" height="48"/>
-        <image name="alert.png" width="32" height="32"/>
         <image name="logo_launch.png" width="200" height="200"/>
     </resources>
 </document>

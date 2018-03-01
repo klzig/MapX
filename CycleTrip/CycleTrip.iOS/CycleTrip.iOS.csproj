@@ -98,10 +98,6 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ITunesArtwork Include="Resources\ITunesArtwork" />
-    <ITunesArtwork Include="Resources\ITunesArtwork%402x" />
-  </ItemGroup>
-  <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
@@ -119,7 +115,6 @@
       <SubType>Designer</SubType>
     </InterfaceDefinition>
     <InterfaceDefinition Include="Views\InfoView.xib" />
-    <BundleResource Include="Resources\hamburger.pdf" />
     <InterfaceDefinition Include="UserControls\LeftDrawerMenuItemView.xib" />
   </ItemGroup>
   <ItemGroup>
@@ -157,11 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppDelegate.cs.txt" />
-    <BundleResource Include="Resources\icon_map.png" />
-    <BundleResource Include="Resources\menu_icon.png" />
-    <BundleResource Include="Resources\Icon.png" />
-    <BundleResource Include="Resources\hamburger.png" />
-    <BundleResource Include="Resources\alert.png" />
     <BundleResource Include="Resources\logo_launch.png" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +195,30 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\iTunesArtwark@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FirstPage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FirstPage.imageset\FirstPage.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Hamburger.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Hamburger.imageset\hamburger2.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Notifications.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Notifications.imageset\Notifications.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Settings.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Settings.imageset\Settings2.pdf">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>

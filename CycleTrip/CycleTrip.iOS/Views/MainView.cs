@@ -97,7 +97,7 @@ namespace CycleTrip.iOS.Views
             {
                 Button = new UIBarButtonItem
                 {
-                    Image = UIImage.FromFile("alert.png"),
+                    Image = UIImage.FromBundle("Hamburger"),
                 };
             }
         }
@@ -114,7 +114,7 @@ namespace CycleTrip.iOS.Views
                 Alerts = new Dictionary<AlertType, AlertItem> {
                     { AlertType.notification, new AlertItem
                         {
-                            Button = new UIBarButtonItem {  Image = UIImage.FromFile("alert.png") },
+                            Button = new UIBarButtonItem {  Image = UIImage.FromBundle("Notifications") },
                             Visible = false
                         }
                     }
@@ -155,9 +155,9 @@ namespace CycleTrip.iOS.Views
             {
                 Items = new List<MenuItem>
                 {
-                    new MenuItem() { IconPath = "alert", MenuName = menuItems[0].MenuName },
-                    new MenuItem() { IconPath = "alert", MenuName = menuItems[1].MenuName },
-                    new MenuItem() { IconPath = "alert", MenuName = menuItems[2].MenuName }
+                    new MenuItem() { IconPath = "FirstPage", MenuName = menuItems[0].MenuName },
+                    new MenuItem() { IconPath = "Notifications", MenuName = menuItems[1].MenuName },
+                    new MenuItem() { IconPath = "Settings", MenuName = menuItems[2].MenuName }
                 };
             }
         }
