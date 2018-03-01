@@ -3,32 +3,13 @@
     {
       "scale": "2x",
       "size": "20x20",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "Icon-40.png"
     },
     {
       "scale": "3x",
       "size": "20x20",
       "idiom": "iphone"
-    },
-    {
-      "scale": "1x",
-      "size": "20x20",
-      "idiom": "ipad"
-    },
-    {
-      "scale": "2x",
-      "size": "20x20",
-      "idiom": "ipad"
-    },
-    {
-      "scale": "2x",
-      "size": "83.5x83.5",
-      "idiom": "ipad"
-    },
-    {
-      "scale": "1x",
-      "size": "1024x1024",
-      "idiom": "ios-marketing"
     },
     {
       "scale": "2x",
@@ -68,6 +49,17 @@
     },
     {
       "scale": "1x",
+      "size": "20x20",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "20x20",
+      "idiom": "ipad",
+      "filename": "Icon-40.png"
+    },
+    {
+      "scale": "1x",
       "size": "29x29",
       "idiom": "ipad",
       "filename": "Icon-29.png"
@@ -101,6 +93,17 @@
       "size": "76x76",
       "idiom": "ipad",
       "filename": "Icon-76@2x.png"
+    },
+    {
+      "scale": "2x",
+      "size": "83.5x83.5",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "1x",
+      "size": "1024x1024",
+      "idiom": "ios-marketing",
+      "filename": "iTunesArtwark@2x.png"
     }
   ],
   "properties": {},
