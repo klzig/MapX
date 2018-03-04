@@ -7,12 +7,12 @@ using MvvmCross.Droid.Views.Attributes;
 
 namespace CycleTrip.Droid.Views
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, AddToBackStack = true)]
-    public class SecondPageFragment : MvxFragment<SecondPageViewModel>
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, AddToBackStack = false)]
+    public class InfoView : MvxFragment<InfoViewModel>
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            return inflater.Inflate(Resource.Layout.SecondPageView, container, false);
+            return inflater.Inflate(Resource.Layout.InfoView, container, false);
         }
     }
 }

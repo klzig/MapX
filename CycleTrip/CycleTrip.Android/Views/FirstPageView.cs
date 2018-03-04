@@ -4,15 +4,17 @@ using Android.Views;
 using CycleTrip.ViewModels;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Views.Attributes;
+using MvvmCross.Binding.Droid.BindingContext;
 
 namespace CycleTrip.Droid.Views
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.frameLayout, AddToBackStack = false)]
-    public class InfoFragment : MvxFragment<InfoViewModel>
+    public class FirstPageView : MvxFragment<FirstPageViewModel>
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            return inflater.Inflate(Resource.Layout.InfoView, container, false);
+           base.OnCreateView(inflater, container, savedInstanceState);
+           return this.BindingInflate(Resource.Layout.FirstPageView, container, false);
         }
     }
 }

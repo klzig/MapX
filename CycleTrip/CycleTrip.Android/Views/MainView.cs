@@ -20,7 +20,7 @@ namespace CycleTrip.Droid.Views
     /// The one activity, common to all views.  It managages the top navigation bar, navigation drawer, and hosts views as fragments. 
     /// </summary>
     [Activity]
-    public class MainActivity : MvxAppCompatActivity<MainViewModel>
+    public class MainView : MvxAppCompatActivity<MainViewModel>
     {
         MyActionBarDrawerToggle _drawerToggle;
         ListView _drawerListView;
@@ -35,7 +35,7 @@ namespace CycleTrip.Droid.Views
         private readonly MvxSubscriptionToken _alert_token;
         private readonly MvxSubscriptionToken _title_token;
 
-        public MainActivity() : base()
+        public MainView() : base()
         {
             _messenger = Mvx.Resolve<IMvxMessenger>();
             _alert_token = _messenger.Subscribe<AlertMessage>(OnAlertMessage);
