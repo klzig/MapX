@@ -7,14 +7,12 @@ namespace CycleTrip.Droid
     [Activity(
         Label = "Cycle Trip"
         , MainLauncher = true
-        , Icon = "@mipmap/splash"
-        , Theme = "@style/Theme.Splash"
-        , NoHistory = true
-        , ScreenOrientation = ScreenOrientation.Portrait)]
+        , Icon = "@drawable/ic_splash"
+        , Theme = "@style/MyTheme.Splash"
+        , NoHistory = true)]
     public class SplashScreen : MvxSplashScreenActivity
     {
         public SplashScreen()
-            : base(Resource.Layout.SplashScreen)
         {
         }
     }
