@@ -8,3 +8,4 @@ Baseline solution for a cross platform, open source mapping (OSM) application
   * iOS - Single root view with pages in ContentView, UINavigationBar
   * UWP - Single NavigationView with pages in ContentFrame, CommandBar
 * Shared string localization using .resx in PCL and MvvmCross ResxLocalization plugin
+* Vector images
