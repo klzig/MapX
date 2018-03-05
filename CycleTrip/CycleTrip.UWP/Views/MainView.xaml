@@ -16,11 +16,8 @@
                     <ColumnDefinition Width="16"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <FontIcon Grid.Column="0"
-                          FontFamily="Segoe MDL2 Assets" 
-                          FontSize="16"
-                          Foreground="White"
-                          Glyph="{x:Bind Icon}" />
+                <Image Grid.Column="0"
+                       Source="{x:Bind Icon}"/>
                 <TextBlock Grid.Column="1" 
                            Margin="16,0,0,0"
                            Text="{x:Bind Label}" 
@@ -43,7 +40,7 @@
         <NavigationView x:Name="hamburgerMenuControl"
             Padding="0,32,0,0"
             Foreground="White"
-            IsSettingsVisible="True"
+            IsSettingsVisible="False"
             OpenPaneLength="250"
             MenuItemTemplate="{StaticResource HamburgerMenuItem}"
      
@@ -65,9 +62,7 @@
                         Background="CornflowerBlue" 
                         HorizontalAlignment="Stretch">
                         <AppBarButton HorizontalAlignment="Right" Visibility="Visible" ToolTipService.ToolTip="Notifications" Label="Notifications" LabelPosition="Collapsed" x:Name="NotificationsAlert" Loaded="Alert_Loaded" Click="NotificationsAlert_Click">
-                            <AppBarButton.Icon>
-                                <FontIcon Glyph="&#xE91C;"/>
-                            </AppBarButton.Icon>
+                            <Image Source="{StaticResource Notifications}"/>
                         </AppBarButton>
                         <AppBarButton HorizontalAlignment="Right" Visibility="Collapsed" ToolTipService.ToolTip="Recording" Label="Recording" LabelPosition="Collapsed" x:Name="RecordingAlert" Loaded="Alert_Loaded" FontFamily="Segoe UI">
                             <AppBarButton.Icon>

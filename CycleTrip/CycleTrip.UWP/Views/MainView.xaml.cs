@@ -115,8 +115,9 @@ namespace CycleTrip.UWP.Views
         {
             var items = new List<MenuItem>();
 
-            items.Add(new MenuItem() { Icon = "\uEC1B", Label = menuItems[0].MenuName, Index = 0 });
-            items.Add(new MenuItem() { Icon = "\uEC42", Label = menuItems[1].MenuName, Index = 1 });
+            items.Add(new MenuItem() { Icon = "/Assets/WindowsLogo.svg", Label = menuItems[0].MenuName, Index = 0 });
+            items.Add(new MenuItem() { Icon = "/Assets/Notifications.svg", Label = menuItems[1].MenuName, Index = 1 });
+            items.Add(new MenuItem() { Icon = "/Assets/Settings.svg", Label = menuItems[2].MenuName, Index = 2 });
 
             return items;
         }

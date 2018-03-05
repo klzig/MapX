@@ -25,6 +25,8 @@
             <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
               BackgroundSource="HostBackdrop" TintColor="CornflowerBlue" TintOpacity=".6"/>
 
+            <SvgImageSource x:Key="Notifications" UriSource="Assets/Notifications.svg" />
+
             <resources:LocalizedStrings x:Key="LocalizedStrings"/>
 
         </ResourceDictionary>
