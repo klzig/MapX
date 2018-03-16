@@ -13,6 +13,7 @@ namespace CycleTrip.ViewModels
     {
         public ModelMenuItem[] ModelMenuItems = {
             new ModelMenuItem(AppStrings.FirstPage, typeof(FirstPageViewModel)),
+            new ModelMenuItem(AppStrings.Map, typeof(MapViewModel)),
             new ModelMenuItem(AppStrings.Information, typeof(InfoViewModel)),
             new ModelMenuItem(AppStrings.Settings, typeof(SettingsViewModel))
         };

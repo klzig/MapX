@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
-  <item
-    android:id="@+id/notification"
-    android:icon="@drawable/ic_info_outline_black"
-    app:showAsAction="always"
-    android:visible="true"
-    android:title="New Notification"/>
-  <item
-    android:id="@+id/recording"
-    android:icon="@drawable/ic_record_black"
-    app:showAsAction="always"
-    android:visible="true"
-    android:title="Recording"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/ic_info_outline_black"
+        app:showAsAction="always"
+        android:visible="true"
+        android:title="New Notification" />
+    <item
+        android:id="@+id/recording"
+        android:icon="@drawable/ic_record_black"
+        app:showAsAction="always"
+        android:visible="true"
+        android:title="Recording" />
 </menu>

@@ -217,7 +217,8 @@ namespace CycleTrip.Droid.Views
 
             items.Add(new MenuItem() { IconId = Resource.Drawable.ic_android_black, MenuName = menuItems[0].MenuName });
             items.Add(new MenuItem() { IconId = Resource.Drawable.ic_info_outline_black, MenuName = menuItems[1].MenuName });
-            items.Add(new MenuItem() { IconId = Resource.Drawable.ic_settings_black, MenuName = menuItems[2].MenuName });
+            items.Add(new MenuItem() { IconId = Resource.Drawable.ic_info_outline_black, MenuName = menuItems[2].MenuName });
+            items.Add(new MenuItem() { IconId = Resource.Drawable.ic_settings_black, MenuName = menuItems[3].MenuName });
 
             return items;
         }

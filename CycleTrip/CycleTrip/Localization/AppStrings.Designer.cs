@@ -89,6 +89,15 @@ namespace CycleTrip.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        public static string Map {
+            get {
+                return ResourceManager.GetString("Map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Second Page.
         /// </summary>
         public static string SecondPage {
