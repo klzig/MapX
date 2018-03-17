@@ -116,6 +116,9 @@
     <InterfaceDefinition Include="Views\InfoView.xib" />
     <InterfaceDefinition Include="UserControls\LeftDrawerMenuItemView.xib" />
     <None Include="packages.config" />
+    <InterfaceDefinition Include="Views\MapView.xib">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
@@ -145,6 +148,7 @@
     <Compile Include="Views\SecondPageView.designer.cs">
       <DependentUpon>SecondPageView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\SettingsView.designer.cs">
       <DependentUpon>SettingsView.cs</DependentUpon>
@@ -153,6 +157,7 @@
   <ItemGroup>
     <Content Include="AppDelegate.cs.txt" />
     <BundleResource Include="Resources\logo_launch.png" />
+    <None Include="Resources\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CycleTrip\CycleTrip.csproj">
@@ -161,6 +166,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Images.xcassets\MapPage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\MapPage.imageset\map.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

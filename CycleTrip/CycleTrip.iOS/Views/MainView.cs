@@ -156,8 +156,9 @@ namespace CycleTrip.iOS.Views
                 Items = new List<MenuItem>
                 {
                     new MenuItem() { IconPath = "FirstPage", MenuName = menuItems[0].MenuName },
-                    new MenuItem() { IconPath = "Notifications", MenuName = menuItems[1].MenuName },
-                    new MenuItem() { IconPath = "Settings", MenuName = menuItems[2].MenuName }
+                    new MenuItem() { IconPath = "MapPage", MenuName = menuItems[1].MenuName },
+                    new MenuItem() { IconPath = "Notifications", MenuName = menuItems[2].MenuName },
+                    new MenuItem() { IconPath = "Settings", MenuName = menuItems[3].MenuName }
                 };
             }
         }
