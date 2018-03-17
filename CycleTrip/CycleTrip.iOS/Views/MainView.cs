@@ -35,7 +35,7 @@ namespace CycleTrip.iOS.Views
             _titleToken = messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
 
             AlertItem.Init();
-            AlertItem.Alerts[AlertType.notification].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(1); };
+            AlertItem.Alerts[AlertType.notification].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(2); };
 
             HamburgerItem.Init();
             HamburgerItem.Button.Clicked += (sender, e) => { PerformTableTransition(); };
