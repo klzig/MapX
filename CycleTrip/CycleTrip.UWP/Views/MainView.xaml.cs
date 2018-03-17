@@ -78,7 +78,7 @@ namespace CycleTrip.UWP.Views
 
         private void NotificationsAlert_Click(object sender, RoutedEventArgs e)
         {
-            int position = 1;
+            int position = 2;
             ViewModel.NavigateTo(position);
         }
  
@@ -86,7 +86,7 @@ namespace CycleTrip.UWP.Views
         {
             if (e.IsSettingsInvoked)
             {
-                ViewModel.NavigateTo(2);
+                ViewModel.NavigateTo(3);
             }
             else
             {
@@ -116,8 +116,9 @@ namespace CycleTrip.UWP.Views
             var items = new List<MenuItem>();
 
             items.Add(new MenuItem() { Icon = "/Assets/WindowsLogo.svg", Label = menuItems[0].MenuName, Index = 0 });
-            items.Add(new MenuItem() { Icon = "/Assets/Notifications.svg", Label = menuItems[1].MenuName, Index = 1 });
-            items.Add(new MenuItem() { Icon = "/Assets/Settings.svg", Label = menuItems[2].MenuName, Index = 2 });
+            items.Add(new MenuItem() { Icon = "/Assets/Map.svg", Label = menuItems[1].MenuName, Index = 1 });
+            items.Add(new MenuItem() { Icon = "/Assets/Notifications.svg", Label = menuItems[2].MenuName, Index = 2 });
+            items.Add(new MenuItem() { Icon = "/Assets/Settings.svg", Label = menuItems[3].MenuName, Index = 3 });
 
             return items;
         }
