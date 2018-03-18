@@ -84,7 +84,7 @@ namespace CycleTrip.Droid.Views
             {
                 case Resource.Id.notification:
                     // TODO: Figure out how to add this view to backstack when navigating via actionbar button
-                    ViewModel.NavigateTo(1);
+                    ViewModel.NavigateTo(2);
                     break;
             }
 
