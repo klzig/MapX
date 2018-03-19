@@ -1,5 +1,6 @@
 ﻿using CycleTrip.Localization;
 using CycleTrip.Messages;
+using CycleTrip.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Plugins.Messenger;
 
@@ -10,7 +11,7 @@ namespace CycleTrip.ViewModels
         private readonly IMvxNavigationService _navigationService;
         private readonly IMvxMessenger _messenger;
 
-        public MapViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger)
+        public MapViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger, ILocationService loc)
         {
             _navigationService = navigationService;
             _messenger = messenger;

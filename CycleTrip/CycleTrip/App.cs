@@ -1,8 +1,10 @@
 using CycleTrip.Localization;
+using CycleTrip.Services;
 using CycleTrip.ViewModels;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Localization;
 using MvvmCross.Platform;
+using MvvmCross.Platform.IoC;
 using MvvmCross.Plugins.Messenger;
 using MvvmCross.Plugins.ResxLocalization;
 
@@ -16,11 +18,11 @@ namespace CycleTrip
 
             Mvx.LazyConstructAndRegisterSingleton<IMvxMessenger, MvxMessengerHub>();
             Mvx.RegisterSingleton<IMvxTextProvider>(new MvxResxTextProvider(AppStrings.ResourceManager));
- 
-            //           CreatableTypes()
-            //               .EndingWith("Service")
-            //               .AsInterfaces()
-            //               .RegisterAsLazySingleton();
+
+            CreatableTypes()
+                .EndingWith("Service")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
 
             RegisterNavigationServiceAppStart<MainViewModel>();
         }
