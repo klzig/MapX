@@ -9,3 +9,5 @@ Baseline solution for a cross platform, open source mapping (OSM) application
   * UWP - Single NavigationView with pages in ContentFrame; CommandBar
 * Shared string localization using .resx in PCL and MvvmCross ResxLocalization plugin
 * Vector images
+* MvvmCross Messenger plugin for communication between services, viewmodels, and views
+* MvvmCross Location plugin
