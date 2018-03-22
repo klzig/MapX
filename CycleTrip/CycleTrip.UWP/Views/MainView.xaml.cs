@@ -86,6 +86,7 @@ namespace CycleTrip.UWP.Views
         {
             if (e.IsSettingsInvoked)
             {
+                // TODO: Decide whether to use built-in settings menu (this is currently dead code)
                 ViewModel.NavigateTo(3);
             }
             else
@@ -118,7 +119,8 @@ namespace CycleTrip.UWP.Views
             items.Add(new MenuItem() { Icon = "/Assets/WindowsLogo.svg", Label = menuItems[0].MenuName, Index = 0 });
             items.Add(new MenuItem() { Icon = "/Assets/Map.svg", Label = menuItems[1].MenuName, Index = 1 });
             items.Add(new MenuItem() { Icon = "/Assets/Notifications.svg", Label = menuItems[2].MenuName, Index = 2 });
-            items.Add(new MenuItem() { Icon = "/Assets/Settings.svg", Label = menuItems[3].MenuName, Index = 3 });
+            items.Add(new MenuItem() { Icon = "/Assets/Location.svg", Label = menuItems[3].MenuName, Index = 3 });
+            items.Add(new MenuItem() { Icon = "/Assets/Settings.svg", Label = menuItems[4].MenuName, Index = 4 });
 
             return items;
         }

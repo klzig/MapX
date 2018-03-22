@@ -38,8 +38,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Images/icon_event.png" width="303" height="303"/>
-        <image name="Images/icon_help.png" width="128" height="128"/>
         <image name="Images/icon_home.png" width="128" height="128"/>
         <image name="Images/icon_product.png" width="512" height="512"/>
         <image name="Images/icon_service.png" width="512" height="411"/>
@@ -52,5 +50,6 @@
         <image name="Icon.png" width="57" height="57"/>
         <image name="icon_map.png" width="200" height="200"/>
         <image name="menu_icon.png" width="48" height="48"/>
+        <image name="logo_launch.png" width="200" height="200"/>
     </resources>
 </document>

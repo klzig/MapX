@@ -6,6 +6,7 @@ using CycleTrip.Messages;
 using CycleTrip.Localization;
 using MvvmCross.Plugins.Messenger;
 using System.Threading.Tasks;
+using CycleTrip.Services;
 
 namespace CycleTrip.ViewModels
 {
@@ -15,13 +16,14 @@ namespace CycleTrip.ViewModels
             new ModelMenuItem(AppStrings.FirstPage, typeof(FirstPageViewModel)),
             new ModelMenuItem(AppStrings.Map, typeof(MapViewModel)),
             new ModelMenuItem(AppStrings.Information, typeof(InfoViewModel)),
+            new ModelMenuItem(AppStrings.Location, typeof(LocationViewModel)),
             new ModelMenuItem(AppStrings.Settings, typeof(SettingsViewModel))
         };
 
         private readonly IMvxNavigationService _navigationService;
         private readonly IMvxMessenger _messenger;
 
-        public MainViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger)
+        public MainViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger, ILocationService loc)
         {
             _navigationService = navigationService;
             _messenger = messenger;

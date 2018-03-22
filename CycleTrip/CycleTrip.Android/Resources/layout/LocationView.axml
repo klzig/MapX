@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF32CD32"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="8"
+        android:orientation="horizontal">
+        <TextView
+            android:text="row -1 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Updated, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:text="row -1 col 2"
+            local:MvxBind="Text Updated"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:text="row 0 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Error, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 0 col 2"
+            local:MvxBind="Text Error"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 1 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Latitude, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 1 col 2"
+            local:MvxBind="Text Lat"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 2 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Longitude, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 2 col 2"
+            local:MvxBind="Text Lon"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 3 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Accuracy, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 3 col 2"
+            local:MvxBind="Text Acc"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 4 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Altitude, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:text="row 4 col 2"
+            local:MvxBind="Text Alt"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:text="row 5 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Accuracy, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 5 col 2"
+            local:MvxBind="Text AltAcc"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 6 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Heading, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 6 col 2"
+            local:MvxBind="Text Hdg"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 7 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Accuracy, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 7 col 2"
+            local:MvxBind="Text HdgAcc"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 8 col 1"
+            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Speed, Mode=OneWay"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:text="row 8 col 2"
+            local:MvxBind="Text Spd"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+    </GridLayout>
+</LinearLayout>

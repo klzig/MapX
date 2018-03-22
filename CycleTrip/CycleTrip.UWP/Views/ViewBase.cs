@@ -45,4 +45,11 @@ namespace CycleTrip.UWP.Views
     public abstract class MapViewBase : MvxWindowsPage<MapViewModel>
     {
     }
+
+    /// <summary>
+    /// Work-around for lack of XAML support for generic types
+    /// </summary>
+    public abstract class LocationViewBase : MvxWindowsPage<LocationViewModel>
+    {
+    }
 }

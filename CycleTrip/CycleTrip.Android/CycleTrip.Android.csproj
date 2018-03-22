@@ -162,6 +162,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="Views\LocationView.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\InfoView.cs" />
     <Compile Include="Views\SecondPageView.cs" />
@@ -195,6 +196,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MapView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LocationView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

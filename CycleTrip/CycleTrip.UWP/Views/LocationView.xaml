@@ -1,0 +1,58 @@
+﻿<base:LocationViewBase
+    xmlns:base="using:CycleTrip.UWP.Views"
+    x:Class="CycleTrip.UWP.Views.LocationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="#FFBF32CD">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Strings.Updated, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Updated}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Strings.Error, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Error}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="{Binding Strings.Latitude, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding Lat}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="5" Text="{Binding Strings.Longitude, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="5" Text="{Binding Lon}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="6" Text="{Binding Strings.Accuracy, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="6" Text="{Binding Acc}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="8" Text="{Binding Strings.Altitude, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="8" Text="{Binding Alt}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="9" Text="{Binding Strings.Accuracy, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="9" Text="0" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+            <TextBlock Grid.Column="0" Grid.Row="11" Text="{Binding Strings.Heading, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="11" Text="{Binding Hdg}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="12" Text="{Binding Strings.Accuracy, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="12" Text="{Binding HdgAcc}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="14" Text="{Binding Strings.Speed, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="14" Text="{Binding Spd}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+        </Grid>
+    </StackPanel>
+
+</base:LocationViewBase>

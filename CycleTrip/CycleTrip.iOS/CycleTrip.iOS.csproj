@@ -125,6 +125,7 @@
     <InterfaceDefinition Include="Views\MapView.xib">
       <SubType>Designer</SubType>
     </InterfaceDefinition>
+    <InterfaceDefinition Include="Views\LocationView.xib" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
@@ -146,6 +147,10 @@
     <Compile Include="Views\InfoView.cs" />
     <Compile Include="Views\InfoView.designer.cs">
       <DependentUpon>InfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocationView.cs" />
+    <Compile Include="Views\LocationView.designer.cs">
+      <DependentUpon>LocationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.cs" />
     <Compile Include="Views\MainView.designer.cs">
@@ -173,6 +178,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Images.xcassets\Location.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Location.imageset\Location.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Images.xcassets\MapPage.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

@@ -4,6 +4,10 @@ using MvvmCross.Plugins.Messenger;
 using CycleTrip.Messages;
 using System;
 
+// To enable location services for Android api level 23+, runtime permissions are required in 
+// addition to the ACCESS_FINE_LOCATION manifest permission.
+// https://developer.android.com/training/permissions/requesting.html
+
 namespace CycleTrip.Services
 {
     public interface ILocationService
@@ -36,6 +40,7 @@ namespace CycleTrip.Services
             var message = new LocationMessage(this,
                                 location.Coordinates.Latitude,
                                 location.Coordinates.Longitude,
+                                acc:location.Coordinates.Accuracy,
                                 alt: location.Coordinates.Altitude,
                                 altacc: location.Coordinates.AltitudeAccuracy,
                                 hdg: location.Coordinates.Heading,
@@ -46,7 +51,7 @@ namespace CycleTrip.Services
 
         private void OnError(MvxLocationError error)
         {
-            Mvx.Error("Location error: {0}", error.Code);
+            var message = new LocationMessage(this, String.Format("Location error: {0}", error.Code));
         }
     }
 }

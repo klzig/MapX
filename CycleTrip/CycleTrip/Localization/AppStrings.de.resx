@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accuracy" xml:space="preserve">
+    <value>Accuracy</value>
+  </data>
+  <data name="Altitude" xml:space="preserve">
+    <value>Altitude</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="FirstPage" xml:space="preserve">
     <value>Zuerst Seite</value>
   </data>
+  <data name="Heading" xml:space="preserve">
+    <value>Heading</value>
+  </data>
   <data name="Information" xml:space="preserve">
     <value>Information</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
   </data>
   <data name="Map" xml:space="preserve">
     <value>Karte</value>
@@ -131,5 +152,11 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>die Einstellungen</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Updated</value>
   </data>
 </root>

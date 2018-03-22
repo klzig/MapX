@@ -11,7 +11,7 @@ namespace CycleTrip.ViewModels
         private readonly IMvxNavigationService _navigationService;
         private readonly IMvxMessenger _messenger;
 
-        public MapViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger, ILocationService loc)
+        public MapViewModel(IMvxNavigationService navigationService, IMvxMessenger messenger)
         {
             _navigationService = navigationService;
             _messenger = messenger;

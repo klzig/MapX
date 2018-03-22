@@ -5,13 +5,6 @@ namespace CycleTrip.Messages
 {
     public class LocationMessage : MvxMessage
     {
-        public double? Accuracy { get; set; }
-        public double? Altitude { get; set; }
-        public double? AltitudeAccuracy { get; set; }
-        public double? Heading { get; set; }
-        public double? HeadingAccuracy { get; set; }
-        public double? Speed { get; set; }
-
         public LocationMessage(object sender, double lat, double lon, double? acc=null,
             double? alt=null, double? altacc=null, double? hdg=null, double? hdgacc=null, 
             double? spd=null)
@@ -21,10 +14,16 @@ namespace CycleTrip.Messages
             Lon = lon;
             Acc = acc;
             Alt = alt;
-            AltAcc = alt;
+            AltAcc = altacc;
             Hdg = hdg;
             HdgAcc = hdgacc;
             Spd = spd;
+            Error = "";
+        }
+
+        public LocationMessage(object sender, string error) : base(sender)
+        {
+            Error = error;
         }
 
         public double Lat { get; private set; }
@@ -35,5 +34,6 @@ namespace CycleTrip.Messages
         public double? Hdg { get; private set; }
         public double? HdgAcc { get; private set; }
         public double? Spd { get; private set; }
+        public string Error { get; private set; }
     }
 }
