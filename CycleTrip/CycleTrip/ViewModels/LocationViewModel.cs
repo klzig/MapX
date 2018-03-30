@@ -24,6 +24,7 @@ namespace CycleTrip.ViewModels
         {
             var new_title = new ViewTitleMessage(this, AppStrings.Location);
             _messenger.Publish(new_title);
+            _messenger.Publish(new UpdateLocMessage(this));
         }
 
         private void OnLocationMessage(LocationMessage locationMessage)
@@ -36,6 +37,9 @@ namespace CycleTrip.ViewModels
             Hdg = locationMessage.Hdg;
             HdgAcc = locationMessage.HdgAcc;
             Spd = string.Format("{0:0.0}", locationMessage.Spd);
+            ErrorLbl = locationMessage.ErrorLbl;
+            Error = locationMessage.Error;
+            Updated = locationMessage.Updated;
         }
 
         private string _updated;
@@ -43,6 +47,13 @@ namespace CycleTrip.ViewModels
         {
             get { return _updated; }
             set { _updated = value; RaisePropertyChanged(() => Updated); }
+        }
+
+        private string _errorLbl;
+        public string ErrorLbl
+        {
+            get { return _errorLbl; }
+            set { _errorLbl = value; RaisePropertyChanged(() => ErrorLbl); }
         }
 
         private string _error;

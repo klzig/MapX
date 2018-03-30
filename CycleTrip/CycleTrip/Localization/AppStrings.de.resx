@@ -147,6 +147,12 @@
   <data name="Map" xml:space="preserve">
     <value>Karte</value>
   </data>
+  <data name="Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Now</value>
+  </data>
   <data name="SecondPage" xml:space="preserve">
     <value>Zweite Seite</value>
   </data>
