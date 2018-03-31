@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
         <TextView
             android:text="row -1 col 2"
             local:MvxBind="Text Updated"
@@ -32,15 +32,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
         <TextView
             android:text="row 0 col 1"
-            local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Error, Mode=OneWay"
+            local:MvxBind="Text ErrorLbl"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 0 col 2"
             local:MvxBind="Text Error"
@@ -48,7 +48,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 1 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Latitude, Mode=OneWay"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 1 col 2"
             local:MvxBind="Text Lat"
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 2 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Longitude, Mode=OneWay"
@@ -74,7 +74,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 2 col 2"
             local:MvxBind="Text Lon"
@@ -82,7 +82,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 3 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Accuracy, Mode=OneWay"
@@ -90,7 +90,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 3 col 2"
             local:MvxBind="Text Acc"
@@ -98,7 +98,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 4 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Altitude, Mode=OneWay"
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
         <TextView
             android:text="row 4 col 2"
             local:MvxBind="Text Alt"
@@ -116,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
         <TextView
             android:text="row 5 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Accuracy, Mode=OneWay"
@@ -124,7 +124,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 5 col 2"
             local:MvxBind="Text AltAcc"
@@ -132,7 +132,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 6 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Heading, Mode=OneWay"
@@ -141,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 6 col 2"
             local:MvxBind="Text Hdg"
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 7 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Accuracy, Mode=OneWay"
@@ -158,7 +158,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 7 col 2"
             local:MvxBind="Text HdgAcc"
@@ -166,7 +166,7 @@
             android:layout_gravity="left|top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 8 col 1"
             local:MvxBind="Text SharedSource, Converter=Language, ConverterParameter=Speed, Mode=OneWay"
@@ -175,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
         <TextView
             android:text="row 8 col 2"
             local:MvxBind="Text Spd"
@@ -184,6 +184,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp" />
     </GridLayout>
 </LinearLayout>

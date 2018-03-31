@@ -1,13 +1,15 @@
 ﻿using CycleTrip.Localization;
 using MvvmCross.Plugins.Location;
 using MvvmCross.Plugins.Messenger;
+using System;
 
 namespace CycleTrip.Messages
 {
     public class LocationMessage : MvxMessage
     {
-        public LocationMessage(object sender)
-        : base(sender)
+        private bool _updated = false;
+
+        public LocationMessage(object sender) : base(sender)
         {
             Lat = 0;
             Lon = 0;
@@ -22,7 +24,7 @@ namespace CycleTrip.Messages
             Updated = AppStrings.Never;
         }
 
-        public void Update(double lat, double lon, double? acc = null,
+        public void Update(double lat, double lon, string updated, double? acc = null,
             double? alt = null, double? altacc = null, double? hdg = null, double? hdgacc = null,
             double? spd = null)
         {
@@ -36,7 +38,16 @@ namespace CycleTrip.Messages
             Spd = spd;
             ErrorLbl = "";
             Error = "";
-            Updated = AppStrings.Now;
+            Updated = updated;
+            _updated = true;
+        }
+
+        public void Update(string updated)
+        {
+            if (_updated)
+            {
+                Updated = updated;
+            }
         }
 
         public void UpdateError(string error)

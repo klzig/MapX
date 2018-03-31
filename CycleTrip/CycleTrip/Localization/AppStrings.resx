@@ -120,6 +120,10 @@
   <data name="Accuracy" xml:space="preserve">
     <value>Accuracy</value>
   </data>
+  <data name="Ago" xml:space="preserve">
+    <value>ago</value>
+    <comment>Updated 00:01:23 ago</comment>
+  </data>
   <data name="Altitude" xml:space="preserve">
     <value>Altitude</value>
   </data>

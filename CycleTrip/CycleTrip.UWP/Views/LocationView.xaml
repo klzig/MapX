@@ -32,8 +32,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Strings.Updated, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
-            <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Updated}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
-            <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Strings.Error, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Updated}" FontSize="30" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding ErrorLbl}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Error}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="0" Grid.Row="4" Text="{Binding Strings.Latitude, Source={StaticResource LocalizedStrings}}" FontSize="30" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding Lat}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center"/>

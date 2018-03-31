@@ -3,6 +3,8 @@ using MvvmCross.Plugins.Location;
 using MvvmCross.Plugins.Messenger;
 using CycleTrip.Messages;
 using System;
+using CycleTrip.Localization;
+using System.Threading.Tasks;
 
 // To enable location services for Android api level 23+, runtime permissions are required in 
 // addition to the ACCESS_FINE_LOCATION manifest permission.
@@ -21,6 +23,8 @@ namespace CycleTrip.Services
         private readonly IMvxLocationWatcher _watcher;
         private readonly IMvxMessenger _messenger;
         private readonly MvxSubscriptionToken _updateLoc_token;
+        private DateTime _timestamp = DateTime.Now;
+        private bool _updateTimerStarted = false;
 
         public LocationService(IMvxLocationWatcher watcher, IMvxMessenger messenger)
         {
@@ -39,15 +43,20 @@ namespace CycleTrip.Services
             _watcher.Start(options, OnLocation, OnError);
         }
 
-        private void OnUpdateLocMessage(MvxMessage obj)
+        private void OnUpdateLocMessage(MvxMessage obj=null)
         {
+            //Mvx.Trace("OnUpdateMessage");
+            _locationMessage.Update(Updated());
             _messenger.Publish(_locationMessage);
         }
 
         private void OnLocation(MvxGeoLocation location)
         {
+            //Mvx.Trace("Location Update");
+            _timestamp = DateTime.Now;
             _locationMessage.Update(location.Coordinates.Latitude,
                                     location.Coordinates.Longitude,
+                                    AppStrings.Now,
                                     acc:location.Coordinates.Accuracy,
                                     alt: location.Coordinates.Altitude,
                                     altacc: location.Coordinates.AltitudeAccuracy,
@@ -55,11 +64,45 @@ namespace CycleTrip.Services
                                     hdgacc: location.Coordinates.HeadingAccuracy,
                                     spd: location.Coordinates.Speed);
             _messenger.Publish(_locationMessage);
+            StartUpdateTimer();
         }
 
         private void OnError(MvxLocationError error)
         {
            _locationMessage.UpdateError(String.Format("{0}", error.Code));
+        }
+
+        private string Updated()
+        {
+            // Show time elapsed since last update
+            string updated = "";
+            TimeSpan elapsed = DateTime.Now - _timestamp;
+            if (elapsed.TotalSeconds > 4)
+            {
+                updated = elapsed.ToString(@"hh\:mm\:ss") + " " + AppStrings.Ago; 
+            }
+            else
+            {
+                updated = AppStrings.Now;
+            }
+            return updated;
+        }
+
+        private void StartUpdateTimer()
+        {
+            if (!_updateTimerStarted)
+            {
+                _updateTimerStarted = true;
+                Task.Run(
+                async () =>
+                {
+                    while (true)
+                    {
+                        await Task.Delay(4000);
+                        OnUpdateLocMessage();
+                    }
+                });
+            }
         }
     }
 }

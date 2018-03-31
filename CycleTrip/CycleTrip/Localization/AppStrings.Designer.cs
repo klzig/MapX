@@ -71,6 +71,15 @@ namespace CycleTrip.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ago.
+        /// </summary>
+        public static string Ago {
+            get {
+                return ResourceManager.GetString("Ago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Altitude.
         /// </summary>
         public static string Altitude {

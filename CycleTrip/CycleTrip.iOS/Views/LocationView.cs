@@ -27,7 +27,7 @@ namespace CycleTrip.iOS.Views
             var set = this.CreateBindingSet<LocationView, LocationViewModel>();
             set.Bind(UpdatedLbl).To(ViewModel => ViewModel.SharedSource).WithConversion(new MvxLanguageConverter(), "Updated");
             set.Bind(Updated).To(vm => vm.Updated);
-            set.Bind(ErrorLbl).To(ViewModel => ViewModel.SharedSource).WithConversion(new MvxLanguageConverter(), "Error");
+            set.Bind(ErrorLbl).To(vm => vm.ErrorLbl);
             set.Bind(Error).To(vm => vm.Error);
             set.Bind(LatLbl).To(ViewModel => ViewModel.SharedSource).WithConversion(new MvxLanguageConverter(), "Latitude");
             set.Bind(Lat).To(vm => vm.Lat);
