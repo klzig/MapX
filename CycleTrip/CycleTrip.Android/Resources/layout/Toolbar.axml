@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/location"
+        android:icon="@drawable/ic_location_black"
+        app:showAsAction="always"
+        android:visible="true"
+        android:title="Location Error" />
+    <item
         android:id="@+id/notification"
         android:icon="@drawable/ic_info_outline_black"
         app:showAsAction="always"

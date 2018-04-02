@@ -64,12 +64,14 @@ namespace CycleTrip.Services
                                     hdgacc: location.Coordinates.HeadingAccuracy,
                                     spd: location.Coordinates.Speed);
             _messenger.Publish(_locationMessage);
+            _messenger.Publish(new AlertMessage(this, AlertType.location, false));
             StartUpdateTimer();
         }
 
         private void OnError(MvxLocationError error)
         {
            _locationMessage.UpdateError(String.Format("{0}", error.Code));
+            StartUpdateTimer();
         }
 
         private string Updated()
@@ -79,11 +81,13 @@ namespace CycleTrip.Services
             TimeSpan elapsed = DateTime.Now - _timestamp;
             if (elapsed.TotalSeconds > 4)
             {
-                updated = elapsed.ToString(@"hh\:mm\:ss") + " " + AppStrings.Ago; 
+                updated = elapsed.ToString(@"hh\:mm\:ss") + " " + AppStrings.Ago;
+                _messenger.Publish(new AlertMessage(this, AlertType.location, true));
             }
             else
             {
                 updated = AppStrings.Now;
+                _messenger.Publish(new AlertMessage(this, AlertType.location, false));
             }
             return updated;
         }

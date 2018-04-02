@@ -1,4 +1,5 @@
-﻿To add vector graphic:
+﻿https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton
+To add vector graphic:
 1) Edit in InkScape
 2) Save as "Plain SVG"
 4) Edit file with text editor to make image expand to size of container

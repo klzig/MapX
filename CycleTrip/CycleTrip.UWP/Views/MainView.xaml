@@ -61,6 +61,9 @@
                         Margin="0,32,0,0"
                         Background="CornflowerBlue" 
                         HorizontalAlignment="Stretch">
+                        <AppBarButton HorizontalAlignment="Right" Visibility="Collapsed" ToolTipService.ToolTip="Location" Label="Location" LabelPosition="Collapsed" x:Name="LocationAlert" Loaded="Alert_Loaded" Click="LocationAlert_Click">
+                            <BitmapIcon UriSource="ms-appx:///Assets/Location.png"/>
+                        </AppBarButton>
                         <AppBarButton HorizontalAlignment="Right" Visibility="Visible" ToolTipService.ToolTip="Notifications" Label="Notifications" LabelPosition="Collapsed" x:Name="NotificationsAlert" Loaded="Alert_Loaded" Click="NotificationsAlert_Click">
                             <Image Source="{StaticResource Notifications}"/>
                         </AppBarButton>

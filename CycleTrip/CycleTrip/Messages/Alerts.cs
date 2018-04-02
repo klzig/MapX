@@ -3,7 +3,8 @@
 public enum AlertType
 {
     recording,
-    notification
+    notification,
+    location
 }
 
 namespace CycleTrip.Messages

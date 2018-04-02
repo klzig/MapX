@@ -31,11 +31,12 @@ namespace CycleTrip.iOS.Views
         public MainView() : base("MainView", null)
         {
             IMvxMessenger messenger = Mvx.Resolve<IMvxMessenger>();
-            _alertToken = messenger.Subscribe<AlertMessage>(OnAlertMessage);
+            _alertToken = messenger.SubscribeOnMainThread<AlertMessage>(OnAlertMessage);
             _titleToken = messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
 
             AlertItem.Init();
             AlertItem.Alerts[AlertType.notification].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(2); };
+            AlertItem.Alerts[AlertType.location].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(3); };
 
             HamburgerItem.Init();
             HamburgerItem.Button.Clicked += (sender, e) => { PerformTableTransition(); };
@@ -115,6 +116,12 @@ namespace CycleTrip.iOS.Views
                     { AlertType.notification, new AlertItem
                         {
                             Button = new UIBarButtonItem {  Image = UIImage.FromBundle("Notifications") },
+                            Visible = false
+                        }
+                    },
+                    { AlertType.location, new AlertItem
+                        {
+                            Button = new UIBarButtonItem {  Image = UIImage.FromBundle("Location") },
                             Visible = false
                         }
                     }

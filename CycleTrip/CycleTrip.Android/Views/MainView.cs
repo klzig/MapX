@@ -28,7 +28,8 @@ namespace CycleTrip.Droid.Views
 
         Dictionary<AlertType, bool> _alerts = new Dictionary<AlertType, bool> {
             {AlertType.notification, false},
-            {AlertType.recording, false }
+            {AlertType.recording, false },
+            {AlertType.location, false }
         };
 
         private readonly IMvxMessenger _messenger;
@@ -86,6 +87,10 @@ namespace CycleTrip.Droid.Views
                     // TODO: Figure out how to add this view to backstack when navigating via actionbar button
                     ViewModel.NavigateTo(2);
                     break;
+                case Resource.Id.location:
+                    // TODO: Figure out how to add this view to backstack when navigating via actionbar button
+                    ViewModel.NavigateTo(3);
+                    break;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -101,6 +106,9 @@ namespace CycleTrip.Droid.Views
 
             alert = menu.FindItem(Resource.Id.recording);
             alert.SetVisible(_alerts[AlertType.recording]);
+
+            alert = menu.FindItem(Resource.Id.location);
+            alert.SetVisible(_alerts[AlertType.location]);
 
             return base.OnCreateOptionsMenu(menu);
         }

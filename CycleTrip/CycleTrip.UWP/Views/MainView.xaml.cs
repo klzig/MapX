@@ -18,7 +18,8 @@ namespace CycleTrip.UWP.Views
     {
         Dictionary<AlertType, AppBarButton> _alerts = new Dictionary<AlertType, AppBarButton> {
             {AlertType.notification, null},
-            {AlertType.recording, null }
+            {AlertType.recording, null },
+            {AlertType.location, null }
         };
 
         private readonly IMvxMessenger _messenger;
@@ -30,7 +31,7 @@ namespace CycleTrip.UWP.Views
             InitializeComponent();
 
             _messenger = Mvx.Resolve<IMvxMessenger>();
-            _alert_token = _messenger.Subscribe<AlertMessage>(OnAlertMessage);
+            _alert_token = _messenger.SubscribeOnMainThread<AlertMessage>(OnAlertMessage);
             _title_token = _messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
         }
 
@@ -68,10 +69,13 @@ namespace CycleTrip.UWP.Views
             switch (btn.Name)
             {
                 case "RecordingAlert":
-                    _alerts[AlertType.recording] = btn;
+                    _alerts[AlertType.recording] = btn; 
                     break;
                 case "NotificationsAlert":
                     _alerts[AlertType.notification] = btn;
+                    break;
+                case "LocationAlert":
+                    _alerts[AlertType.location] = btn;
                     break;
             }
         }
@@ -81,7 +85,13 @@ namespace CycleTrip.UWP.Views
             int position = 2;
             ViewModel.NavigateTo(position);
         }
- 
+
+        private void LocationAlert_Click(object sender, RoutedEventArgs e)
+        {
+            int position = 3;
+            ViewModel.NavigateTo(position);
+        }
+
         private void OnMenuItemClick(NavigationView sender, NavigationViewItemInvokedEventArgs e)
         {
             if (e.IsSettingsInvoked)

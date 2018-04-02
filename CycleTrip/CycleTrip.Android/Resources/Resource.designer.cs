@@ -4790,8 +4790,11 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f080063
 			public const int list_item = 2131230819;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int masked = 2131230905;
+			// aapt resource value: 0x7f0800b5
+			public const int location = 2131230901;
+			
+			// aapt resource value: 0x7f0800ba
+			public const int masked = 2131230906;
 			
 			// aapt resource value: 0x7f0800a8
 			public const int media_actions = 2131230888;
@@ -4802,8 +4805,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0800a1
 			public const int menu_name = 2131230881;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int message = 2131230903;
+			// aapt resource value: 0x7f0800b8
+			public const int message = 2131230904;
 			
 			// aapt resource value: 0x7f080033
 			public const int middle = 2131230771;
@@ -4826,8 +4829,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f080020
 			public const int normal = 2131230752;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int notification = 2131230901;
+			// aapt resource value: 0x7f0800b6
+			public const int notification = 2131230902;
 			
 			// aapt resource value: 0x7f0800b1
 			public const int notification_background = 2131230897;
@@ -4859,8 +4862,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f080077
 			public const int radio = 2131230839;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int recording = 2131230902;
+			// aapt resource value: 0x7f0800b7
+			public const int recording = 2131230903;
 			
 			// aapt resource value: 0x7f08004c
 			public const int right = 2131230796;
@@ -5063,8 +5066,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int visible = 2131230904;
+			// aapt resource value: 0x7f0800b9
+			public const int visible = 2131230905;
 			
 			// aapt resource value: 0x7f08003e
 			public const int withText = 2131230782;
