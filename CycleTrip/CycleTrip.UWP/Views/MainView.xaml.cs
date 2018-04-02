@@ -119,7 +119,7 @@ namespace CycleTrip.UWP.Views
             items.Add(new MenuItem() { Icon = "/Assets/WindowsLogo.svg", Label = menuItems[0].MenuName, Index = 0 });
             items.Add(new MenuItem() { Icon = "/Assets/Map.svg", Label = menuItems[1].MenuName, Index = 1 });
             items.Add(new MenuItem() { Icon = "/Assets/Notifications.svg", Label = menuItems[2].MenuName, Index = 2 });
-            items.Add(new MenuItem() { Icon = "/Assets/Location.svg", Label = menuItems[3].MenuName, Index = 3 });
+            items.Add(new MenuItem() { Icon = "/Assets/Location.png", Label = menuItems[3].MenuName, Index = 3 }); // Can't figure out how to render from .svg
             items.Add(new MenuItem() { Icon = "/Assets/Settings.svg", Label = menuItems[4].MenuName, Index = 4 });
 
             return items;
