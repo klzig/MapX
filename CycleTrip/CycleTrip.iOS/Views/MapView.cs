@@ -1,6 +1,11 @@
 ﻿using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters.Attributes;
 using CycleTrip.ViewModels;
+using Mapbox;
+using Foundation;
+using CoreLocation;
+
+// https://blogs.naxam.net/using-mapbox-in-xamarin-ios-ffa9bdee13f4
 
 namespace CycleTrip.iOS.Views
 {
@@ -22,7 +27,8 @@ namespace CycleTrip.iOS.Views
         {
             base.ViewDidLoad();
 
-            // Perform any additional setup after loading the view, typically from a nib.
+    //        mapView.StyleURL = new NSUrl("mapbox://styles/tbd");
+            mapView.SetCenterCoordinate(new CLLocationCoordinate2D(43.6332, -116.216), 11, false);
         }
     }
 }

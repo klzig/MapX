@@ -3,6 +3,7 @@ using UIKit;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
+using Mapbox;
 
 namespace CycleTrip.iOS
 {
@@ -27,6 +28,8 @@ namespace CycleTrip.iOS
 
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
+
+            MGLAccountManager.AccessToken = "my_access_token";
 
             Window.MakeKeyAndVisible();
 

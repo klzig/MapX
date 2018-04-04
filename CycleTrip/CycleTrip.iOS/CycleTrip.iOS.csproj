@@ -98,6 +98,9 @@
     <Reference Include="MvvmCross.Plugins.Messenger, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
+    <Reference Include="Naxam.Mapbox.iOS, Version=3.7.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Naxam.Mapbox.iOS.3.7.6\lib\Xamarin.iOS10\Naxam.Mapbox.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -122,10 +125,8 @@
     <InterfaceDefinition Include="Views\InfoView.xib" />
     <InterfaceDefinition Include="UserControls\LeftDrawerMenuItemView.xib" />
     <None Include="packages.config" />
-    <InterfaceDefinition Include="Views\MapView.xib">
-      <SubType>Designer</SubType>
-    </InterfaceDefinition>
     <InterfaceDefinition Include="Views\LocationView.xib" />
+    <InterfaceDefinition Include="Views\MapView.xib" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
@@ -156,11 +157,14 @@
     <Compile Include="Views\MainView.designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MapView.cs" />
+    <Compile Include="Views\MapView.designer.cs">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SecondPageView.cs" />
     <Compile Include="Views\SecondPageView.designer.cs">
       <DependentUpon>SecondPageView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\SettingsView.designer.cs">
       <DependentUpon>SettingsView.cs</DependentUpon>
