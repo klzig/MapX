@@ -29,7 +29,7 @@ namespace CycleTrip.iOS
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
 
-            MGLAccountManager.AccessToken = "my_access_token";
+            MGLAccountManager.AccessToken = Secrets.iosMapboxToken;
 
             Window.MakeKeyAndVisible();
 
