@@ -27,7 +27,7 @@ namespace CycleTrip.iOS.Views
         {
             base.ViewDidLoad();
 
-    //        mapView.StyleURL = new NSUrl("mapbox://styles/tbd");
+            mapView.StyleURL = new NSUrl("mapbox://styles/klzig/cjflt8g1z09kh2spsbxl3j4z2");
             mapView.SetCenterCoordinate(new CLLocationCoordinate2D(43.6332, -116.216), 11, false);
         }
     }
