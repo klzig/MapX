@@ -1,0 +1,2 @@
+﻿*.designer.cs files are versioned because Xamarin's handling of these files is infuriatingly unreliable.  They should be generated at build time but usually aren't.
+See https://forums.xamarin.com/discussion/7681/how-to-regenerate-a-view-controllers-designer-cs-file

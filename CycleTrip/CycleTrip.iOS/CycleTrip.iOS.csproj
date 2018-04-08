@@ -173,6 +173,7 @@
   <ItemGroup>
     <Content Include="AppDelegate.cs.txt" />
     <BundleResource Include="Resources\logo_launch.png" />
+    <Content Include="Views\Readme.txt" />
     <None Include="Resources\Readme.txt" />
   </ItemGroup>
   <ItemGroup>

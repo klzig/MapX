@@ -9,7 +9,6 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-*.designer.cs
 
 # Build results
 [Dd]ebug/
@@ -262,3 +261,4 @@ __pycache__/
 *.pyc
 *.bak
 /CycleTrip/CycleTrip/Secrets.resx
+/CycleTrip/CycleTrip.iOS/AppDelegate.designer.cs
