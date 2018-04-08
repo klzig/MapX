@@ -1,4 +1,6 @@
 ﻿using MvvmCross.Uwp.Attributes;
+using Windows.UI.Xaml;
+using Windows.Devices.Geolocation;
 
 namespace CycleTrip.UWP.Views
 {
@@ -7,12 +9,22 @@ namespace CycleTrip.UWP.Views
     {
         public MapView()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+            Map.MapServiceToken = Secrets.uwpMapSDKToken;
+            Map.ZoomLevel = 11;
+            BasicGeoposition center = new BasicGeoposition
+            {
+                Latitude = 43.6332,
+                Longitude = -116.216
+            };
+            Map.Center = new Geopoint(center);
+            SizeChanged += MapView_Load;        
         }
 
-        private void TextBlock_SelectionChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void MapView_Load(object sender, RoutedEventArgs e)
         {
-
+            Map.Height = ActualHeight;
+            Map.Width = ActualWidth;
         }
     }
 }
