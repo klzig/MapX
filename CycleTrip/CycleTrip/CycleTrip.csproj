@@ -51,7 +51,7 @@
       <DependentUpon>AppStrings.resx</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Secrets1.Designer.cs">
+    <Compile Include="Secrets.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Secrets.resx</DependentUpon>
@@ -84,7 +84,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secrets.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Secrets1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Secrets.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Secrets_template.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -262,3 +262,5 @@ __pycache__/
 *.bak
 /CycleTrip/CycleTrip/Secrets.resx
 /CycleTrip/CycleTrip.iOS/AppDelegate.designer.cs
+/CycleTrip/CycleTrip/Secrets.Designer.cs
+/CycleTrip/CycleTrip/Secrets_template.Designer.cs
