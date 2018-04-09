@@ -1,7 +1,7 @@
 # CycleTrip
 Baseline solution for a cross platform, open source mapping (OSM) application.
 # Build
-* To get a clean build
+* To get a clean build (Visual Studio 2017)
   * Copy CycleTrip/Secrets_template.resx to Secrets.resx
   * Add Secrets.resx to project
   * Set Access Modifier on Secrets.resx to Public
