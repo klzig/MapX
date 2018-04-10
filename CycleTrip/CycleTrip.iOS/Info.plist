@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>NSLocationWhenInUseUsageDescription</key>
-  <string>Location is required to show your position on the map</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required to show your position on the map</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleLocalizations</key>
@@ -11,7 +11,7 @@
 		<string>de</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>CycleTrip.iOS</string>
+	<string>CycleTrip</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.your-company.CycleTrip.iOS</string>
 	<key>CFBundleShortVersionString</key>
