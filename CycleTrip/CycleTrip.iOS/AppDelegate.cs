@@ -4,6 +4,9 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using Mapbox;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace CycleTrip.iOS
 {
@@ -32,6 +35,9 @@ namespace CycleTrip.iOS
             MGLAccountManager.AccessToken = Secrets.iosMapboxToken;
 
             Window.MakeKeyAndVisible();
+
+            AppCenter.Start("fca58d6a-836f-43ee-b70b-6e1de1dea1eb",
+                   typeof(Analytics), typeof(Crashes));
 
             return true;
         }
