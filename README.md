@@ -21,4 +21,4 @@ Baseline solution for a cross platform, open source mapping (OSM) application.
 * Vector images
 * MvvmCross Messenger plugin for communication between services, viewmodels, and views
 * MvvmCross Location plugin
-* Interactive vector map using MapBox iOS and Android SDKs, Bing Maps UWP SDK
+* Interactive vector map using MapBox iOS and Android SDKs (NAXAM bindings), Bing Maps UWP SDK
