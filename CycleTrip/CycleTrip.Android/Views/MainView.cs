@@ -11,9 +11,6 @@ using MvvmCross.Platform;
 using MvvmCross.Plugins.Messenger;
 using System.Collections.Generic;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 
 // https://developer.xamarin.com/guides/android/user_interface/layouts/list-view/part-3-customizing-list-view-appearance/
 
@@ -64,9 +61,6 @@ namespace CycleTrip.Droid.Views
             _drawerToggle = new MyActionBarDrawerToggle(this, _drawerLayout, toolbar, Resource.String.OpenDrawerString, Resource.String.CloseDrawerString);
             _drawerLayout.AddDrawerListener(_drawerToggle);
             _drawerToggle.SyncState();
-
-            AppCenter.Start("a6adcd2f-f234-4f18-84c2-653b1cfdb482",
-                   typeof(Analytics), typeof(Crashes));
         }
 
         void ShowFragmentAt(int position)

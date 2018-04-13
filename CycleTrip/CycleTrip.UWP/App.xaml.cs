@@ -20,8 +20,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
 
 namespace CycleTrip.UWP
 {
@@ -38,7 +36,6 @@ namespace CycleTrip.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            AppCenter.Start("ce527955-d05b-47c6-a03b-335a30738287", typeof(Analytics));
         }
 
         /// <summary>
