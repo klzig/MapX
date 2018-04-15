@@ -4861,26 +4861,26 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02009c
-			public const int avd_hide_password_1 = 2130837660;
+			// aapt resource value: 0x7f02009f
+			public const int avd_hide_password_1 = 2130837663;
 			
-			// aapt resource value: 0x7f02009d
-			public const int avd_hide_password_2 = 2130837661;
+			// aapt resource value: 0x7f0200a0
+			public const int avd_hide_password_2 = 2130837664;
 			
-			// aapt resource value: 0x7f02009e
-			public const int avd_hide_password_3 = 2130837662;
+			// aapt resource value: 0x7f0200a1
+			public const int avd_hide_password_3 = 2130837665;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02009f
-			public const int avd_show_password_1 = 2130837663;
+			// aapt resource value: 0x7f0200a2
+			public const int avd_show_password_1 = 2130837666;
 			
-			// aapt resource value: 0x7f0200a0
-			public const int avd_show_password_2 = 2130837664;
+			// aapt resource value: 0x7f0200a3
+			public const int avd_show_password_2 = 2130837667;
 			
-			// aapt resource value: 0x7f0200a1
-			public const int avd_show_password_3 = 2130837665;
+			// aapt resource value: 0x7f0200a4
+			public const int avd_show_password_3 = 2130837668;
 			
 			// aapt resource value: 0x7f020055
 			public const int common_full_open_on_phone = 2130837589;
@@ -4973,127 +4973,136 @@ namespace CycleTrip.Droid
 			public const int ic_info_outline_black = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int ic_location_black = 2130837619;
+			public const int ic_list_black = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int ic_map_black = 2130837620;
+			public const int ic_location_black = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int ic_record_black = 2130837621;
+			public const int ic_location_panned_black = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int ic_settings_black = 2130837622;
+			public const int ic_map_black = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int ic_splash = 2130837623;
+			public const int ic_more_black = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int mapbox_compass_icon = 2130837624;
+			public const int ic_record_black = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int mapbox_info_bg_selector = 2130837625;
+			public const int ic_settings_black = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int mapbox_info_icon_default = 2130837626;
+			public const int ic_splash = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int mapbox_info_icon_selected = 2130837627;
+			public const int mapbox_compass_icon = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int mapbox_logo_helmet = 2130837628;
+			public const int mapbox_info_bg_selector = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int mapbox_logo_icon = 2130837629;
+			public const int mapbox_info_icon_default = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int mapbox_marker_icon_default = 2130837630;
+			public const int mapbox_info_icon_selected = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int mapbox_markerview_icon_default = 2130837631;
+			public const int mapbox_logo_helmet = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int mapbox_mylocation_bg_shape = 2130837632;
+			public const int mapbox_logo_icon = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int mapbox_mylocation_icon_bearing = 2130837633;
+			public const int mapbox_marker_icon_default = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int mapbox_mylocation_icon_default = 2130837634;
+			public const int mapbox_markerview_icon_default = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int mapbox_popup_window_transparent = 2130837635;
+			public const int mapbox_mylocation_bg_shape = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int mapbox_rounded_corner = 2130837636;
+			public const int mapbox_mylocation_icon_bearing = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int mz_bg_ripple = 2130837637;
+			public const int mapbox_mylocation_icon_default = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int mz_bg_white_gray_border = 2130837638;
+			public const int mapbox_popup_window_transparent = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int mz_find_me = 2130837639;
+			public const int mapbox_rounded_corner = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int mz_find_me_normal = 2130837640;
+			public const int mz_bg_ripple = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int mz_find_me_pressed = 2130837641;
+			public const int mz_bg_white_gray_border = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int navigation_empty_icon = 2130837642;
+			public const int mz_find_me = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int notification_action_background = 2130837643;
+			public const int mz_find_me_normal = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int notification_bg = 2130837644;
+			public const int mz_find_me_pressed = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int notification_bg_low = 2130837645;
+			public const int navigation_empty_icon = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int notification_bg_low_normal = 2130837646;
+			public const int notification_action_background = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int notification_bg_low_pressed = 2130837647;
+			public const int notification_bg = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int notification_bg_normal = 2130837648;
+			public const int notification_bg_low = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int notification_bg_normal_pressed = 2130837649;
+			public const int notification_bg_low_normal = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int notification_icon_background = 2130837650;
-			
-			// aapt resource value: 0x7f02009a
-			public const int notification_template_icon_bg = 2130837658;
-			
-			// aapt resource value: 0x7f02009b
-			public const int notification_template_icon_low_bg = 2130837659;
+			public const int notification_bg_low_pressed = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int notification_tile_bg = 2130837651;
+			public const int notification_bg_normal = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int notify_panel_notification_icon_bg = 2130837652;
+			public const int notification_bg_normal_pressed = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int Readme = 2130837653;
+			public const int notification_icon_background = 2130837653;
+			
+			// aapt resource value: 0x7f02009d
+			public const int notification_template_icon_bg = 2130837661;
+			
+			// aapt resource value: 0x7f02009e
+			public const int notification_template_icon_low_bg = 2130837662;
 			
 			// aapt resource value: 0x7f020096
-			public const int splash = 2130837654;
+			public const int notification_tile_bg = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int splash_screen = 2130837655;
+			public const int notify_panel_notification_icon_bg = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int tooltip_frame_dark = 2130837656;
+			public const int Readme = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int tooltip_frame_light = 2130837657;
+			public const int splash = 2130837657;
+			
+			// aapt resource value: 0x7f02009a
+			public const int splash_screen = 2130837658;
+			
+			// aapt resource value: 0x7f02009b
+			public const int tooltip_frame_dark = 2130837659;
+			
+			// aapt resource value: 0x7f02009c
+			public const int tooltip_frame_light = 2130837660;
 			
 			static Drawable()
 			{
@@ -5132,8 +5141,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0041
 			public const int SYM = 2131427393;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int action0 = 2131427517;
+			// aapt resource value: 0x7f0b00c2
+			public const int action0 = 2131427522;
 			
 			// aapt resource value: 0x7f0b008c
 			public const int action_bar = 2131427468;
@@ -5156,17 +5165,17 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b006a
 			public const int action_bar_title = 2131427434;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int action_container = 2131427514;
+			// aapt resource value: 0x7f0b00bf
+			public const int action_container = 2131427519;
 			
 			// aapt resource value: 0x7f0b008d
 			public const int action_context_bar = 2131427469;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int action_divider = 2131427521;
+			// aapt resource value: 0x7f0b00c6
+			public const int action_divider = 2131427526;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int action_image = 2131427515;
+			// aapt resource value: 0x7f0b00c0
+			public const int action_image = 2131427520;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_divider = 2131427331;
@@ -5183,11 +5192,14 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b006c
 			public const int action_mode_close_button = 2131427436;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int action_text = 2131427516;
+			// aapt resource value: 0x7f0b00c1
+			public const int action_text = 2131427521;
 			
-			// aapt resource value: 0x7f0b00ca
-			public const int actions = 2131427530;
+			// aapt resource value: 0x7f0b00b5
+			public const int actionbar = 2131427509;
+			
+			// aapt resource value: 0x7f0b00cf
+			public const int actions = 2131427535;
 			
 			// aapt resource value: 0x7f0b006d
 			public const int activity_chooser_view_content = 2131427437;
@@ -5234,8 +5246,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0073
 			public const int buttonPanel = 2131427443;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int cancel_action = 2131427518;
+			// aapt resource value: 0x7f0b00c3
+			public const int cancel_action = 2131427523;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int center = 2131427406;
@@ -5252,8 +5264,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0083
 			public const int checkbox = 2131427459;
 			
-			// aapt resource value: 0x7f0b00c6
-			public const int chronometer = 2131427526;
+			// aapt resource value: 0x7f0b00cb
+			public const int chronometer = 2131427531;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int clip_horizontal = 2131427415;
@@ -5321,8 +5333,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b003a
 			public const int end = 2131427386;
 			
-			// aapt resource value: 0x7f0b00cc
-			public const int end_padder = 2131427532;
+			// aapt resource value: 0x7f0b00d1
+			public const int end_padder = 2131427537;
 			
 			// aapt resource value: 0x7f0b0049
 			public const int enterAlways = 2131427401;
@@ -5369,8 +5381,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0072
 			public const int icon = 2131427442;
 			
-			// aapt resource value: 0x7f0b00cb
-			public const int icon_group = 2131427531;
+			// aapt resource value: 0x7f0b00d0
+			public const int icon_group = 2131427536;
 			
 			// aapt resource value: 0x7f0b0022
 			public const int icon_only = 2131427362;
@@ -5381,8 +5393,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b006f
 			public const int image = 2131427439;
 			
-			// aapt resource value: 0x7f0b00c7
-			public const int info = 2131427527;
+			// aapt resource value: 0x7f0b00cc
+			public const int info = 2131427532;
 			
 			// aapt resource value: 0x7f0b00ae
 			public const int infowindow_description = 2131427502;
@@ -5417,8 +5429,11 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0071
 			public const int list_item = 2131427441;
 			
-			// aapt resource value: 0x7f0b00cd
-			public const int location = 2131427533;
+			// aapt resource value: 0x7f0b00d2
+			public const int location = 2131427538;
+			
+			// aapt resource value: 0x7f0b00b8
+			public const int locationButton = 2131427512;
 			
 			// aapt resource value: 0x7f0b00b2
 			public const int logoView = 2131427506;
@@ -5429,20 +5444,20 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b00af
 			public const int markerViewContainer = 2131427503;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int masked = 2131427538;
+			// aapt resource value: 0x7f0b00d7
+			public const int masked = 2131427543;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int media_actions = 2131427520;
+			// aapt resource value: 0x7f0b00c5
+			public const int media_actions = 2131427525;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int menu_icon = 2131427509;
+			// aapt resource value: 0x7f0b00ba
+			public const int menu_icon = 2131427514;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int menu_name = 2131427510;
+			// aapt resource value: 0x7f0b00bb
+			public const int menu_name = 2131427515;
 			
-			// aapt resource value: 0x7f0b00d0
-			public const int message = 2131427536;
+			// aapt resource value: 0x7f0b00d5
+			public const int message = 2131427541;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int middle = 2131427387;
@@ -5450,17 +5465,23 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b005c
 			public const int mini = 2131427420;
 			
+			// aapt resource value: 0x7f0b00b7
+			public const int modeButton = 2131427511;
+			
+			// aapt resource value: 0x7f0b00b9
+			public const int moreButton = 2131427513;
+			
 			// aapt resource value: 0x7f0b0032
 			public const int multiply = 2131427378;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int mz_attribution = 2131427513;
+			// aapt resource value: 0x7f0b00be
+			public const int mz_attribution = 2131427518;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int mz_find_me = 2131427512;
+			// aapt resource value: 0x7f0b00bd
+			public const int mz_find_me = 2131427517;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int mz_tangram_map = 2131427511;
+			// aapt resource value: 0x7f0b00bc
+			public const int mz_tangram_map = 2131427516;
 			
 			// aapt resource value: 0x7f0b00a3
 			public const int navigation_header_container = 2131427491;
@@ -5474,17 +5495,17 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0029
 			public const int normal = 2131427369;
 			
+			// aapt resource value: 0x7f0b00d3
+			public const int notification = 2131427539;
+			
 			// aapt resource value: 0x7f0b00ce
-			public const int notification = 2131427534;
+			public const int notification_background = 2131427534;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int notification_background = 2131427529;
+			// aapt resource value: 0x7f0b00c8
+			public const int notification_main_column = 2131427528;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int notification_main_column = 2131427523;
-			
-			// aapt resource value: 0x7f0b00c2
-			public const int notification_main_column_container = 2131427522;
+			// aapt resource value: 0x7f0b00c7
+			public const int notification_main_column_container = 2131427527;
 			
 			// aapt resource value: 0x7f0b0062
 			public const int packed = 2131427426;
@@ -5513,17 +5534,17 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0085
 			public const int radio = 2131427461;
 			
-			// aapt resource value: 0x7f0b00cf
-			public const int recording = 2131427535;
+			// aapt resource value: 0x7f0b00d4
+			public const int recording = 2131427540;
 			
 			// aapt resource value: 0x7f0b0053
 			public const int right = 2131427411;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int right_icon = 2131427528;
+			// aapt resource value: 0x7f0b00cd
+			public const int right_icon = 2131427533;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int right_side = 2131427524;
+			// aapt resource value: 0x7f0b00c9
+			public const int right_side = 2131427529;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int save_image_matrix = 2131427340;
@@ -5636,8 +5657,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0054
 			public const int start = 2131427412;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int status_bar_latest_event_content = 2131427519;
+			// aapt resource value: 0x7f0b00c4
+			public const int status_bar_latest_event_content = 2131427524;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int submenuarrow = 2131427462;
@@ -5672,8 +5693,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0015
 			public const int textinput_error = 2131427349;
 			
-			// aapt resource value: 0x7f0b00c5
-			public const int time = 2131427525;
+			// aapt resource value: 0x7f0b00ca
+			public const int time = 2131427530;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int title = 2131427356;
@@ -5686,6 +5707,9 @@ namespace CycleTrip.Droid
 			
 			// aapt resource value: 0x7f0b00a9
 			public const int toolbar = 2131427497;
+			
+			// aapt resource value: 0x7f0b00b6
+			public const int toolbarmenucontainer = 2131427510;
 			
 			// aapt resource value: 0x7f0b0048
 			public const int top = 2131427400;
@@ -5726,8 +5750,8 @@ namespace CycleTrip.Droid
 			// aapt resource value: 0x7f0b0016
 			public const int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00d1
-			public const int visible = 2131427537;
+			// aapt resource value: 0x7f0b00d6
+			public const int visible = 2131427542;
 			
 			// aapt resource value: 0x7f0b0024
 			public const int wide = 2131427364;

@@ -170,6 +170,15 @@ namespace CycleTrip.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        public static string More {
+            get {
+                return ResourceManager.GetString("More", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Never.
         /// </summary>
         public static string Never {
@@ -220,6 +229,24 @@ namespace CycleTrip.Localization {
         public static string Updated {
             get {
                 return ResourceManager.GetString("Updated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View List.
+        /// </summary>
+        public static string ViewList {
+            get {
+                return ResourceManager.GetString("ViewList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Map.
+        /// </summary>
+        public static string ViewMap {
+            get {
+                return ResourceManager.GetString("ViewMap", resourceCulture);
             }
         }
     }

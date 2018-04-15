@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mapbox.mapboxsdk.maps.MapView 
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:id="@+id/mapView"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-   />
-
-<!--app:mapbox_cameraTargetLat="40.73581"
-  app:mapbox_cameraTargetLng="-73.99155"
-  app:mapbox_cameraZoom="11"-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_weight="5"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/Base.Theme.AppCompat.CompactMenu">
+        <LinearLayout
+            android:id="@+id/toolbarmenucontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="0.0dp">
+            <ImageButton
+                android:id="@+id/modeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:onClick="ModeButtonClick"
+                android:src="@drawable/ic_map_black" />
+            <ImageButton
+                android:id="@+id/locationButton"              
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:onClick="LocationButtonClick"
+                android:src="@drawable/ic_location_black" />
+            <ImageButton
+                android:id="@+id/moreButton"              
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                app:MvxBind="Click MoreCommand"
+                android:src="@drawable/ic_more_black" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>
