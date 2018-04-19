@@ -103,8 +103,8 @@
     <Reference Include="Naxam.Jakewharton.Timber, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Naxam.Jakewharton.Timber.4.5.1\lib\MonoAndroid10\Naxam.Jakewharton.Timber.dll</HintPath>
     </Reference>
-    <Reference Include="Naxam.Mapbox.Droid, Version=5.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Naxam.Mapbox.Droid.5.5.1.1\lib\MonoAndroid10\Naxam.Mapbox.Droid.dll</HintPath>
+    <Reference Include="Naxam.Mapbox.Droid, Version=5.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Naxam.Mapbox.Droid.5.5.2\lib\MonoAndroid10\Naxam.Mapbox.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Naxam.Mapbox.MapboxJavaCore, Version=2.2.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Naxam.Mapbox.MapboxJavaCore.2.2.10\lib\MonoAndroid10\Naxam.Mapbox.MapboxJavaCore.dll</HintPath>
