@@ -38,9 +38,9 @@ namespace CycleTrip.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
- 
+
             // Show first view after cold start
-            NavigateTo(0);
+            NavigateToAsync(0);
             SelfTest();
         }
 
@@ -53,38 +53,12 @@ namespace CycleTrip.ViewModels
             _messenger.Publish(notification_true);
         }
 
-        public void NavigateTo(int position)
+        public async void NavigateToAsync(int position)
         {
             Type vm = ModelMenuItems[position].ViewType;
-            ChangePresentation(new ClearBackstackHint());
-            //           var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
-            _navigationService.Navigate(vm, null);  // Fragment's OnCreateView not called unless second parameter is null
+            //var presentationBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "ClearStack" } });
+            await _navigationService.Navigate(vm, null);
         }
-
-        //      public async Task NavigateTo(int position)
-        //      {
-        //          Type vm = _menuItemTypes[position];
-        //          var presentationBundle = new MvxBundle(new Dictionary<string, string> { {"NavigationMode", "ClearStack"} });
-        //          await _navigationService.Navigate(vm, null);
-        //      }
-
-        //public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
-        //private void ResetText()
-        //{
-        //    Text = "Hello MvvmCross";
-        //}
-
-        //private string _text = "Hello MvvmCross";
-        //public string Text
-        //{
-        //    get { return _text; }
-        //    set { SetProperty(ref _text, value); }
-        //}
-  
-        //public IMvxAsyncCommand FirstPageCommand
-        //{
-        //    get => new MvxAsyncCommand(() => _navigationService.Navigate<FirstPageViewModel>());
-        //}
     }
 
     /// <summary>

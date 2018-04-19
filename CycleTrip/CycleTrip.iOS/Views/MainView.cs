@@ -35,8 +35,8 @@ namespace CycleTrip.iOS.Views
             _titleToken = messenger.Subscribe<ViewTitleMessage>(OnViewTitleMessage);
 
             AlertItem.Init();
-            AlertItem.Alerts[AlertType.notification].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(2); };
-            AlertItem.Alerts[AlertType.location].Button.Clicked += (sender, e) => { ViewModel.NavigateTo(3); };
+            AlertItem.Alerts[AlertType.notification].Button.Clicked += (sender, e) => { ViewModel.NavigateToAsync(2); };
+            AlertItem.Alerts[AlertType.location].Button.Clicked += (sender, e) => { ViewModel.NavigateToAsync(3); };
 
             HamburgerItem.Init();
             HamburgerItem.Button.Clicked += (sender, e) => { PerformTableTransition(); };
@@ -262,7 +262,7 @@ namespace CycleTrip.iOS.Views
         private void MenuSelected(int menuSelected)
         {
             //          txtActionBarText.Text = menuSeleted;
-            ViewModel.NavigateTo(menuSelected);
+            ViewModel.NavigateToAsync(menuSelected);
             SwipeRightToLeft();
         }
 

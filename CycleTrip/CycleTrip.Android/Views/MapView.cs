@@ -140,7 +140,7 @@ namespace CycleTrip.Droid.Views
             _mapboxMap.AnimateCamera(CameraUpdateFactory.NewCameraPosition(position));
         }
 
-        // View lifecycle
+        #region View lifecycle
         public override void OnStart()
         {
             base.OnStart();
@@ -182,8 +182,9 @@ namespace CycleTrip.Droid.Views
             base.OnLowMemory();
             _mapView.OnLowMemory();
         }
+        #endregion
 
-        // Gestures
+        #region Gestures
         bool GestureDetector.IOnGestureListener.OnDown(MotionEvent e)
         {
             return false;
@@ -216,5 +217,6 @@ namespace CycleTrip.Droid.Views
         {
             return false;
         }
+        #endregion
     }
 }

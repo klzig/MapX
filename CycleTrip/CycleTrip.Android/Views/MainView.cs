@@ -65,7 +65,7 @@ namespace CycleTrip.Droid.Views
 
         void ShowFragmentAt(int position)
         {
-            ViewModel.NavigateTo(position);
+            ViewModel.NavigateToAsync(position);
             _drawerLayout.CloseDrawer(_drawerListView);
         }
 
@@ -85,11 +85,11 @@ namespace CycleTrip.Droid.Views
             {
                 case Resource.Id.notification:
                     // TODO: Figure out how to add this view to backstack when navigating via actionbar button
-                    ViewModel.NavigateTo(2);
+                    ViewModel.NavigateToAsync(2);
                     break;
                 case Resource.Id.location:
                     // TODO: Figure out how to add this view to backstack when navigating via actionbar button
-                    ViewModel.NavigateTo(3);
+                    ViewModel.NavigateToAsync(3);
                     break;
             }
 

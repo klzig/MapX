@@ -83,13 +83,13 @@ namespace CycleTrip.UWP.Views
         private void NotificationsAlert_Click(object sender, RoutedEventArgs e)
         {
             int position = 2;
-            ViewModel.NavigateTo(position);
+            ViewModel.NavigateToAsync(position);
         }
 
         private void LocationAlert_Click(object sender, RoutedEventArgs e)
         {
             int position = 3;
-            ViewModel.NavigateTo(position);
+            ViewModel.NavigateToAsync(position);
         }
 
         private void OnMenuItemClick(NavigationView sender, NavigationViewItemInvokedEventArgs e)
@@ -97,19 +97,19 @@ namespace CycleTrip.UWP.Views
             if (e.IsSettingsInvoked)
             {
                 // TODO: Decide whether to use built-in settings menu (this is currently dead code)
-                ViewModel.NavigateTo(3);
+                ViewModel.NavigateToAsync(3);
             }
             else
             {
                 var item = e.InvokedItem as MenuItem;
-                ViewModel.NavigateTo(item.Index);
+                ViewModel.NavigateToAsync(item.Index);
             }
         }
 
         private void MainViewBase_Loaded(object sender, RoutedEventArgs e)
         {
             hamburgerMenuControl.MenuItemsSource = MenuItem.GetMainItems(ViewModel.ModelMenuItems);
-            ViewModel.NavigateTo(0);
+            ViewModel.NavigateToAsync(0);
         }
     }
 

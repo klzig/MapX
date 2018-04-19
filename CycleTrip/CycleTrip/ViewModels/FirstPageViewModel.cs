@@ -1,11 +1,9 @@
-﻿using CycleTrip.Localization;
-using CycleTrip.Messages;
+﻿using System.Collections.Generic;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Localization;
 using MvvmCross.Plugins.Messenger;
-using System.Collections.Generic;
-using System.Windows.Input;
+using CycleTrip.Localization;
+using CycleTrip.Messages;
 
 namespace CycleTrip.ViewModels
 {
@@ -26,16 +24,15 @@ namespace CycleTrip.ViewModels
             _messenger.Publish(new_title);
         }
 
-        public IMvxCommand SecondPageCommand
+        private MvxAsyncCommand _secondPageCommand;
+        public IMvxAsyncCommand SecondPageCommand
         {
-            get => new MvxCommand(() => _navigationService.Navigate<SecondPageViewModel>(new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "Push" } })));
+            get
+            {
+                _secondPageCommand = _secondPageCommand ?? new MvxAsyncCommand(() => 
+                    _navigationService.Navigate<SecondPageViewModel>(new MvxBundle(new Dictionary<string, string> { { "NavigationMode", "Push" } })));
+                return _secondPageCommand;
+            }
         }
-
-        //private string _ButtonText = "Second Pageyy";
-        //public string ButtonText
-        //{
-        //    get => _ButtonText;
-        ////    set => SetProperty(ref _ButtonText, value);
-        //}
     }
 }
