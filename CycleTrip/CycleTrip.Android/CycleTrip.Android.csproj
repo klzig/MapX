@@ -100,6 +100,9 @@
     <Reference Include="MvvmCross.Plugins.Messenger, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.ResxLocalization, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Plugin.ResxLocalization.5.7.0\lib\MonoAndroid\MvvmCross.Plugins.ResxLocalization.dll</HintPath>
+    </Reference>
     <Reference Include="Naxam.Jakewharton.Timber, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Naxam.Jakewharton.Timber.4.5.1\lib\MonoAndroid10\Naxam.Jakewharton.Timber.dll</HintPath>
     </Reference>
@@ -212,6 +215,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ResxLocalizationPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="PresentationHintHandlers.cs" />

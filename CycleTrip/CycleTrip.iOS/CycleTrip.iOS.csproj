@@ -98,6 +98,9 @@
     <Reference Include="MvvmCross.Plugins.Messenger, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Plugin.Messenger.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.ResxLocalization, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Plugin.ResxLocalization.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.ResxLocalization.dll</HintPath>
+    </Reference>
     <Reference Include="Naxam.Mapbox.iOS, Version=3.7.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Naxam.Mapbox.iOS.3.7.6\lib\Xamarin.iOS10\Naxam.Mapbox.iOS.dll</HintPath>
     </Reference>
@@ -131,6 +134,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ResxLocalizationPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
