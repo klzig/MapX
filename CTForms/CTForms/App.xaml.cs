@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CTForms.Views;
+using CTForms.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CTForms
@@ -13,6 +14,12 @@ namespace CTForms
         {
             InitializeComponent();
 
+            if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
+            {
+                var ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
+                CTForms.Properties.Resources.Culture = ci; // set the RESX for resource localization
+                DependencyService.Get<ILocalize>().SetLocale(ci); // set the Thread for locale-aware methods
+            }
 
             MainPage = new MainPage();
         }
@@ -31,5 +38,6 @@ namespace CTForms
         {
             // Handle when your app resumes
         }
+
     }
 }

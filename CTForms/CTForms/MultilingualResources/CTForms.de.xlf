@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="de" original="CTFORMS/PROPERTIES/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6900.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CTFORMS/PROPERTIES/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="LabelAdd" translate="yes" xml:space="preserve">
+          <source>Add</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hinzufügen</target>
+        </trans-unit>
+        <trans-unit id="LabelCancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abbrechen</target>
+        </trans-unit>
+        <trans-unit id="LabelDescription" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Beschreibung</target>
+        </trans-unit>
+        <trans-unit id="LabelSave" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Speichern</target>
+        </trans-unit>
+        <trans-unit id="LabelText" translate="yes" xml:space="preserve">
+          <source>Text</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Text</target>
+        </trans-unit>
+        <trans-unit id="MenuItemAbout" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Info</target>
+        </trans-unit>
+        <trans-unit id="MenuItemBrowse" translate="yes" xml:space="preserve">
+          <source>Browse</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Durchsuchen</target>
+        </trans-unit>
+        <trans-unit id="PromptItemDescription" translate="yes" xml:space="preserve">
+          <source>This is an item description.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dies ist eine Artikelbeschreibung.</target>
+        </trans-unit>
+        <trans-unit id="PromptItemName" translate="yes" xml:space="preserve">
+          <source>Item Name</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Elementnamen</target>
+        </trans-unit>
+        <trans-unit id="TitleMenu" translate="yes" xml:space="preserve">
+          <source>Menu</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Menü</target>
+        </trans-unit>
+        <trans-unit id="TitleNewItem" translate="yes" xml:space="preserve">
+          <source>New Item</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Neues Element</target>
+        </trans-unit>
+        <trans-unit id="ValueFirstItem" translate="yes" xml:space="preserve">
+          <source>First Item</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Erstes Element</target>
+        </trans-unit>
+        <trans-unit id="LabelDescriptionColon" translate="yes" xml:space="preserve">
+          <source>Description:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Beschreibung:</target>
+        </trans-unit>
+        <trans-unit id="LabelTextColon" translate="yes" xml:space="preserve">
+          <source>Text:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Text:</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

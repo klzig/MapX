@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using CTForms.Models;
 using CTForms.Views;
+using CTForms.Properties;
 
 namespace CTForms.ViewModels
 {
@@ -17,7 +18,7 @@ namespace CTForms.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = Resources.MenuItemBrowse;
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

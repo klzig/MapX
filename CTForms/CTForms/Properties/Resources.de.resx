@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LabelAdd" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="LabelCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="LabelDescription" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="LabelSave" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="LabelText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="MenuItemAbout" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MenuItemBrowse" xml:space="preserve">
+    <value>Durchsuchen</value>
+  </data>
+  <data name="PromptItemDescription" xml:space="preserve">
+    <value>Dies ist eine Artikelbeschreibung.</value>
+  </data>
+  <data name="PromptItemName" xml:space="preserve">
+    <value>Elementnamen</value>
+  </data>
+  <data name="TitleMenu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="TitleNewItem" xml:space="preserve">
+    <value>Neues Element</value>
+  </data>
+  <data name="ValueFirstItem" xml:space="preserve">
+    <value>Erstes Element</value>
+  </data>
+  <data name="LabelDescriptionColon" xml:space="preserve">
+    <value>Beschreibung:</value>
+  </data>
+  <data name="LabelTextColon" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+</root>

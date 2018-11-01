@@ -1,9 +1,10 @@
-﻿using CTForms.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using CTForms.Models;
 
 namespace CTForms.Views
 {
@@ -18,8 +19,8 @@ namespace CTForms.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse },
+                new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout }
             };
 
             ListViewMenu.ItemsSource = menuItems;

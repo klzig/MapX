@@ -3,13 +3,15 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 
+using CTForms.Properties;
+
 namespace CTForms.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = Resources.MenuItemAbout;
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }

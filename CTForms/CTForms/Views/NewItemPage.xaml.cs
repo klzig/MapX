@@ -19,8 +19,8 @@ namespace CTForms.Views
 
             Item = new Item
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Text = Properties.Resources.PromptItemName,
+                Description = Properties.Resources.PromptItemDescription
             };
 
             BindingContext = this;
