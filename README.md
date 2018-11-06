@@ -5,8 +5,8 @@ Baseline solution for a cross platform, open source mapping (OSM) application.
   * Create a MapBox account: https://www.mapbox.com/signup/
   * Create MapBox token(s), add to Secrets.cs for Android and iOS
   * UWP map page might crash without a token.
-   * Create a Bing Maps account: https://www.bingmapsportal.com/
-   * Create a UWP key, add it to Secrets.cs
+    * Create a Bing Maps account: https://www.bingmapsportal.com/
+    * Create a UWP key, add it to Secrets.cs
 # Design
 * xamarin.android, xamarin.ios, uwp, mvvmcross, .net standard 2.0
   * Slide-over (hamburger) main menu using native, first-party controls
