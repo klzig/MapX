@@ -9,10 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Services\Secrets.override" />
+    <None Remove="Services\Secrets.save" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MvvmCross" Version="5.7.0" />
     <PackageReference Include="MvvmCross.Plugin.Location" Version="5.7.0" />
     <PackageReference Include="MvvmCross.Plugin.Messenger" Version="5.7.0" />
     <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="5.7.0" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo F|xcopy /Y $(ProjectDir)Services\Secrets.save  $(ProjectDir)Services\Secrets.cs&#xD;&#xA;exit 0" />
+  </Target>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo F|xcopy /Y $(ProjectDir)Services\Secrets.cs  $(ProjectDir)Services\Secrets.save&#xD;&#xA;echo F|xcopy /Y $(ProjectDir)Services\Secrets.override  $(ProjectDir)Services\Secrets.cs&#xD;&#xA;exit 0" />
+  </Target>
 
 </Project>

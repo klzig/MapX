@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Uwp.Attributes;
 using Windows.UI.Xaml;
 using Windows.Devices.Geolocation;
+using CycleTrip.Services;
 
 namespace CycleTrip.UWP.Views
 {
@@ -10,7 +11,7 @@ namespace CycleTrip.UWP.Views
         public MapView()
         {
             InitializeComponent();
-            Map.MapServiceToken = Secrets.uwpMapSDKToken;
+            Map.MapServiceToken = Secrets.UwpMapSDKToken;
             Map.ZoomLevel = 11;
             BasicGeoposition center = new BasicGeoposition
             {

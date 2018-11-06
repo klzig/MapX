@@ -8,6 +8,7 @@ using MvvmCross.Plugins.Messenger;
 using MvvmCross.Platform;
 using CycleTrip.ViewModels;
 using CycleTrip.Messages;
+using CycleTrip.Services;
 using Com.Mapbox.Mapboxsdk;
 using Com.Mapbox.Mapboxsdk.Maps;
 using Com.Mapbox.Mapboxsdk.Camera;
@@ -47,7 +48,7 @@ namespace CycleTrip.Droid.Views
             var view = this.BindingInflate(Resource.Layout.MapView, container, false);
 
             // Set up map
-            Mapbox.GetInstance(Context, Secrets.androidMapboxToken);
+            Mapbox.GetInstance(Context, Secrets.AndroidMapboxToken);
             _mapView = view.FindViewById<Com.Mapbox.Mapboxsdk.Maps.MapView>(Resource.Id.mapView);
             _mapView.OnCreate(savedInstanceState);
             _mapView.SetStyleUrl("mapbox://styles/klzig/cjflt8g1z09kh2spsbxl3j4z2");

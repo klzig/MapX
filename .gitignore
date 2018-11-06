@@ -260,9 +260,8 @@ paket-files/
 __pycache__/
 *.pyc
 *.bak
-/CycleTrip/CycleTrip/Secrets.resx
 /CycleTrip/CycleTrip.iOS/AppDelegate.designer.cs
-/CycleTrip/CycleTrip/Secrets.Designer.cs
-/CycleTrip/CycleTrip/Secrets_template.Designer.cs
 /CTForms/CTForms/Services/Secrets.override
 /CTForms/CTForms/Services/Secrets.save
+/CycleTrip/CycleTrip/Services/Secrets.save
+/CycleTrip/CycleTrip/Services/Secrets.override
