@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Com.Mapbox.Mapboxsdk;
+using CTForms.Services;
 
 namespace CTForms.Droid
 {
@@ -18,8 +20,9 @@ namespace CTForms.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            Mapbox.GetInstance(this, Secrets.AndroidMapboxToken);
         }
     }
 }

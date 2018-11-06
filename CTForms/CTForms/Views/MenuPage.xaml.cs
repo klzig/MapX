@@ -20,6 +20,7 @@ namespace CTForms.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse },
+                new HomeMenuItem {Id = MenuItemType.Map, Title=Properties.Resources.MenuItemMap },
                 new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout }
             };
 

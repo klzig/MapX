@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
+using Mapbox;
 using UIKit;
+using CTForms.Services;
 
 namespace CTForms.iOS
 {
@@ -22,9 +23,11 @@ namespace CTForms.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            MGLAccountManager.AccessToken = Secrets.IosMapboxToken;
+            new Naxam.Controls.Mapbox.Platform.iOS.MapViewRenderer();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }

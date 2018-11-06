@@ -142,10 +142,20 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Naxam.Mapbox.Forms">
+      <Version>1.0.5.2</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\CycleTrip\CycleTrip\CycleTrip.csproj">
+      <Project>{F3AAAE3D-0BCD-43FC-9640-57D5B9144EF5}</Project>
+      <Name>CycleTrip</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CTForms\CTForms.csproj">
       <Project>{38F92043-F5CF-4AFA-BEC0-AF6E25BC7AE7}</Project>
       <Name>CTForms</Name>

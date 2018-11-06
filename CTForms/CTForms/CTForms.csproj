@@ -21,6 +21,8 @@
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
   <ItemGroup>
+    <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +30,14 @@
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\*.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Services\Secrets_override.cs" />
+    <Compile Remove="Services\Secrets_template.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Services\Secrets.override" />
+    <None Remove="Services\Secrets.save" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -42,4 +52,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo F|xcopy /Y $(ProjectDir)Services\Secrets.cs  $(ProjectDir)Services\Secrets.save&#xD;&#xA;echo F|xcopy /Y $(ProjectDir)Services\Secrets.override  $(ProjectDir)Services\Secrets.cs&#xD;&#xA;exit 0&#xD;&#xA;" />
+  </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo F|xcopy /Y $(ProjectDir)Services\Secrets.save  $(ProjectDir)Services\Secrets.cs&#xD;&#xA;exit 0" />
+  </Target>
 </Project>

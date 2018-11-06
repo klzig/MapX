@@ -142,6 +142,15 @@ namespace CTForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        internal static string MenuItemMap {
+            get {
+                return ResourceManager.GetString("MenuItemMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is an item description..
         /// </summary>
         internal static string PromptItemDescription {

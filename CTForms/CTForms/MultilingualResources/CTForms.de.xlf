@@ -62,6 +62,10 @@
           <source>Text:</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Text:</target>
         </trans-unit>
+        <trans-unit id="MenuItemMap" translate="yes" xml:space="preserve">
+          <source>Map</source>
+          <target state="new">Map</target>
+        </trans-unit>
       </group>
     </body>
   </file>
