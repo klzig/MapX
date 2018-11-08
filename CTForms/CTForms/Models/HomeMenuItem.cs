@@ -15,5 +15,7 @@ namespace CTForms.Models
         public MenuItemType Id { get; set; }
 
         public string Title { get; set; }
+
+        public object Icon { get; set; }
     }
 }

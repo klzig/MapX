@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,10 +20,15 @@ namespace CTForms.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse },
-                new HomeMenuItem {Id = MenuItemType.Map, Title=Properties.Resources.MenuItemMap },
-                new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse, Icon=ImageSource.FromResource("CTForms.Resources.icon.png", typeof(MenuPage).GetTypeInfo().Assembly) },
+                new HomeMenuItem {Id = MenuItemType.Map, Title=Properties.Resources.MenuItemMap, Icon=ImageSource.FromResource("CTForms.Resources.icon.png", typeof(MenuPage).GetTypeInfo().Assembly) },
+                new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout, Icon=ImageSource.FromResource("CTForms.Resources.icon.png", typeof(MenuPage).GetTypeInfo().Assembly) }
             };
+
+            // NOTE: use for debugging, not in released app code!
+            //var assembly = typeof(MenuPage).GetTypeInfo().Assembly;
+            //foreach (var res in assembly.GetManifestResourceNames())
+            //    System.Diagnostics.Debug.WriteLine("found resource: " + res);
 
             ListViewMenu.ItemsSource = menuItems;
 
