@@ -16,6 +16,6 @@ namespace CTForms.Models
 
         public string Title { get; set; }
 
-        public object Icon { get; set; }
+        public string Icon { get; set; }
     }
 }

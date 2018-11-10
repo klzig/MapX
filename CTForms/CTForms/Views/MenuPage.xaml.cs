@@ -20,9 +20,9 @@ namespace CTForms.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse, Icon=ImageSource.FromResource("CTForms.Resources.icon.png", typeof(MenuPage).GetTypeInfo().Assembly) },
-                new HomeMenuItem {Id = MenuItemType.Map, Title=Properties.Resources.MenuItemMap, Icon=ImageSource.FromResource("CTForms.Resources.icon.png", typeof(MenuPage).GetTypeInfo().Assembly) },
-                new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout, Icon=ImageSource.FromResource("CTForms.Resources.icon.png", typeof(MenuPage).GetTypeInfo().Assembly) }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse, Icon=""},
+                new HomeMenuItem {Id = MenuItemType.Map, Title=Properties.Resources.MenuItemMap, Icon="ic_map_black"},
+                new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout, Icon="ic_settings_black" }
             };
 
             // NOTE: use for debugging, not in released app code!

@@ -13,11 +13,14 @@
           <ViewCell>
             <Grid Padding="10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding Icon}" Grid.Column="0"/>
-                <Label Text="{Binding  Title}" FontSize="20" Grid.Column="1"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Image Source="{Binding Icon}" Aspect="AspectFit" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="{Binding  Title}" FontSize="20" Grid.Column="1" Grid.Row="0"/>
             </Grid>
           </ViewCell>
         </DataTemplate>
