@@ -1,9 +1,8 @@
-﻿using CTForms.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CTForms.Models;
 
 namespace CTForms.Views
 {
@@ -11,6 +10,7 @@ namespace CTForms.Views
     public partial class MainPage : MasterDetailPage
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+  
         public MainPage()
         {
             InitializeComponent();
@@ -18,6 +18,11 @@ namespace CTForms.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+
+            MessagingCenter.Subscribe<string>("Notifications", "Clicked", async (sender) =>
+            {
+                await Detail.Navigation.PushAsync(new NotificationsPage());
+            });
         }
 
         public async Task NavigateFromMenu(int id)

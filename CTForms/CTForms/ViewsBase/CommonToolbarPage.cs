@@ -11,7 +11,12 @@ namespace CTForms.ViewsBase
 
         private void Init()
         {
-            ToolbarItems.Add(new ToolbarItem() { Text = Properties.Resources.Notifications, Icon="notifications", Priority = 0, Order = ToolbarItemOrder.Primary });
+            ToolbarItems.Add(new ToolbarItem("Action Name", "notifications", () =>
+            {
+                // On clicked
+                MessagingCenter.Send("Notifications", "Clicked");
+            }
+            ) { Text = Properties.Resources.Notifications, Priority = 0, Order = ToolbarItemOrder.Primary });
         }
     }
 }
