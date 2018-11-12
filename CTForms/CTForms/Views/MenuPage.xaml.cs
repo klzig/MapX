@@ -14,6 +14,7 @@ namespace CTForms.Views
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
+        
         public MenuPage()
         {
             InitializeComponent();
@@ -35,11 +36,12 @@ namespace CTForms.Views
             ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
-                if (e.SelectedItem == null)
-                    return;
-
-                var id = (int)((HomeMenuItem)e.SelectedItem).Id;
-                await RootPage.NavigateFromMenu(id);
+                if (e.SelectedItem != null)
+                {
+                    var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                    await RootPage.NavigateFromMenu(id);
+                    ListViewMenu.SelectedItem = null;
+                }
             };
         }
     }

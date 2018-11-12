@@ -7,14 +7,12 @@ using Xamarin.Forms.Xaml;
 using Naxam.Controls.Mapbox.Forms;
 using Newtonsoft.Json;
 
-using CTForms.Models;
-using CTForms.Views;
-using CTForms.ViewModels;
+using CTForms.ViewsBase;
 
 namespace CTForms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapPage : ContentPage
+    public partial class MapPage : CommonToolbarPage
     {
         public MapPage()
         {
@@ -43,6 +41,5 @@ namespace CTForms.Views
             map.ZoomLevel = Device.RuntimePlatform == Device.Android ? 4 : 10;
        //     map.Style = "mapbox://styles/klzig/cjflt8g1z09kh2spsbxl3j4z2";
         }
-
     }
 }

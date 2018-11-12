@@ -10,11 +10,12 @@ using Xamarin.Forms.Xaml;
 using CTForms.Models;
 using CTForms.Views;
 using CTForms.ViewModels;
+using CTForms.ViewsBase;
 
 namespace CTForms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ItemsPage : ContentPage
+    public partial class ItemsPage : CommonToolbarPage
     {
         ItemsViewModel viewModel;
 
