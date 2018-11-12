@@ -70,6 +70,10 @@
           <source>Notifications</source>
           <target state="new">Notifications</target>
         </trans-unit>
+        <trans-unit id="MenuItemNotifications" translate="yes" xml:space="preserve">
+          <source>Notifications</source>
+          <target state="new">Notifications</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -147,6 +147,9 @@
   <data name="MenuItemMap" xml:space="preserve">
     <value>Map</value>
   </data>
+  <data name="MenuItemNotifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
   </data>

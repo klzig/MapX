@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 using CTForms.Models;
 using CTForms.Views;
+using CTForms.Properties;
 
 namespace CTForms.ViewModels
 {
@@ -14,7 +15,7 @@ namespace CTForms.ViewModels
 
         public MapViewModel()
         {
-            Title = "Map";
+            Title = Resources.MenuItemMap;
         }
 
         Naxam.Controls.Mapbox.Forms.MapStyle currentMapStyle;

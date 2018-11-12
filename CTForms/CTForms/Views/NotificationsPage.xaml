@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewsBase:CommonToolbarPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CTForms.Views.NotificationsPage"
+             xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
+             xmlns:vm="clr-namespace:CTForms.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:NotificationsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout BackgroundColor="#FFFF0000"/>
+
+</ViewsBase:CommonToolbarPage>

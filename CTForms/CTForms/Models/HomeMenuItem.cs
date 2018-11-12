@@ -8,7 +8,8 @@ namespace CTForms.Models
     {
         Browse,
         Map,
-        About
+        About,
+        Notifications
     }
     public class HomeMenuItem
     {
