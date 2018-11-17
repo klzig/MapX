@@ -1,20 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ViewsBase:CommonToolbarPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CTForms.Views.MapPage"
-             xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
-             xmlns:vm="clr-namespace:CTForms.ViewModels"
-             xmlns:local="clr-namespace:Naxam.Controls.Mapbox.Forms;assembly=Naxam.Mapbox.Forms"
-             Title="{Binding Title}">
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="CTForms.Views.MapPage"
+        xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
+        xmlns:vm="clr-namespace:CTForms.ViewModels"
+        xmlns:local="clr-namespace:Naxam.Controls.Mapbox.Forms;assembly=Naxam.Mapbox.Forms"
+        Title="{Binding Title}">
 
-            <ContentPage.BindingContext>
-                <vm:MapViewModel />
-            </ContentPage.BindingContext>
+    <ContentPage.BindingContext>
+        <vm:MapViewModel />
+    </ContentPage.BindingContext>
 
-            <local:MapView 
-                x:Name="map" 
-                VerticalOptions="FillAndExpand" 
-                MapStyle="{Binding CurrentMapStyle}" 
-                ZoomLevel="{Binding ZoomLevel}"
-            />
+    <Grid>
+        <local:MapView
+            x:Name="map" 
+            VerticalOptions="FillAndExpand" 
+            MapStyle="{Binding CurrentMapStyle}" 
+            ZoomLevel="{Binding ZoomLevel}"
+        />
+
+        <!-- Bottom toolbar background -->
+        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="#448aff" HeightRequest="60" IsVisible="False"/>
+
+        <Grid VerticalOptions="End">
+            <Grid.RowDefinitions>
+                <!-- Buttons -->
+                <RowDefinition Height="50" />
+                <!-- Button text -->
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="HeightRequest" Value="50"/>
+                    <Setter Property="WidthRequest" Value="50"/>
+                    <Setter Property="BorderRadius" Value="25"/>
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="0"/>
+                    <Setter Property="BackgroundColor" Value="#448aff"/>
+                    <Setter Property="Opacity" Value=".3"/>
+                    <Setter Property="Grid.Row" Value="0"/>
+                </Style>
+                <Style TargetType="Image">
+                    <Setter Property="HeightRequest" Value="40"/>
+                    <Setter Property="WidthRequest" Value="40"/>
+                    <Setter Property="Margin" Value="8,8,8,8"/>
+                    <Setter Property="InputTransparent" Value="True"/>
+                    <Setter Property="Grid.Row" Value="0"/>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="BackgroundColor" Value="#448aff"/>
+                    <Setter Property="Grid.Row" Value="1"/>
+                </Style>
+            </Grid.Resources>
+
+            <!-- Bottom toolbar controls -->               
+            <Button Text="" Grid.Column="1"/>
+            <Image Source="ic_map_black" Grid.Column="1"/>
+            <Label Text="" Grid.Column="1"/>
+            
+            <Button Text= "" Grid.Column="2"/>
+            <Image Source="location" Grid.Column="2"/>
+            <Label Text="" Grid.Column="2"/>
+            
+            <Button Text="" Grid.Column="3"/>
+            <Image Source="more" Grid.Column="3"/>
+            <Label Text="" Grid.Column="3"/>
+        </Grid>
+    </Grid>
 </ViewsBase:CommonToolbarPage>
