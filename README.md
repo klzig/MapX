@@ -22,4 +22,6 @@ Baseline solution for a cross platform, open source mapping (OSM) application.
 * xamarin.forms, uwp, .net standard 2.0
   * Slideover menu (master-view)
   * Shared string localization using .resx
+  * Vector images (iOS and Android)
+  * Adaptive-icon for Android
   * Interactive vector map using MapBox iOS and Android SDKs (NAXAM forms bindings)
