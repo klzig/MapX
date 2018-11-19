@@ -212,5 +212,23 @@ namespace CTForms.Properties {
                 return ResourceManager.GetString("ValueFirstItem", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List.
+        /// </summary>
+        internal static string ViewList {
+            get {
+                return ResourceManager.GetString("ViewList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        internal static string ViewMap {
+            get {
+                return ResourceManager.GetString("ViewMap", resourceCulture);
+            }
+        }
     }
 }

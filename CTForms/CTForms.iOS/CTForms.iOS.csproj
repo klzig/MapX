@@ -136,6 +136,9 @@
     <ImageAsset Include="Assets.xcassets\hamburger_menu.imageset\hamburger_ios_37x37.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_list_black.imageset\list.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\ic_map_black.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -149,6 +152,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\ic_settings_black.imageset\Settings.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_list_black.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\location.imageset\Contents.json">

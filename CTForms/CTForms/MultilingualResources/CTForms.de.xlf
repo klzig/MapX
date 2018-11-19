@@ -74,6 +74,14 @@
           <source>Notifications</source>
           <target state="new">Notifications</target>
         </trans-unit>
+        <trans-unit id="ViewList" translate="yes" xml:space="preserve">
+          <source>List</source>
+          <target state="new">List</target>
+        </trans-unit>
+        <trans-unit id="ViewMap" translate="yes" xml:space="preserve">
+          <source>Map</source>
+          <target state="new">Map</target>
+        </trans-unit>
       </group>
     </body>
   </file>
