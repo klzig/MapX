@@ -19,6 +19,8 @@ namespace CTForms.ViewModels
         {
             Title = Resources.MenuItemMap;
 
+            Loc.BeginLocationUpdates();
+
             ModeToggleCommand = new Command(() => ToggleMode());
         }
 

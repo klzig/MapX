@@ -23,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.4-beta" />
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
   </ItemGroup>
   <ItemGroup>

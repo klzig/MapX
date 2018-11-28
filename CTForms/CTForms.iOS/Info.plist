@@ -34,5 +34,13 @@
 	<string>CTForms</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Location required for turn-by-turn guidance and to show user's current position on map.</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Location required for turn-by-turn guidance and to show user's current position on map.</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Location required for turn-by-turn guidance and to show user's current position on map.</string>
+  <key>NSLocationUsageDescription</key>
+  <string>Location required for turn-by-turn guidance and to show user's current position on map.</string>
 </dict>
 </plist>

@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using Com.Mapbox.Mapboxsdk;
 using CTForms.Services;
+using Plugin.CurrentActivity;
+using Plugin.Permissions;
 
 namespace CTForms.Droid
 {
@@ -24,8 +26,15 @@ namespace CTForms.Droid
 
             base.OnCreate(savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App());
             Mapbox.GetInstance(this, Secrets.AndroidMapboxToken);
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);   // Is this necessary?
         }
     }
 }

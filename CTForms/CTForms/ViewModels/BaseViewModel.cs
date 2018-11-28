@@ -13,6 +13,12 @@ namespace CTForms.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public ILocationService Loc => DependencyService.Get<ILocationService>() ?? new LocationService();
+
+        public BaseViewModel()
+        {
+
+        }
 
         bool isBusy = false;
         public bool IsBusy
