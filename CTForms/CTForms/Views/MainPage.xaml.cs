@@ -16,6 +16,14 @@ namespace CTForms.Views
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Popover;
+            if (Device.RuntimePlatform == Device.iOS)
+            {   // The iOS gesture that opens the main menu interferes too much with gesture-enabled views.
+                // Android isn't as bad because the gesture is only active from the left edge.
+                // Disabling the gesture for Android also disables the hamburger menu.
+                // Android allows the menu to be opened by gesture even on child pages with no hamburger.
+                // UWP also has the hamburger on child pages.  Probably not a show-stopper.
+                IsGestureEnabled = false;
+            }
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
 
