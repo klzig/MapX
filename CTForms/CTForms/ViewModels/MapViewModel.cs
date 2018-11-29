@@ -18,9 +18,6 @@ namespace CTForms.ViewModels
         public MapViewModel()
         {
             Title = Resources.MenuItemMap;
-
-            Loc.BeginLocationUpdates();
-
             ModeToggleCommand = new Command(() => ToggleMode());
         }
 

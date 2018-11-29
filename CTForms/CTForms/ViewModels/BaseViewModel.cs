@@ -17,7 +17,7 @@ namespace CTForms.ViewModels
 
         public BaseViewModel()
         {
-
+            Loc.BeginLocationUpdates();
         }
 
         bool isBusy = false;
