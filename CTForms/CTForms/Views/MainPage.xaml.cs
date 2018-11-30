@@ -25,7 +25,10 @@ namespace CTForms.Views
                 IsGestureEnabled = false;
             }
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Map, new NavigationPage(new MapPage()));
+            MenuPages.Add((int)MenuItemType.Browse, new NavigationPage(new ItemsPage()));
+            MenuPages.Add((int)MenuItemType.About, new NavigationPage(new AboutPage()));
+            MenuPages.Add((int)MenuItemType.Notifications, new NavigationPage(new NotificationsPage()));
 
             MessagingCenter.Subscribe<string>("Notifications", "Clicked", async (sender) =>
             {
@@ -35,25 +38,6 @@ namespace CTForms.Views
 
         public async Task NavigateFromMenu(int id)
         {
-            if (!MenuPages.ContainsKey(id))
-            {
-                switch (id)
-                {
-                    case (int)MenuItemType.Map:
-                        MenuPages.Add(id, new NavigationPage(new MapPage()));
-                        break;
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
-                    case (int)MenuItemType.Notifications:
-                        MenuPages.Add(id, new NavigationPage(new NotificationsPage()));
-                        break;
-                }
-            }
-
             var newPage = MenuPages[id];
 
             if (newPage != null && Detail != newPage)
