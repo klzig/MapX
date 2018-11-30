@@ -35,13 +35,12 @@ namespace CTForms.Views
             ListViewMenu.ItemsSource = menuItems;
 
             ListViewMenu.SelectedItem = menuItems[0];
-            ListViewMenu.ItemSelected += async (sender, e) =>
+            ListViewMenu.ItemTapped += async (sender, e) =>
             {
-                if (e.SelectedItem != null)
+                if (e.Item != null)
                 {
-                    var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                    var id = (int)((HomeMenuItem)e.Item).Id;
                     await RootPage.NavigateFromMenu(id);
-                    ListViewMenu.SelectedItem = null;
                 }
             };
         }
