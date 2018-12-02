@@ -6,6 +6,7 @@
              Icon="hamburger_menu"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
+             BackgroundColor="#448aff"
              Title="{i18n:Translate TitleMenu}">
 
     <StackLayout  VerticalOptions="FillAndExpand">
@@ -20,8 +21,7 @@
             <Image Source="icon" Grid.Column="0"/>
             <Label Text="CycleTrip" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White" Grid.Column="1"/>
         </Grid>
-        <ListView x:Name="ListViewMenu"
-                HasUnevenRows="True">
+        <ListView x:Name="ListViewMenu" HasUnevenRows="True" BackgroundColor="GhostWhite">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
