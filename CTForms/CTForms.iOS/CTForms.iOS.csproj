@@ -78,7 +78,9 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\Localize.cs" />
     <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard">
       <SubType>Designer</SubType>
@@ -136,6 +138,9 @@
     <ImageAsset Include="Assets.xcassets\hamburger_menu.imageset\hamburger_ios_37x37.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\icon.imageset\sharrow_white.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\ic_list_black.imageset\list.pdf">
       <Visible>false</Visible>
     </ImageAsset>
@@ -155,6 +160,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\ic_list_black.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\icon.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\location.imageset\Contents.json">

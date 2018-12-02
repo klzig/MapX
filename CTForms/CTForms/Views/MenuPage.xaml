@@ -4,28 +4,41 @@
              xmlns:i18n="clr-namespace:CTForms.Services;assembly=CTForms"
              x:Class="CTForms.Views.MenuPage"
              Icon="hamburger_menu"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
              Title="{i18n:Translate TitleMenu}">
-  
-  <StackLayout VerticalOptions="FillAndExpand">
-    <ListView x:Name="ListViewMenu"
+
+    <StackLayout  VerticalOptions="FillAndExpand">
+        <Grid BackgroundColor="#448aff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Image Source="icon" Grid.Column="0"/>
+            <Label Text="CycleTrip" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White" Grid.Column="1"/>
+        </Grid>
+        <ListView x:Name="ListViewMenu"
                 HasUnevenRows="True">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <Grid Padding="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25" />
-                </Grid.RowDefinitions>
-                <Image Source="{Binding Icon}" Aspect="AspectFit" Grid.Column="0" Grid.Row="0"/>
-                <Label Text="{Binding  Title}" FontSize="20" Grid.Column="1" Grid.Row="0"/>
-            </Grid>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Icon}" Aspect="AspectFit" Grid.Column="0" Grid.Row="0"/>
+                            <Label Text="{Binding  Title}" FontSize="20" Grid.Column="1" Grid.Row="0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
