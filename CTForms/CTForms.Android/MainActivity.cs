@@ -29,6 +29,11 @@ namespace CTForms.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App());
             Mapbox.GetInstance(this, Secrets.AndroidMapboxToken);
+
+            // Set status bar background color to match NavigationPage BarBackgroundColor
+            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+            Window.SetStatusBarColor(Android.Graphics.Color.Rgb(44, 138, 255));
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
