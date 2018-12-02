@@ -6,11 +6,11 @@
              Icon="hamburger_menu"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
-             BackgroundColor="#448aff"
+             BackgroundColor="{DynamicResource BackgroundColor}"
              Title="{i18n:Translate TitleMenu}">
 
     <StackLayout  VerticalOptions="FillAndExpand">
-        <Grid BackgroundColor="#448aff">
+        <Grid BackgroundColor="{DynamicResource BackgroundColor}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="*"/>
@@ -19,9 +19,9 @@
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <Image Source="icon" Grid.Column="0"/>
-            <Label Text="{i18n:Translate AppName}" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White" Grid.Column="1"/>
+            <Label Text="{i18n:Translate AppName}" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="{DynamicResource TextColor}" Grid.Column="1"/>
         </Grid>
-        <ListView x:Name="ListViewMenu" HasUnevenRows="True" BackgroundColor="GhostWhite">
+        <ListView x:Name="ListViewMenu" HasUnevenRows="True" BackgroundColor="{DynamicResource MenuBackgroundColor}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

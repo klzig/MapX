@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
 
             <Label Text="This page intentionally left blank" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding ShowList}"/>
-            <BoxView Grid.Row ="1" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowList}" BackgroundColor="#448aff"/>
+            <BoxView Grid.Row ="1" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowList}" BackgroundColor="{DynamicResource BackgroundColor}"/>
         </Grid>
 
 
@@ -56,7 +56,7 @@
                     <Setter Property="HorizontalOptions" Value="Center"/>
                     <Setter Property="Padding" Value="0"/>
                     <Setter Property="Margin" Value="0"/>
-                    <Setter Property="BackgroundColor" Value="#448aff"/>
+                    <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
                     <Setter Property="Opacity" Value=".3"/>
                     <Setter Property="Grid.Row" Value="0"/>
                 </Style>
@@ -68,7 +68,7 @@
                     <Setter Property="Grid.Row" Value="0"/>
                 </Style>
                 <Style TargetType="Label">
-                    <Setter Property="BackgroundColor" Value="#448aff"/>
+                    <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
                     <Setter Property="Grid.Row" Value="1"/>
                 </Style>
             </Grid.Resources>

@@ -4,6 +4,11 @@ using Xamarin.Forms.Xaml;
 using CTForms.Views;
 using CTForms.Services;
 
+// To change theme at runtime
+// App.Current.Resources ["BackgroundColor"] = Color.White;
+// App.Current.Resources ["TextColor"] = Color.Black;
+// etc.
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CTForms
 {
