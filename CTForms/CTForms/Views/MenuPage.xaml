@@ -21,7 +21,7 @@
             <Image Source="icon" Grid.Column="0"/>
             <Label Text="{i18n:Translate AppName}" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="{DynamicResource TextColor}" Grid.Column="1"/>
         </Grid>
-        <ListView x:Name="ListViewMenu" HasUnevenRows="True" BackgroundColor="{DynamicResource MenuBackgroundColor}">
+        <ListView x:Name="ListViewMenu" HasUnevenRows="True" BackgroundColor="{DynamicResource MenuBackgroundColor}" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
