@@ -9,7 +9,8 @@ namespace CTForms.Models
         Browse,
         Map,
         About,
-        Notifications
+        Notifications,
+        Location
     }
     public class HomeMenuItem
     {

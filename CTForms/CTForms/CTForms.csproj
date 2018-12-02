@@ -56,6 +56,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\LocationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="echo F|xcopy /Y $(ProjectDir)Services\Secrets.cs  $(ProjectDir)Services\Secrets.save&#xD;&#xA;echo F|xcopy /Y $(ProjectDir)Services\Secrets.override  $(ProjectDir)Services\Secrets.cs&#xD;&#xA;exit 0&#xD;&#xA;" />

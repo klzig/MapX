@@ -20,9 +20,10 @@ namespace CTForms.Views
             InitializeComponent();
 
             menuItems = new List<HomeMenuItem>
-            {
+            {   // Order of menu items determined here
                 new HomeMenuItem {Id = MenuItemType.Browse, Title=Properties.Resources.MenuItemBrowse, Icon=""},
                 new HomeMenuItem {Id = MenuItemType.Map, Title=Properties.Resources.MenuItemMap, Icon="ic_map_black"},
+                new HomeMenuItem {Id = MenuItemType.Location, Title=Properties.Resources.MenuItemLocation, Icon="location" },
                 new HomeMenuItem {Id = MenuItemType.Notifications, Title=Properties.Resources.MenuItemNotifications, Icon="notifications" },
                 new HomeMenuItem {Id = MenuItemType.About, Title=Properties.Resources.MenuItemAbout, Icon="ic_settings_black" }
             };

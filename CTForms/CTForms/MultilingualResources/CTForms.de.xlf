@@ -86,6 +86,10 @@
           <source>CycleTrip</source>
           <target state="new">CycleTrip</target>
         </trans-unit>
+        <trans-unit id="MenuItemLocation" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <target state="new">Location</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -147,6 +147,9 @@
   <data name="MenuItemBrowse" xml:space="preserve">
     <value>Browse</value>
   </data>
+  <data name="MenuItemLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
   <data name="MenuItemMap" xml:space="preserve">
     <value>Map</value>
   </data>

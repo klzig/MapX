@@ -29,6 +29,7 @@ namespace CTForms.Views
             MenuPages.Add((int)MenuItemType.Browse, new NavigationPage(new ItemsPage()));
             MenuPages.Add((int)MenuItemType.About, new NavigationPage(new AboutPage()));
             MenuPages.Add((int)MenuItemType.Notifications, new NavigationPage(new NotificationsPage()));
+            MenuPages.Add((int)MenuItemType.Location, new NavigationPage(new LocationPage()));
 
             MessagingCenter.Subscribe<string>("Notifications", "Clicked", async (sender) =>
             {
