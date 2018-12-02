@@ -82,6 +82,10 @@
           <source>Map</source>
           <target state="new">Map</target>
         </trans-unit>
+        <trans-unit id="AppName" translate="yes" xml:space="preserve">
+          <source>CycleTrip</source>
+          <target state="new">CycleTrip</target>
+        </trans-unit>
       </group>
     </body>
   </file>

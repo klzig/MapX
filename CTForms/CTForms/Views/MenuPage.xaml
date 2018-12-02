@@ -19,7 +19,7 @@
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <Image Source="icon" Grid.Column="0"/>
-            <Label Text="CycleTrip" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White" Grid.Column="1"/>
+            <Label Text="{i18n:Translate AppName}" VerticalOptions="CenterAndExpand" FontSize="Large" TextColor="White" Grid.Column="1"/>
         </Grid>
         <ListView x:Name="ListViewMenu" HasUnevenRows="True" BackgroundColor="GhostWhite">
             <ListView.ItemTemplate>
