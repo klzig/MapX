@@ -8,8 +8,6 @@ using Android.Widget;
 using Android.OS;
 using Com.Mapbox.Mapboxsdk;
 using CTForms.Services;
-using Plugin.CurrentActivity;
-using Plugin.Permissions;
 
 namespace CTForms.Droid
 {
@@ -26,7 +24,7 @@ namespace CTForms.Droid
 
             base.OnCreate(savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             LoadApplication(new App());
             Mapbox.GetInstance(this, Secrets.AndroidMapboxToken);
 
@@ -34,12 +32,6 @@ namespace CTForms.Droid
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Rgb(44, 138, 255));
-        }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
-        {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

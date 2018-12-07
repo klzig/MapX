@@ -117,8 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Ago" xml:space="preserve">
+    <value>Ago</value>
+    <comment>Location page</comment>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>CycleTrip</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Location page</comment>
   </data>
   <data name="LabelAdd" xml:space="preserve">
     <value>Add</value>
@@ -156,8 +164,16 @@
   <data name="MenuItemNotifications" xml:space="preserve">
     <value>Notifications</value>
   </data>
+  <data name="Never" xml:space="preserve">
+    <value>Never</value>
+    <comment>Location page</comment>
+  </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Now</value>
+    <comment>Location page</comment>
   </data>
   <data name="PromptItemDescription" xml:space="preserve">
     <value>This is an item description.</value>
@@ -170,6 +186,10 @@
   </data>
   <data name="TitleNewItem" xml:space="preserve">
     <value>New Item</value>
+  </data>
+  <data name="Updated" xml:space="preserve">
+    <value>Updated</value>
+    <comment>Location page</comment>
   </data>
   <data name="ValueFirstItem" xml:space="preserve">
     <value>First Item</value>

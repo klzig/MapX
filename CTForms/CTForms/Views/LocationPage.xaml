@@ -2,12 +2,31 @@
 <ViewsBase:CommonToolbarPage
     xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CTForms.ViewModels"
+             xmlns:i18n="clr-namespace:CTForms.Services;assembly=CTForms"
              x:Class="CTForms.Views.LocationPage">
+
+    <ContentPage.BindingContext>
+        <vm:LocationViewModel />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="1" Text="{i18n:Translate Updated}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                <Label Grid.Column="2" Grid.Row="1" Text="{Binding Location.Updated}" FontSize="Medium" HorizontalOptions="Start"  VerticalOptions="Center" VerticalTextAlignment="Center" FontFamily="Segoe UI"/>
+                <Label Grid.Column="0" Grid.Row="2" Text="{Binding Location.ErrorLbl}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                <Label Grid.Column="2" Grid.Row="2" Text="{Binding Location.Error}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ViewsBase:CommonToolbarPage>

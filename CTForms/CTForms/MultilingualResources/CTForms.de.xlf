@@ -90,6 +90,31 @@
           <source>Location</source>
           <target state="new">Location</target>
         </trans-unit>
+        <trans-unit id="Ago" translate="yes" xml:space="preserve">
+          <source>Ago</source>
+          <target state="new">Ago</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Location page</note>
+        </trans-unit>
+        <trans-unit id="Error" translate="yes" xml:space="preserve">
+          <source>Error</source>
+          <target state="new">Error</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Location page</note>
+        </trans-unit>
+        <trans-unit id="Never" translate="yes" xml:space="preserve">
+          <source>Never</source>
+          <target state="new">Never</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Location page</note>
+        </trans-unit>
+        <trans-unit id="Now" translate="yes" xml:space="preserve">
+          <source>Now</source>
+          <target state="new">Now</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Location page</note>
+        </trans-unit>
+        <trans-unit id="Updated" translate="yes" xml:space="preserve">
+          <source>Updated</source>
+          <target state="new">Updated</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Location page</note>
+        </trans-unit>
       </group>
     </body>
   </file>

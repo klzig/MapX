@@ -1,61 +1,92 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Diagnostics;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Plugin.Geolocator;
-using Plugin.Geolocator.Abstractions;
+using CTForms.Models;
+using Xamarin.Essentials;
 
 namespace CTForms.Services
 {
     public interface ILocationService
     {
-        Task BeginLocationUpdates();
+        event EventHandler LocationUpdate;
     }
-  
+
+    public class LocationEventArgs : EventArgs
+    {
+        public LocationEventArgs(LocationModel location)
+        {
+            Loc = location;
+        }
+        public LocationModel Loc { get; }
+    }
+
     public class LocationService : ILocationService
     {
-        public async Task BeginLocationUpdates()
+        public event EventHandler LocationUpdate;
+        private LocationModel _location;
+        private bool _updateTimerStarted = false;
+
+        public LocationService()
         {
-            if (!CrossGeolocator.Current.IsListening)
+             _location = new LocationModel();
+            BeginListening();
+        }
+
+        public void BeginListening()
+        {
+            if (!_updateTimerStarted)
             {
-                await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(2), 10, true);
+                _updateTimerStarted = true;
+                Task.Run(
+                async () =>
+                {
+                    while (_updateTimerStarted)
+                    {
+                        if (LocationUpdate != null)
+                        {
+                            try
+                            {
+                                var request = new GeolocationRequest(GeolocationAccuracy.High, new TimeSpan(0, 0, 4));
 
-                CrossGeolocator.Current.PositionChanged += PositionChanged;
-                CrossGeolocator.Current.PositionError += PositionError;
-            }
-        }
+                                // This can't be called from a background thread, bug https://github.com/xamarin/Essentials/issues/634
+                                var location = await Geolocation.GetLocationAsync(request);
 
-        private void PositionChanged(object sender, PositionEventArgs e)
-        {
+                                if (location == null)
+                                {
+                                    _location.Update("Timed out getting location");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                                     _location.Update(location.Latitude,
+                                                     location.Longitude,
+                                                     location.Accuracy,
+                                                     location.Altitude,
+                                                     location.Speed,
+                                                     location.Course,
+                                                     location.Timestamp);
+                                }
+                            }
+                            catch (FeatureNotSupportedException e)
+                            {
+                                // Handle not supported on device exception
+                                _location.Update(string.Format("{0}", e.Message));
+                            }
+                            catch (PermissionException e)
+                            {
+                                // Handle permission exception
+                                _location.Update(string.Format("{0}", e.Message));
+                            }
+                            catch (Exception e)
+                            {
+                                // Unable to get location
+                                _location.Update(string.Format("{0}", e.Message));
+                            }
 
-            //If updating the UI, ensure you invoke on main thread
-            var position = e.Position;
-            var output = "Full: Lat: " + position.Latitude + " Long: " + position.Longitude;
-            output += "\n" + $"Time: {position.Timestamp}";
-            output += "\n" + $"Heading: {position.Heading}";
-            output += "\n" + $"Speed: {position.Speed}";
-            output += "\n" + $"Accuracy: {position.Accuracy}";
-            output += "\n" + $"Altitude: {position.Altitude}";
-            output += "\n" + $"Altitude Accuracy: {position.AltitudeAccuracy}";
-            Debug.WriteLine(output);
-        }
-
-        private void PositionError(object sender, PositionErrorEventArgs e)
-        {
-            Debug.WriteLine(e.Error);
-            //Handle event here for errors
-        }
-
-        async Task StopListening()
-        {
-            if (CrossGeolocator.Current.IsListening)
-            {
-                await CrossGeolocator.Current.StopListeningAsync();
-
-                CrossGeolocator.Current.PositionChanged -= PositionChanged;
-                CrossGeolocator.Current.PositionError -= PositionError;
+                            LocationUpdate?.Invoke(this, new LocationEventArgs(_location));
+                        }
+                        await Task.Delay(2000);
+                    }
+                });
             }
         }
     }
