@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CTForms.Models;
 using Xamarin.Essentials;
+using Xamarin.Forms;
+using CTForms.Models;
 
 namespace CTForms.Services
 {
@@ -23,33 +24,31 @@ namespace CTForms.Services
     {
         public event EventHandler LocationUpdate;
         private LocationModel _location;
-        private bool _updateTimerStarted = false;
 
         public LocationService()
         {
              _location = new LocationModel();
+            Device.StartTimer(new TimeSpan(0, 0, 2), BeginListening);
             BeginListening();
         }
 
-        public void BeginListening()
+        public bool BeginListening()
         {
-            if (!_updateTimerStarted)
+            if (LocationUpdate != null)
             {
-                _updateTimerStarted = true;
-                Task.Run(
-                async () =>
+                try
                 {
-                    while (_updateTimerStarted)
+                    var request = new GeolocationRequest(GeolocationAccuracy.High, new TimeSpan(0, 0, 2));
+
+                    // This can't be called from a background thread, bug https://github.com/xamarin/Essentials/issues/634
+                    var task = Geolocation.GetLocationAsync(request);
+                    task.ContinueWith(x =>
                     {
-                        if (LocationUpdate != null)
+                        try
                         {
-                            try
+                            if (x.IsCompleted)
                             {
-                                var request = new GeolocationRequest(GeolocationAccuracy.High, new TimeSpan(0, 0, 4));
-
-                                // This can't be called from a background thread, bug https://github.com/xamarin/Essentials/issues/634
-                                var location = await Geolocation.GetLocationAsync(request);
-
+                                var location = x.Result;
                                 if (location == null)
                                 {
                                     _location.Update("Timed out getting location");
@@ -57,37 +56,41 @@ namespace CTForms.Services
                                 else
                                 {
                                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
-                                     _location.Update(location.Latitude,
-                                                     location.Longitude,
-                                                     location.Accuracy,
-                                                     location.Altitude,
-                                                     location.Speed,
-                                                     location.Course,
-                                                     location.Timestamp);
+                                    _location.Update(location.Latitude,
+                                                    location.Longitude,
+                                                    location.Accuracy,
+                                                    location.Altitude,
+                                                    location.Speed,
+                                                    location.Course,
+                                                    location.Timestamp);
                                 }
                             }
-                            catch (FeatureNotSupportedException e)
-                            {
-                                // Handle not supported on device exception
-                                _location.Update(string.Format("{0}", e.Message));
-                            }
-                            catch (PermissionException e)
-                            {
-                                // Handle permission exception
-                                _location.Update(string.Format("{0}", e.Message));
-                            }
-                            catch (Exception e)
-                            {
-                                // Unable to get location
-                                _location.Update(string.Format("{0}", e.Message));
-                            }
-
-                            LocationUpdate?.Invoke(this, new LocationEventArgs(_location));
                         }
-                        await Task.Delay(2000);
-                    }
-                });
+                        catch {
+
+                        }
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
+                }
+                catch (FeatureNotSupportedException e)
+                {
+                    // Handle not supported on device exception
+                    _location.Update(string.Format("{0}", e.Message));
+                }
+                catch (PermissionException e)
+                {
+                    // Handle permission exception
+                    _location.Update(string.Format("{0}", e.Message));
+                }
+                catch (Exception e)
+                {
+                    // Unable to get location
+                    _location.Update(string.Format("{0}", e.Message));
+                }
+
+                LocationUpdate?.Invoke(this, new LocationEventArgs(_location));
             }
+            return true;
         }
     }
 }
+

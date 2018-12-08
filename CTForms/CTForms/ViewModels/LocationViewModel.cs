@@ -1,12 +1,16 @@
 ﻿using CTForms.Models;
 using CTForms.Services;
+using Xamarin.Forms;
 
 namespace CTForms.ViewModels
 {
     public class LocationViewModel : BaseViewModel
     {
+        public LocationService Loc;
+
         public LocationViewModel()
         {
+            Loc = new LocationService();
             Loc.LocationUpdate += LocationUpdate;
         }
 
