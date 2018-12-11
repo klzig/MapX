@@ -115,6 +115,10 @@
           <target state="new">Updated</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Location page</note>
         </trans-unit>
+        <trans-unit id="Location" translate="yes" xml:space="preserve">
+          <source>Location</source>
+          <target state="new">Location</target>
+        </trans-unit>
       </group>
     </body>
   </file>

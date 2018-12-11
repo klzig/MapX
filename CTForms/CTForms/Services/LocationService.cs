@@ -8,7 +8,17 @@ namespace CTForms.Services
 {
     public interface ILocationService
     {
+        event EventHandler Alert;
         event EventHandler LocationUpdate;
+    }
+
+    public class AlertEventArgs : EventArgs
+    {
+        public AlertEventArgs(bool alert)
+        {
+            Alert = alert;
+        }
+        public bool Alert { get; }
     }
 
     public class LocationEventArgs : EventArgs
@@ -22,17 +32,22 @@ namespace CTForms.Services
 
     public class LocationService : ILocationService
     {
+        public event EventHandler Alert;
         public event EventHandler LocationUpdate;
         private LocationModel _location;
 
-        public LocationService()
+        // Singleton
+        private static readonly Lazy<LocationService> lazy = new Lazy<LocationService>(() => new LocationService());
+        public static LocationService Instance { get { return lazy.Value; } }
+
+        private LocationService()
         {
              _location = new LocationModel();
             Device.StartTimer(new TimeSpan(0, 0, 2), BeginListening);
             BeginListening();
         }
 
-        public bool BeginListening()
+        private bool BeginListening()
         {
             if (LocationUpdate != null)
             {
@@ -52,10 +67,10 @@ namespace CTForms.Services
                                 if (location == null)
                                 {
                                     _location.Update("Timed out getting location");
+                                    Alert?.Invoke(this, new AlertEventArgs(true));
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
                                     _location.Update(location.Latitude,
                                                     location.Longitude,
                                                     location.Accuracy,
@@ -63,11 +78,13 @@ namespace CTForms.Services
                                                     location.Speed,
                                                     location.Course,
                                                     location.Timestamp);
+                                    Alert?.Invoke(this, new AlertEventArgs(false));
                                 }
                             }
                         }
                         catch {
-
+                            _location.Update("Unknown error");
+                            Alert?.Invoke(this, new AlertEventArgs(true));
                         }
                     }, TaskScheduler.FromCurrentSynchronizationContext());
                 }
@@ -75,16 +92,19 @@ namespace CTForms.Services
                 {
                     // Handle not supported on device exception
                     _location.Update(string.Format("{0}", e.Message));
+                    Alert?.Invoke(this, new AlertEventArgs(true));
                 }
                 catch (PermissionException e)
                 {
                     // Handle permission exception
                     _location.Update(string.Format("{0}", e.Message));
+                    Alert?.Invoke(this, new AlertEventArgs(true));
                 }
                 catch (Exception e)
                 {
                     // Unable to get location
                     _location.Update(string.Format("{0}", e.Message));
+                    Alert?.Invoke(this, new AlertEventArgs(true));
                 }
 
                 LocationUpdate?.Invoke(this, new LocationEventArgs(_location));

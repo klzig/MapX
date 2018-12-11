@@ -149,6 +149,9 @@
   <data name="LabelTextColon" xml:space="preserve">
     <value>Text:</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
   <data name="MenuItemAbout" xml:space="preserve">
     <value>About</value>
   </data>

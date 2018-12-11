@@ -4,9 +4,9 @@ using CTForms.ViewsBase;
 namespace CTForms.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LocationPage : LocationBasePage
+	public partial class LocationAlertPage : LocationBasePage
 	{
-		public LocationPage ()
+		public LocationAlertPage ()
 		{
 			InitializeComponent ();
 		}

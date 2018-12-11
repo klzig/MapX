@@ -1,6 +1,6 @@
 ﻿using CTForms.Models;
+using CTForms.Properties;
 using CTForms.Services;
-using Xamarin.Forms;
 
 namespace CTForms.ViewModels
 {
@@ -10,7 +10,9 @@ namespace CTForms.ViewModels
 
         public LocationViewModel()
         {
-            Loc = new LocationService();
+            Title = Resources.MenuItemLocation;
+
+            Loc = LocationService.Instance;
             Loc.LocationUpdate += LocationUpdate;
         }
 
