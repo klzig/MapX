@@ -117,9 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accuracy" xml:space="preserve">
+    <value>Accuracy</value>
+  </data>
   <data name="Ago" xml:space="preserve">
     <value>Ago</value>
     <comment>Location page</comment>
+  </data>
+  <data name="Altitude" xml:space="preserve">
+    <value>Altitude</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>CycleTrip</value>
@@ -127,6 +133,9 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
     <comment>Location page</comment>
+  </data>
+  <data name="Heading" xml:space="preserve">
+    <value>Heading</value>
   </data>
   <data name="LabelAdd" xml:space="preserve">
     <value>Add</value>
@@ -149,8 +158,14 @@
   <data name="LabelTextColon" xml:space="preserve">
     <value>Text:</value>
   </data>
+  <data name="Lattitude" xml:space="preserve">
+    <value>Lattitude</value>
+  </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
   </data>
   <data name="MenuItemAbout" xml:space="preserve">
     <value>About</value>
@@ -183,6 +198,9 @@
   </data>
   <data name="PromptItemName" xml:space="preserve">
     <value>Item Name</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
   </data>
   <data name="TitleMenu" xml:space="preserve">
     <value>Menu</value>

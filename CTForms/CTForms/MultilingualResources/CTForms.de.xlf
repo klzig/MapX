@@ -119,6 +119,30 @@
           <source>Location</source>
           <target state="new">Location</target>
         </trans-unit>
+        <trans-unit id="Lattitude" translate="yes" xml:space="preserve">
+          <source>Lattitude</source>
+          <target state="new">Lattitude</target>
+        </trans-unit>
+        <trans-unit id="Longitude" translate="yes" xml:space="preserve">
+          <source>Longitude</source>
+          <target state="new">Longitude</target>
+        </trans-unit>
+        <trans-unit id="Accuracy" translate="yes" xml:space="preserve">
+          <source>Accuracy</source>
+          <target state="new">Accuracy</target>
+        </trans-unit>
+        <trans-unit id="Altitude" translate="yes" xml:space="preserve">
+          <source>Altitude</source>
+          <target state="new">Altitude</target>
+        </trans-unit>
+        <trans-unit id="Heading" translate="yes" xml:space="preserve">
+          <source>Heading</source>
+          <target state="new">Heading</target>
+        </trans-unit>
+        <trans-unit id="Speed" translate="yes" xml:space="preserve">
+          <source>Speed</source>
+          <target state="new">Speed</target>
+        </trans-unit>
       </group>
     </body>
   </file>

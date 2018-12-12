@@ -61,11 +61,29 @@ namespace CTForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accuracy.
+        /// </summary>
+        internal static string Accuracy {
+            get {
+                return ResourceManager.GetString("Accuracy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ago.
         /// </summary>
         internal static string Ago {
             get {
                 return ResourceManager.GetString("Ago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Altitude.
+        /// </summary>
+        internal static string Altitude {
+            get {
+                return ResourceManager.GetString("Altitude", resourceCulture);
             }
         }
         
@@ -84,6 +102,15 @@ namespace CTForms.Properties {
         internal static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heading.
+        /// </summary>
+        internal static string Heading {
+            get {
+                return ResourceManager.GetString("Heading", resourceCulture);
             }
         }
         
@@ -151,11 +178,29 @@ namespace CTForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lattitude.
+        /// </summary>
+        internal static string Lattitude {
+            get {
+                return ResourceManager.GetString("Lattitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
         internal static string Location {
             get {
                 return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude.
+        /// </summary>
+        internal static string Longitude {
+            get {
+                return ResourceManager.GetString("Longitude", resourceCulture);
             }
         }
         
@@ -246,6 +291,15 @@ namespace CTForms.Properties {
         internal static string PromptItemName {
             get {
                 return ResourceManager.GetString("PromptItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speed.
+        /// </summary>
+        internal static string Speed {
+            get {
+                return ResourceManager.GetString("Speed", resourceCulture);
             }
         }
         

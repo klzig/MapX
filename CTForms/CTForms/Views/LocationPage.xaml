@@ -19,7 +19,7 @@
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
@@ -28,6 +28,35 @@
                 <Label Grid.Column="0" Grid.Row="2" Text="{Binding Location.ErrorLbl}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                 <Label Grid.Column="2" Grid.Row="2" Text="{Binding Location.Error}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
             </Grid>
+            <ScrollView VerticalOptions="StartAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.Row="1" Text="{i18n:Translate Lattitude}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Grid.Row="1" Text="{Binding Location.Lat}" FontSize="Medium" HorizontalOptions="Start"  VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="2" Text="{i18n:Translate Longitude}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Grid.Row="2" Text="{Binding Location.Lon}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="3" Text="{i18n:Translate Accuracy}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Grid.Row="3" Text="{Binding Location.Acc}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="4" Text="{i18n:Translate Altitude}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Grid.Row="4" Text="{Binding Location.Alt}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="5" Text="{i18n:Translate Heading}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Grid.Row="5" Text="{Binding Location.Hdg}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="6" Text="{i18n:Translate Speed}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Grid.Row="6" Text="{Binding Location.Spd}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ViewsBase:LocationBasePage>
