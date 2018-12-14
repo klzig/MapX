@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewsBase:CommonToolbarPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
+    xmlns:vm="clr-namespace:CTForms.ViewModels"
+    xmlns:i18n="clr-namespace:CTForms.Services;assembly=CTForms"
+    x:Class="CTForms.Views.NetworkAlertPage"
+    Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:NetworkViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="{i18n:Translate InternetDown}"  FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="{i18n:Translate Access}"  FontSize="Medium" />
+                <Label Text="{Binding Access}" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="{i18n:Translate Profiles}"  FontSize="Medium" />
+                <Label Text="{Binding Profiles}" FontSize="Medium" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ViewsBase:CommonToolbarPage>

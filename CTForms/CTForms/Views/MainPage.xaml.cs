@@ -15,6 +15,7 @@ namespace CTForms.Views
         private Dictionary<int, CommonToolbarPage> Pages; 
         private CommonToolbarPage NotificationsAlertPage;
         private CommonToolbarPage LocationAlertPage;
+        private CommonToolbarPage NetworkAlertPage;
 
         public MainPage()
         {
@@ -79,6 +80,21 @@ namespace CTForms.Views
                 try
                 {
                     await Detail.Navigation.PushAsync(LocationAlertPage);
+                }
+                catch (InvalidOperationException)
+                {   // Don't push more than one page onto navigation stack
+                }
+            });
+
+            MessagingCenter.Subscribe<string>("network", "NetworkAlertClicked", async (sender) =>
+            {
+                if (NetworkAlertPage == null)
+                {
+                    NetworkAlertPage = new NetworkAlertPage();
+                }
+                try
+                {
+                    await Detail.Navigation.PushAsync(NetworkAlertPage);
                 }
                 catch (InvalidOperationException)
                 {   // Don't push more than one page onto navigation stack

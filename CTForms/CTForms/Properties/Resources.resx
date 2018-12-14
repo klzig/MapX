@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Access" xml:space="preserve">
+    <value>Access: </value>
+    <comment>Network alert page</comment>
+  </data>
   <data name="Accuracy" xml:space="preserve">
     <value>Accuracy</value>
   </data>
@@ -130,12 +134,35 @@
   <data name="AppName" xml:space="preserve">
     <value>CycleTrip</value>
   </data>
+  <data name="Cellular" xml:space="preserve">
+    <value>Cellular</value>
+    <comment>Network alert page</comment>
+  </data>
+  <data name="ConstrainedInternet" xml:space="preserve">
+    <value>Constrained Internet</value>
+    <comment>Network alert page</comment>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
     <comment>Location page</comment>
   </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>Ethernet</value>
+    <comment>Network alert page</comment>
+  </data>
   <data name="Heading" xml:space="preserve">
     <value>Heading</value>
+  </data>
+  <data name="Internet" xml:space="preserve">
+    <value>Internet</value>
+    <comment>Network alert page</comment>
+  </data>
+  <data name="InternetDown" xml:space="preserve">
+    <value>Internet access alert</value>
+    <comment>Network alert page</comment>
+  </data>
+  <data name="IsAirplaneMode" xml:space="preserve">
+    <value>is airplane mode enabled?</value>
   </data>
   <data name="LabelAdd" xml:space="preserve">
     <value>Add</value>
@@ -161,6 +188,10 @@
   <data name="Lattitude" xml:space="preserve">
     <value>Lattitude</value>
   </data>
+  <data name="Local" xml:space="preserve">
+    <value>Local</value>
+    <comment>Network alert page</comment>
+  </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>
   </data>
@@ -182,9 +213,17 @@
   <data name="MenuItemNotifications" xml:space="preserve">
     <value>Notifications</value>
   </data>
+  <data name="Network" xml:space="preserve">
+    <value>Network</value>
+    <comment>Network alert page</comment>
+  </data>
   <data name="Never" xml:space="preserve">
     <value>Never</value>
     <comment>Location page</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+    <comment>Network alert page</comment>
   </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
@@ -192,6 +231,10 @@
   <data name="Now" xml:space="preserve">
     <value>Now</value>
     <comment>Location page</comment>
+  </data>
+  <data name="Profiles" xml:space="preserve">
+    <value>Profiles: </value>
+    <comment>Network alert page</comment>
   </data>
   <data name="PromptItemDescription" xml:space="preserve">
     <value>This is an item description.</value>
@@ -207,6 +250,10 @@
   </data>
   <data name="TitleNewItem" xml:space="preserve">
     <value>New Item</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+    <comment>Network alert page</comment>
   </data>
   <data name="Updated" xml:space="preserve">
     <value>Updated</value>

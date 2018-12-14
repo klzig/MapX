@@ -143,6 +143,65 @@
           <source>Speed</source>
           <target state="new">Speed</target>
         </trans-unit>
+        <trans-unit id="Cellular" translate="yes" xml:space="preserve">
+          <source>Cellular</source>
+          <target state="new">Cellular</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="ConstrainedInternet" translate="yes" xml:space="preserve">
+          <source>Constrained Internet</source>
+          <target state="new">Constrained Internet</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Ethernet" translate="yes" xml:space="preserve">
+          <source>Ethernet</source>
+          <target state="new">Ethernet</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Internet" translate="yes" xml:space="preserve">
+          <source>Internet</source>
+          <target state="new">Internet</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Local" translate="yes" xml:space="preserve">
+          <source>Local</source>
+          <target state="new">Local</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Network" translate="yes" xml:space="preserve">
+          <source>Network</source>
+          <target state="new">Network</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Unknown" translate="yes" xml:space="preserve">
+          <source>Unknown</source>
+          <target state="new">Unknown</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Access" translate="yes" xml:space="preserve">
+          <source>Access: </source>
+          <target state="new">Access: </target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="Profiles" translate="yes" xml:space="preserve">
+          <source>Profiles: </source>
+          <target state="new">Profiles: </target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="None" translate="yes" xml:space="preserve">
+          <source>None</source>
+          <target state="new">None</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="InternetDown" translate="yes" xml:space="preserve">
+          <source>Internet access alert</source>
+          <target state="new">Internet access alert</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Network alert page</note>
+        </trans-unit>
+        <trans-unit id="IsAirplaneMode" translate="yes" xml:space="preserve">
+          <source>is airplane mode enabled?</source>
+          <target state="new">is airplane mode enabled?</target>
+        </trans-unit>
       </group>
     </body>
   </file>

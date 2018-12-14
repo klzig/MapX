@@ -51,6 +51,9 @@
     <Compile Update="Views\LocationAlertPage.xaml.cs">
       <DependentUpon>LocationAlertPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\NetworkAlertPage.xaml.cs">
+      <DependentUpon>NetworkAlertPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\NotificationsAlertPage.xaml.cs">
       <DependentUpon>NotificationsAlertPage.xaml</DependentUpon>
     </Compile>

@@ -7,17 +7,20 @@ namespace CTForms.ViewsBase
     public class CommonToolbarPage : ContentPage
     {
         public LocationService Loc;
+        public NetworkService Net;
 
         private enum Item
         { 
             notification,
-            location    
+            location,
+            network
         }
 
         private readonly List<Item> ItemOrder = new List<Item>()
         {   // Always show toolbar items in same order
             // Left side of toolbar
-            Item.location,      
+            Item.location,
+            Item.network,
             Item.notification
             // Right side of toolbar
         };
@@ -36,13 +39,21 @@ namespace CTForms.ViewsBase
                 {   // On clicked
                     MessagingCenter.Send("location", "LocationAlertClicked");
                 }
-                ) { Text = Properties.Resources.Location, Priority = 0, Order = ToolbarItemOrder.Primary }}
+                ) { Text = Properties.Resources.Location, Priority = 0, Order = ToolbarItemOrder.Primary }},
+
+            { Item.network,
+              new ToolbarItem("Action Name", "network", () =>
+                {   // On clicked
+                    MessagingCenter.Send("network", "NetworkAlertClicked");
+                }
+                ) { Text = Properties.Resources.Network, Priority = 0, Order = ToolbarItemOrder.Primary }}
         };
 
         private Dictionary<Item, bool> ItemsEnabled = new Dictionary<Item, bool>()
         {
             {Item.location, false },
-            {Item.notification, true }
+            {Item.notification, true },
+            {Item.network, false }
         };
 
         public CommonToolbarPage() : base()
@@ -50,17 +61,30 @@ namespace CTForms.ViewsBase
             RefreshToolbar();
             Loc = LocationService.Instance;
             Loc.Alert += LocAlert;
+            Net = NetworkService.Instance;
+            Net.Alert += NetAlert;
+            Net.TriggerAlert();
         }
 
         private void LocAlert(object sender, System.EventArgs e)
         {
             var args = e as AlertEventArgs;
-            bool active = args.Alert;
-            ItemsEnabled[Item.location] = active;
+            UpdateAlert(args.Alert, Item.location);
+        }
+
+        private void NetAlert(object sender, System.EventArgs e)
+        {
+            var args = e as NetworkAlertEventArgs;
+            UpdateAlert(args.Alert, Item.network);
+        }
+
+        private void UpdateAlert(bool active, Item item)
+        {
+            ItemsEnabled[item] = active;
             if (active)
                 RefreshToolbar();
             else
-                ToolbarItems.Remove(AllToolbarItems[Item.location]);
+                ToolbarItems.Remove(AllToolbarItems[item]);
         }
 
         private void RefreshToolbar()
