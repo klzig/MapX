@@ -42,7 +42,7 @@ namespace CTForms.ViewsBase
                 ) { Text = Properties.Resources.Location, Priority = 0, Order = ToolbarItemOrder.Primary }},
 
             { Item.network,
-              new ToolbarItem("Action Name", "network", () =>
+              new ToolbarItem("Action Name", "cloud", () =>
                 {   // On clicked
                     MessagingCenter.Send("network", "NetworkAlertClicked");
                 }

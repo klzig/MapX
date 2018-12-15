@@ -135,6 +135,9 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iTunesArtwark@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\cloud.imageset\cloud.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\hamburger_menu.imageset\hamburger_ios_37x37.pdf">
       <Visible>false</Visible>
     </ImageAsset>
@@ -163,6 +166,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\icon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\cloud.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\location.imageset\Contents.json">
