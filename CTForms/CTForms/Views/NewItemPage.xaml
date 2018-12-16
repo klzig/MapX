@@ -9,14 +9,14 @@
         <ToolbarItem Text="{i18n:Translate LabelCancel}" Clicked="Cancel_Clicked">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="cancel.png"/>
+                    <On Platform="UWP" Value="Assets/cancel.png"/>
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
         <ToolbarItem Text="{i18n:Translate LabelSave}" Clicked="Save_Clicked">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="save.png"/>
+                    <On Platform="UWP" Value="Assets/save.png"/>
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

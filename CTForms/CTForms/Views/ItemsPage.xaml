@@ -10,7 +10,7 @@
         <ToolbarItem Text="{i18n:Translate LabelAdd}" Clicked="AddItem_Clicked">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="add.png"/>
+                    <On Platform="UWP" Value="Assets/add.png"/>
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

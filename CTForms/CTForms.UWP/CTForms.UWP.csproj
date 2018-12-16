@@ -110,9 +110,18 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ic_map_black.svg" />
-    <Content Include="ic_settings_black.svg" />
-    <Content Include="notifications.svg" />
+    <Content Include="Assets\add.png" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\cancel.png" />
+    <Content Include="Assets\Location.png" />
+    <Content Include="Assets\Location.svg" />
+    <Content Include="Assets\map.svg" />
+    <Content Include="Assets\Notifications.svg" />
+    <None Include="Assets\Readme.txt" />
+    <Content Include="Assets\save.png" />
+    <Content Include="Assets\Settings.svg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -141,9 +150,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="add.png" />
-    <Content Include="save.png" />
-    <Content Include="cancel.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
