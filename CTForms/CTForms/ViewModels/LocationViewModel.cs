@@ -1,4 +1,5 @@
-﻿using CTForms.Models;
+﻿using System;
+using CTForms.Models;
 using CTForms.Properties;
 using CTForms.Services;
 
@@ -16,7 +17,7 @@ namespace CTForms.ViewModels
             Loc.LocationUpdate += LocationUpdate;
         }
 
-        private void LocationUpdate(object sender, System.EventArgs e)
+        private void LocationUpdate(object sender, EventArgs e)
         {
             var args = e as LocationEventArgs;
             Location = args.Loc;

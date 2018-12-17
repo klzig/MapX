@@ -4,13 +4,14 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 using CTForms.Models;
-using CTForms.Views;
 using CTForms.Properties;
+using CTForms.Services;
 
 namespace CTForms.ViewModels
 {
     public class MapViewModel : BaseViewModel
     {
+        public LocationService Loc;
         private bool _isMapMode;
 
         //   public Map Item { get; set; }
@@ -19,11 +20,19 @@ namespace CTForms.ViewModels
         {
             Title = Resources.MenuItemMap;
             ModeToggleCommand = new Command(() => ToggleMode());
+            Loc = LocationService.Instance;
+            Loc.LocationUpdate += LocationUpdate;
         }
 
         public ICommand ModeToggleCommand { private set; get; }
         public ICommand LocationCommand { private set; get; }
         public ICommand MoreCommand { private set; get; }
+
+        private void LocationUpdate(object sender, EventArgs e)
+        {
+            var args = e as LocationEventArgs;
+            Location = args.Loc;
+        }
 
         public void ToggleMode()
         {
@@ -78,11 +87,11 @@ namespace CTForms.ViewModels
             set => SetProperty(ref showList, value);
         }
 
-        private string location;
-        public string Location
+        private LocationModel location;
+        public LocationModel Location
         {
-            get => location;
-            set => SetProperty(ref location, value);
+            get { return location; }
+            set { SetProperty(ref location, value); }
         }
 
         private string more;

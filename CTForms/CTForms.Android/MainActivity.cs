@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Views;
+using Android.Graphics;
 using Com.Mapbox.Mapboxsdk;
 using CTForms.Services;
 
@@ -23,15 +21,18 @@ namespace CTForms.Droid
             base.SetTheme(Resource.Style.MainTheme);
 
             base.OnCreate(savedInstanceState);
-            Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            LoadApplication(new App());
             Mapbox.GetInstance(this, Secrets.AndroidMapboxToken);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            System.Diagnostics.Debug.WriteLine("Mapbox version: " + BuildConfig.MapboxVersionString);
+
+            LoadApplication(new App());
 
             // Set status bar background color to match NavigationPage BarBackgroundColor
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Rgb(44, 138, 255));
+            Window.SetStatusBarColor(Color.Rgb(44, 138, 255));
         }
     }
 }

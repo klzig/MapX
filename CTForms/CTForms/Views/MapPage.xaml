@@ -19,7 +19,7 @@
             MapStyle="{Binding CurrentMapStyle}" 
             ZoomLevel="{Binding ZoomLevel}"
         />
-
+        
         <Grid VerticalOptions="FillAndExpand" InputTransparent="{Binding ShowMap}">
             <Grid.RowDefinitions>
                 <!-- Turns list -->
@@ -74,15 +74,15 @@
             </Grid.Resources>
 
             <!-- Bottom toolbar controls -->
-            <Button Text="" Grid.Column="1" Command="{Binding ModeToggleCommand}"/>
+            <Button x:Name="mode" Text="" Grid.Column="1" Command="{Binding ModeToggleCommand}"/>
             <Image Source="{Binding ModeIcon}" Grid.Column="1"/>
             <Label Text="{Binding ModeText}" Grid.Column="1"/>
 
-            <Button Text= "" Grid.Column="2" Command="{Binding LocationCommand}"/>
+            <Button x:Name="location" Text= "" Grid.Column="2" Command="{Binding LocationCommand}"/>
             <Image Source="location" Grid.Column="2"/>
             <Label Text="" Grid.Column="2"/>
 
-            <Button Text="" Grid.Column="3" Command="{Binding MoreCommand}"/>
+            <Button x:Name="more" Text="" Grid.Column="3" Command="{Binding MoreCommand}"/>
             <Image Source="more" Grid.Column="3"/>
             <Label Text="" Grid.Column="3"/>
         </Grid>
