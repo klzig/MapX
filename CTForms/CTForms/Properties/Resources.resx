@@ -214,7 +214,7 @@
     <value>Notifications</value>
   </data>
   <data name="MenuItemXamMap" xml:space="preserve">
-    <value>Xamarin Forms Map</value>
+    <value>Native Platform Map</value>
   </data>
   <data name="Network" xml:space="preserve">
     <value>Network</value>

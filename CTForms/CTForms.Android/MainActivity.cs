@@ -24,6 +24,7 @@ namespace CTForms.Droid
             Mapbox.GetInstance(this, Secrets.AndroidMapboxToken);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
 
             System.Diagnostics.Debug.WriteLine("Mapbox version: " + BuildConfig.MapboxVersionString);
 

@@ -203,8 +203,8 @@
           <target state="new">is airplane mode enabled?</target>
         </trans-unit>
         <trans-unit id="MenuItemXamMap" translate="yes" xml:space="preserve">
-          <source>Xamarin Forms Map</source>
-          <target state="new">Xamarin Forms Map</target>
+          <source>Native Platform Map</source>
+          <target state="new">Native Platform Map</target>
         </trans-unit>
       </group>
     </body>

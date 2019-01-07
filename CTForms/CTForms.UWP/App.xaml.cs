@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CTForms.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,6 +54,7 @@ namespace CTForms.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e);
+                Xamarin.FormsMaps.Init(Secrets.UwpMapSDKToken);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="CTForms.Views.XamMapPage"
         xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
+        xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
         xmlns:vm="clr-namespace:CTForms.ViewModels"
         Title="{Binding Title}">
 
@@ -18,7 +19,16 @@
             MapStyle="{Binding CurrentMapStyle}" 
             ZoomLevel="{Binding ZoomLevel}"
         />-->
-        
+
+        <StackLayout VerticalOptions="FillAndExpand">
+            <maps:Map 
+                x:Name="map"
+                IsVisible="{Binding ShowMap}"
+                IsShowingUser="true"
+                MapType="Street"
+            />
+        </StackLayout>
+
         <Grid VerticalOptions="FillAndExpand" InputTransparent="{Binding ShowMap}">
             <Grid.RowDefinitions>
                 <!-- Turns list -->

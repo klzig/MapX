@@ -322,7 +322,7 @@ namespace CTForms.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xamarin Forms Map.
+        ///   Looks up a localized string similar to Native Platform Map.
         /// </summary>
         internal static string MenuItemXamMap {
             get {
