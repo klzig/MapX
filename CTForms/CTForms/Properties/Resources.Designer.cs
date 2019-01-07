@@ -304,7 +304,7 @@ namespace CTForms.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map.
+        ///   Looks up a localized string similar to Mapbox Map.
         /// </summary>
         internal static string MenuItemMap {
             get {
@@ -318,6 +318,15 @@ namespace CTForms.Properties {
         internal static string MenuItemNotifications {
             get {
                 return ResourceManager.GetString("MenuItemNotifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xamarin Forms Map.
+        /// </summary>
+        internal static string MenuItemXamMap {
+            get {
+                return ResourceManager.GetString("MenuItemXamMap", resourceCulture);
             }
         }
         

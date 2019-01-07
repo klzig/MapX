@@ -8,6 +8,7 @@ namespace CTForms.Models
     {
         Browse,
         Map,
+        XamMap,
         About,
         Notifications,
         Location

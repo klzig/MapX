@@ -24,7 +24,8 @@
     <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.4.0.1009999" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Messages\" />
@@ -50,6 +51,9 @@
     </Compile>
     <Compile Update="Views\LocationAlertPage.xaml.cs">
       <DependentUpon>LocationAlertPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\XamMapPage.xaml.cs">
+      <DependentUpon>XamMapPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\NetworkAlertPage.xaml.cs">
       <DependentUpon>NetworkAlertPage.xaml</DependentUpon>

@@ -35,6 +35,7 @@ namespace CTForms.Views
             {
                 NavigationPages = new Dictionary<int, NavigationPage>
                 {
+                    { (int)MenuItemType.XamMap, new NavigationPage(new XamMapPage()) },
                     { (int)MenuItemType.Map, new NavigationPage(new MapPage()) },
                     { (int)MenuItemType.Browse, new NavigationPage(new ItemsPage()) },
                     { (int)MenuItemType.About, new NavigationPage(new AboutPage()) },
@@ -46,6 +47,7 @@ namespace CTForms.Views
             {
                 Pages = new Dictionary<int, CommonToolbarPage>
                 {
+                    { (int)MenuItemType.XamMap, new XamMapPage() },
                     { (int)MenuItemType.Map, new MapPage() },
                     { (int)MenuItemType.Browse, new ItemsPage() },
                     { (int)MenuItemType.About, new AboutPage() },

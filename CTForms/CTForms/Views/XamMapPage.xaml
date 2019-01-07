@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewsBase:CommonToolbarPage xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="CTForms.Views.XamMapPage"
+        xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
+        xmlns:vm="clr-namespace:CTForms.ViewModels"
+        Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:MapViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!--<local:MapView
+            x:Name="map" 
+            IsVisible="{Binding ShowMap}"
+            VerticalOptions="FillAndExpand" 
+            MapStyle="{Binding CurrentMapStyle}" 
+            ZoomLevel="{Binding ZoomLevel}"
+        />-->
+        
+        <Grid VerticalOptions="FillAndExpand" InputTransparent="{Binding ShowMap}">
+            <Grid.RowDefinitions>
+                <!-- Turns list -->
+                <RowDefinition Height="*" />
+                <!-- Toolbar background -->
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="This page intentionally left blank" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding ShowList}"/>
+            <BoxView Grid.Row ="1" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowList}" BackgroundColor="{DynamicResource BackgroundColor}"/>
+        </Grid>
+
+
+        <Grid VerticalOptions="End">
+            <Grid.RowDefinitions>
+                <!-- Buttons -->
+                <RowDefinition Height="50" />
+                <!-- Button text -->
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="HeightRequest" Value="50"/>
+                    <Setter Property="WidthRequest" Value="50"/>
+                    <Setter Property="BorderRadius" Value="25"/>
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="0"/>
+                    <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
+                    <Setter Property="Opacity" Value=".3"/>
+                    <Setter Property="Grid.Row" Value="0"/>
+                </Style>
+                <Style TargetType="Image">
+                    <Setter Property="HeightRequest" Value="40"/>
+                    <Setter Property="WidthRequest" Value="40"/>
+                    <Setter Property="Margin" Value="8,8,8,8"/>
+                    <Setter Property="InputTransparent" Value="True"/>
+                    <Setter Property="Grid.Row" Value="0"/>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}"/>
+                    <Setter Property="Grid.Row" Value="1"/>
+                </Style>
+            </Grid.Resources>
+
+            <!-- Bottom toolbar controls -->
+            <Button x:Name="mode" Text="" Grid.Column="1" Command="{Binding ModeToggleCommand}"/>
+            <Image Source="{Binding ModeIcon}" Grid.Column="1"/>
+            <Label Text="{Binding ModeText}" Grid.Column="1"/>
+
+            <Button x:Name="location" Text= "" Grid.Column="2" Command="{Binding LocationCommand}"/>
+            <Image Source="location" Grid.Column="2"/>
+            <Label Text="" Grid.Column="2"/>
+
+            <Button x:Name="more" Text="" Grid.Column="3" Command="{Binding MoreCommand}"/>
+            <Image Source="more" Grid.Column="3"/>
+            <Label Text="" Grid.Column="3"/>
+        </Grid>
+    </Grid>
+</ViewsBase:CommonToolbarPage>

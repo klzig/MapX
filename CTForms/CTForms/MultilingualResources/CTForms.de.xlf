@@ -63,8 +63,8 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Text:</target>
         </trans-unit>
         <trans-unit id="MenuItemMap" translate="yes" xml:space="preserve">
-          <source>Map</source>
-          <target state="new">Map</target>
+          <source>Mapbox Map</source>
+          <target state="new">Mapbox Map</target>
         </trans-unit>
         <trans-unit id="Notifications" translate="yes" xml:space="preserve">
           <source>Notifications</source>
@@ -201,6 +201,10 @@
         <trans-unit id="IsAirplaneMode" translate="yes" xml:space="preserve">
           <source>is airplane mode enabled?</source>
           <target state="new">is airplane mode enabled?</target>
+        </trans-unit>
+        <trans-unit id="MenuItemXamMap" translate="yes" xml:space="preserve">
+          <source>Xamarin Forms Map</source>
+          <target state="new">Xamarin Forms Map</target>
         </trans-unit>
       </group>
     </body>
