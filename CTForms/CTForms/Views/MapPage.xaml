@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="CTForms.Views.MapPage"
         xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
+        xmlns:i18n="clr-namespace:CTForms.Services;assembly=CTForms"
         xmlns:vm="clr-namespace:CTForms.ViewModels"
         xmlns:local="clr-namespace:Naxam.Controls.Mapbox.Forms;assembly=Naxam.Mapbox.Forms"
-        Title="{Binding Title}">
+        Title="{i18n:Translate MenuItemMap}">
 
     <ContentPage.BindingContext>
         <vm:MapViewModel />

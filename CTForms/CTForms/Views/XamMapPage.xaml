@@ -4,8 +4,9 @@
         x:Class="CTForms.Views.XamMapPage"
         xmlns:ViewsBase="clr-namespace:CTForms.ViewsBase;assembly=CTForms"
         xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+        xmlns:i18n="clr-namespace:CTForms.Services;assembly=CTForms"
         xmlns:vm="clr-namespace:CTForms.ViewModels"
-        Title="{Binding Title}">
+        Title="{i18n:Translate MenuItemXamMap}">
 
     <ContentPage.BindingContext>
         <vm:MapViewModel />

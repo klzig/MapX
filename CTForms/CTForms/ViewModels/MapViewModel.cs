@@ -7,6 +7,8 @@ using CTForms.Models;
 using CTForms.Properties;
 using CTForms.Services;
 
+// https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map
+
 namespace CTForms.ViewModels
 {
     public class MapViewModel : BaseViewModel
@@ -18,7 +20,6 @@ namespace CTForms.ViewModels
 
         public MapViewModel()
         {
-            Title = Resources.MenuItemMap;
             ModeToggleCommand = new Command(() => ToggleMode());
             Loc = LocationService.Instance;
             Loc.LocationUpdate += LocationUpdate;
