@@ -21,8 +21,10 @@
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
   <ItemGroup>
+    <PackageReference Include="Mapsui.Forms" Version="2.0.0-beta.13" />
     <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.4.0.1009999" />
@@ -48,6 +50,9 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MapsuiPage.xaml.cs">
+      <DependentUpon>MapsuiPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\LocationAlertPage.xaml.cs">
       <DependentUpon>LocationAlertPage.xaml</DependentUpon>

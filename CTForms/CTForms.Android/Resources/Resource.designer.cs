@@ -26,6 +26,11 @@ namespace CTForms.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Mapsui.UI.Android.Resource.Attribute.start_with_openstreetmap = global::CTForms.Droid.Resource.Attribute.start_with_openstreetmap;
+			global::Mapsui.UI.Android.Resource.String.ApplicationName = global::CTForms.Droid.Resource.String.ApplicationName;
+			global::Mapsui.UI.Android.Resource.String.Hello = global::CTForms.Droid.Resource.String.Hello;
+			global::Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style = global::CTForms.Droid.Resource.Styleable.start_with_openstreetmap_style;
+			global::Mapsui.UI.Android.Resource.Styleable.start_with_openstreetmap_style_start_with_openstreetmap = global::CTForms.Droid.Resource.Styleable.start_with_openstreetmap_style_start_with_openstreetmap;
 			global::Naxam.Mapbox.Platform.Droid.Resource.Animation.abc_fade_in = global::CTForms.Droid.Resource.Animation.abc_fade_in;
 			global::Naxam.Mapbox.Platform.Droid.Resource.Animation.abc_fade_out = global::CTForms.Droid.Resource.Animation.abc_fade_out;
 			global::Naxam.Mapbox.Platform.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::CTForms.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -3647,6 +3652,9 @@ namespace CTForms.Droid
 			// aapt resource value: 0x7f010020
 			public const int stackFromEnd = 2130772000;
 			
+			// aapt resource value: 0x7f0101c3
+			public const int start_with_openstreetmap = 2130772419;
+			
 			// aapt resource value: 0x7f010104
 			public const int state_above_anchor = 2130772228;
 			
@@ -6968,6 +6976,12 @@ namespace CTForms.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f090066
+			public const int ApplicationName = 2131296358;
+			
+			// aapt resource value: 0x7f090065
+			public const int Hello = 2131296357;
 			
 			// aapt resource value: 0x7f090026
 			public const int abc_action_bar_home_description = 2131296294;
@@ -10952,6 +10966,12 @@ namespace CTForms.Droid
 			
 			// aapt resource value: 10
 			public const int mapbox_MapView_mapbox_uiZoomGestures = 10;
+			
+			public static int[] start_with_openstreetmap_style = new int[] {
+					2130772419};
+			
+			// aapt resource value: 0
+			public const int start_with_openstreetmap_style_start_with_openstreetmap = 0;
 			
 			static Styleable()
 			{

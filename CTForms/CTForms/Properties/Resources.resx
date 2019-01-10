@@ -210,6 +210,9 @@
   <data name="MenuItemMap" xml:space="preserve">
     <value>Mapbox Map</value>
   </data>
+  <data name="MenuItemMapsui" xml:space="preserve">
+    <value>Mapsui Map</value>
+  </data>
   <data name="MenuItemNotifications" xml:space="preserve">
     <value>Notifications</value>
   </data>

@@ -206,6 +206,10 @@
           <source>Native Platform Map</source>
           <target state="new">Native Platform Map</target>
         </trans-unit>
+        <trans-unit id="MenuItemMapsui" translate="yes" xml:space="preserve">
+          <source>Mapsui Map</source>
+          <target state="new">Mapsui Map</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -313,6 +313,15 @@ namespace CTForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mapsui Map.
+        /// </summary>
+        internal static string MenuItemMapsui {
+            get {
+                return ResourceManager.GetString("MenuItemMapsui", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notifications.
         /// </summary>
         internal static string MenuItemNotifications {
