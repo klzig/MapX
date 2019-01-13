@@ -1,5 +1,5 @@
 # MapX
-Baseline solution for a cross platform, open source mapping (OSM) application.
+Explore various Xamarin mapping solutions.
 # Build
 * To get maps to work
   * iOS and Android maps might display in low detail without a token
