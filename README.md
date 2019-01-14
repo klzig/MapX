@@ -1,13 +1,9 @@
 # MapX
-Baseline solution for a cross platform, open source mapping (OSM) application.
+Explore various Xamarin mapping solutions.
 # Build
-* To get maps to work
-  * iOS and Android maps might display in low detail without a token
-    * Create a MapBox account: https://www.mapbox.com/signup/
-    * Create MapBox token(s), add to Secrets.cs
-  * UWP map page might crash without a token.
-    * Create a Bing Maps account: https://www.bingmapsportal.com/
-    * Create a UWP token, add it to Secrets.cs
+* To get maps to work without limitations
+  * Create account(s) with various map providers
+  * Add API token(s) for those accounts to Secrets.cs
 # Design
 * xamarin.forms, uwp, .net standard 2.0
   * Slideover menu (master-view)
