@@ -1,6 +1,7 @@
 # MapX
 Explore various Xamarin mapping solutions.
 # Build
+* Install Multilingual App Toolkit 4.0
 * To get maps to work without limitations
   * Create account(s) with various map providers
   * Add API token(s) for those accounts to Secrets.cs
