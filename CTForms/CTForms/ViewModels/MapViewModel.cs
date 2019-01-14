@@ -21,6 +21,8 @@ namespace CTForms.ViewModels
         public MapViewModel()
         {
             ModeToggleCommand = new Command(() => ToggleMode());
+            LocationCommand = new Command(() => LocateMap());
+            PanCommand = new Command(() => PanMap());
             Loc = LocationService.Instance;
             Loc.LocationUpdate += LocationUpdate;
         }
@@ -28,6 +30,7 @@ namespace CTForms.ViewModels
         public ICommand ModeToggleCommand { private set; get; }
         public ICommand LocationCommand { private set; get; }
         public ICommand MoreCommand { private set; get; }
+        public ICommand PanCommand { private set; get; }
 
         private void LocationUpdate(object sender, EventArgs e)
         {
@@ -53,6 +56,18 @@ namespace CTForms.ViewModels
             ShowList = !_isMapMode;
         }
 
+        public void PanMap()
+        {
+            Panned = true;
+            LocationIcon = "location";
+        }
+
+        public void LocateMap()
+        {
+            Panned = false;
+            LocationIcon = "location";
+        }
+
         private bool panned = false;
         public bool Panned
         {
@@ -72,6 +87,13 @@ namespace CTForms.ViewModels
         {
             get => modeIcon;
             set => SetProperty(ref modeIcon, value);
+        }
+
+        private string locationIcon = "location";
+        public string LocationIcon
+        {
+            get => locationIcon;
+            set => SetProperty(ref locationIcon, value);
         }
 
         private bool showMap = false;

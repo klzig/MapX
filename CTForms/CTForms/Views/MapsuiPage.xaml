@@ -13,21 +13,8 @@
     </ContentPage.BindingContext>
 
     <Grid>
-        <!--<local:MapView
-            x:Name="map" 
-            IsVisible="{Binding ShowMap}"
-            VerticalOptions="FillAndExpand" 
-            MapStyle="{Binding CurrentMapStyle}" 
-            ZoomLevel="{Binding ZoomLevel}"
-        />-->
-
         <!--<StackLayout VerticalOptions="FillAndExpand">
-            <maps:Map 
-                x:Name="map"
-                IsVisible="{Binding ShowMap}"
-                IsShowingUser="true"
-                MapType="Street"
-            />
+
         </StackLayout>-->
 
                 <!--<Picker x:Name="MapType" 
@@ -44,8 +31,11 @@
             </Picker>-->
 
         <StackLayout IsVisible="{Binding ShowMap}">
-            <local:MapControl 
-                x:Name="mapControl"
+            <local:MapView 
+                x:Name="mapView"
+                IsZoomButtonVisible="False"
+                IsNorthingButtonVisible="False"
+                IsMyLocationButtonVisible="False"
 		        VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand"/>
         </StackLayout>
@@ -109,7 +99,7 @@
             <Label Text="{Binding ModeText}" Grid.Column="1"/>
 
             <Button x:Name="location" Text= "" Grid.Column="2" Command="{Binding LocationCommand}"/>
-            <Image Source="location" Grid.Column="2"/>
+            <Image Source="{Binding LocationIcon}" Grid.Column="2"/>
             <Label Text="" Grid.Column="2"/>
 
             <Button x:Name="more" Text="" Grid.Column="3" Command="{Binding MoreCommand}"/>

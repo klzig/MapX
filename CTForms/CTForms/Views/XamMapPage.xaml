@@ -13,14 +13,6 @@
     </ContentPage.BindingContext>
 
     <Grid>
-        <!--<local:MapView
-            x:Name="map" 
-            IsVisible="{Binding ShowMap}"
-            VerticalOptions="FillAndExpand" 
-            MapStyle="{Binding CurrentMapStyle}" 
-            ZoomLevel="{Binding ZoomLevel}"
-        />-->
-
         <StackLayout VerticalOptions="FillAndExpand">
             <maps:Map 
                 x:Name="map"
